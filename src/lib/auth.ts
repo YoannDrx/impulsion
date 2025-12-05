@@ -171,17 +171,19 @@ export const auth = betterAuth({
 
       organizationCreation: {
         async afterCreate(data) {
-          const stripeCustomer = await stripe.customers.create({
-            email: data.user.email,
-            name: data.organization.name,
-            metadata: {
-              organizationId: data.organization.id,
-            },
-          });
-          await prisma.organization.update({
-            where: { id: data.organization.id },
-            data: { stripeCustomerId: stripeCustomer.id },
-          });
+          if (stripe) {
+            const stripeCustomer = await stripe.customers.create({
+              email: data.user.email,
+              name: data.organization.name,
+              metadata: {
+                organizationId: data.organization.id,
+              },
+            });
+            await prisma.organization.update({
+              where: { id: data.organization.id },
+              data: { stripeCustomerId: stripeCustomer.id },
+            });
+          }
         },
       },
       async sendInvitationEmail({ id, email }) {
