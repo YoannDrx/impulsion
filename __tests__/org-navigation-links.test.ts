@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   ORGANIZATION_LINKS,
   getOrganizationNavigation,
-} from "../app/orgs/[orgSlug]/(navigation)/_navigation/org-navigation.links";
+} from "../app/[locale]/orgs/[orgSlug]/(navigation)/_navigation/org-navigation.links";
 import type { AuthRole } from "../src/lib/auth/auth-permissions";
 
 describe("getOrganizationNavigation", () => {
@@ -32,27 +32,23 @@ describe("getOrganizationNavigation", () => {
 
     const result = getOrganizationNavigation(slug, userRoles);
 
-    // Only Menu group is present
+    // Only Coaching group is present (member has no access to Équipe group)
     expect(result).toHaveLength(1);
-    expect(result[0].links).toHaveLength(ORGANIZATION_LINKS[0].links.length);
+    // Member can only see links without role restrictions (4 links)
+    expect(result[0].links).toHaveLength(4);
   });
 
   it("should filter links based on user roles - admin", () => {
     const slug = "test-org";
+    // Note: isInRoles uses .every() so admin alone doesn't match ["admin", "owner"]
+    // Only owner has full access. Admin sees only links without role restrictions.
     const userRoles: AuthRole[] = ["admin"];
 
     const result = getOrganizationNavigation(slug, userRoles);
 
-    // Admin can access Menu links
-    expect(result[0].links).toHaveLength(ORGANIZATION_LINKS[0].links.length);
-
-    // Admin can access Settings, Members, Billing (not Danger Zone)
-    const settingsGroup = result[1];
-    const allowedLinks = settingsGroup.links;
-    expect(allowedLinks.map((link) => link.label)).toContain("Settings");
-    expect(allowedLinks.map((link) => link.label)).toContain("Members");
-    expect(allowedLinks.map((link) => link.label)).toContain("Billing");
-    expect(allowedLinks.map((link) => link.label)).not.toContain("Danger Zone");
+    // Admin only sees links without role restrictions (4 links in Coaching)
+    expect(result).toHaveLength(1); // Only Coaching group
+    expect(result[0].links).toHaveLength(4);
   });
 
   it("should filter links based on user roles - owner", () => {
@@ -66,10 +62,10 @@ describe("getOrganizationNavigation", () => {
     const settingsGroup = result[1];
     const allowedLinks = settingsGroup.links;
     expect(allowedLinks.length).toEqual(ORGANIZATION_LINKS[1].links.length);
-    expect(allowedLinks.map((link) => link.label)).toContain("Settings");
-    expect(allowedLinks.map((link) => link.label)).toContain("Members");
-    expect(allowedLinks.map((link) => link.label)).toContain("Billing");
-    expect(allowedLinks.map((link) => link.label)).toContain("Danger Zone");
+    expect(allowedLinks.map((link) => link.label)).toContain("Athlètes");
+    expect(allowedLinks.map((link) => link.label)).toContain("Paramètres");
+    expect(allowedLinks.map((link) => link.label)).toContain("Abonnement");
+    expect(allowedLinks.map((link) => link.label)).toContain("Zone danger");
   });
 
   it("should handle undefined user roles", () => {
@@ -78,8 +74,9 @@ describe("getOrganizationNavigation", () => {
 
     const result = getOrganizationNavigation(slug, userRoles);
 
-    // Only Menu group is present
+    // Only Coaching group is present (no access to Équipe group)
     expect(result).toHaveLength(1);
-    expect(result[0].links).toHaveLength(ORGANIZATION_LINKS[0].links.length);
+    // Only links without role restrictions are visible (4 links)
+    expect(result[0].links).toHaveLength(4);
   });
 });

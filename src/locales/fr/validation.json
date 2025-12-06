@@ -1,0 +1,41 @@
+{
+  "required": "Ce champ est requis",
+  "email": {
+    "invalid": "Adresse email invalide"
+  },
+  "string": {
+    "min": "Minimum {min} caractères",
+    "max": "Maximum {max} caractères"
+  },
+  "number": {
+    "min": "La valeur doit être au moins {min}",
+    "max": "La valeur doit être au maximum {max}",
+    "positive": "La valeur doit être positive",
+    "negative": "La valeur doit être négative",
+    "integer": "La valeur doit être un entier"
+  },
+  "date": {
+    "invalid": "Date invalide",
+    "future": "La date doit être dans le futur",
+    "past": "La date doit être dans le passé"
+  },
+  "password": {
+    "min": "Le mot de passe doit contenir au moins {min} caractères",
+    "uppercase": "Le mot de passe doit contenir au moins une majuscule",
+    "lowercase": "Le mot de passe doit contenir au moins une minuscule",
+    "number": "Le mot de passe doit contenir au moins un chiffre",
+    "special": "Le mot de passe doit contenir au moins un caractère spécial",
+    "match": "Les mots de passe ne correspondent pas"
+  },
+  "file": {
+    "required": "Un fichier est requis",
+    "size": "Le fichier est trop volumineux (max {max})",
+    "type": "Type de fichier non autorisé"
+  },
+  "url": {
+    "invalid": "URL invalide"
+  },
+  "phone": {
+    "invalid": "Numéro de téléphone invalide"
+  }
+}

@@ -4,7 +4,7 @@ import { screen, waitFor } from "@testing-library/react";
 import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { SignUpCredentialsForm } from "../app/auth/signup/sign-up-credentials-form";
+import { SignUpCredentialsForm } from "../app/[locale]/auth/signup/sign-up-credentials-form";
 import { setup } from "../test/setup";
 
 describe("SignUpCredentialsForm", () => {

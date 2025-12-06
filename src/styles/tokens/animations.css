@@ -1,0 +1,276 @@
+/**
+ * Impulsion Design System - Animation Tokens
+ *
+ * Durees, easings et keyframes pour les animations.
+ * Animations energiques et fluides pour l'identite "Cyber-Athletisme".
+ */
+
+:root {
+  /* === DURATION === */
+
+  --imp-duration-instant: 0ms;
+  --imp-duration-75: 75ms;
+  --imp-duration-100: 100ms;
+  --imp-duration-150: 150ms;
+  --imp-duration-200: 200ms;
+  --imp-duration-300: 300ms;
+  --imp-duration-400: 400ms;
+  --imp-duration-500: 500ms;
+  --imp-duration-700: 700ms;
+  --imp-duration-1000: 1000ms;
+
+  /* Semantic durations */
+  --imp-duration-fast: var(--imp-duration-150);
+  --imp-duration-normal: var(--imp-duration-300);
+  --imp-duration-slow: var(--imp-duration-500);
+
+  /* === EASING FUNCTIONS === */
+
+  /* Standard easings */
+  --imp-ease-linear: linear;
+  --imp-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --imp-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --imp-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Spring-like easings */
+  --imp-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --imp-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --imp-ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  /* Smooth athletic motion */
+  --imp-ease-athletic: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Energetic snappy motion */
+  --imp-ease-snappy: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* === TRANSITION PRESETS === */
+
+  /* Common transitions */
+  --imp-transition-colors: color, background-color, border-color, text-decoration-color, fill, stroke;
+  --imp-transition-opacity: opacity;
+  --imp-transition-shadow: box-shadow;
+  --imp-transition-transform: transform;
+  --imp-transition-all: all;
+
+  /* Composite transitions */
+  --imp-transition-default: var(--imp-duration-normal) var(--imp-ease-out);
+  --imp-transition-fast: var(--imp-duration-fast) var(--imp-ease-out);
+  --imp-transition-slow: var(--imp-duration-slow) var(--imp-ease-out);
+  --imp-transition-spring: var(--imp-duration-400) var(--imp-ease-spring);
+
+  /* === DELAYS === */
+
+  --imp-delay-75: 75ms;
+  --imp-delay-100: 100ms;
+  --imp-delay-150: 150ms;
+  --imp-delay-200: 200ms;
+  --imp-delay-300: 300ms;
+  --imp-delay-500: 500ms;
+  --imp-delay-700: 700ms;
+  --imp-delay-1000: 1000ms;
+}
+
+/* === KEYFRAME ANIMATIONS === */
+
+/* Fade animations */
+@keyframes imp-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes imp-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes imp-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imp-fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale animations */
+@keyframes imp-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes imp-scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Bounce animation for badges/achievements */
+@keyframes imp-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  70% {
+    transform: scale(0.9) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* Pulse glow animation */
+@keyframes imp-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 oklch(0.91 0.23 120 / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px oklch(0.91 0.23 120 / 0.6);
+  }
+}
+
+@keyframes imp-pulse-glow-cyan {
+  0%, 100% {
+    box-shadow: 0 0 0 0 oklch(0.85 0.16 195 / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px oklch(0.85 0.16 195 / 0.6);
+  }
+}
+
+/* Neon flicker effect */
+@keyframes imp-neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+  20%, 24%, 55% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+}
+
+/* Shake animation for errors */
+@keyframes imp-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+/* Spin animation */
+@keyframes imp-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Ping animation for notifications */
+@keyframes imp-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Slide animations for modals/drawers */
+@keyframes imp-slide-in-from-top {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes imp-slide-in-from-bottom {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes imp-slide-in-from-left {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes imp-slide-in-from-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Progress/streak counter animation */
+@keyframes imp-count-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Confetti burst keyframes */
+@keyframes imp-confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Float animation for 3D elements */
+@keyframes imp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Gradient shift for backgrounds */
+@keyframes imp-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Accordion animations (keeping existing) */
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+/* === ANIMATION UTILITY CLASSES === */
+
+:root {
+  /* Animation presets using keyframes */
+  --imp-animate-fade-in: imp-fade-in var(--imp-duration-normal) var(--imp-ease-out);
+  --imp-animate-fade-in-up: imp-fade-in-up var(--imp-duration-normal) var(--imp-ease-out);
+  --imp-animate-scale-in: imp-scale-in var(--imp-duration-normal) var(--imp-ease-spring);
+  --imp-animate-bounce-in: imp-bounce-in var(--imp-duration-500) var(--imp-ease-bounce);
+  --imp-animate-pulse-glow: imp-pulse-glow 2s var(--imp-ease-in-out) infinite;
+  --imp-animate-spin: imp-spin 1s var(--imp-ease-linear) infinite;
+  --imp-animate-ping: imp-ping 1s var(--imp-ease-in-out) infinite;
+  --imp-animate-float: imp-float 3s var(--imp-ease-in-out) infinite;
+}

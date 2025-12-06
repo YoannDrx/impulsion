@@ -1,35 +1,61 @@
 export const SiteConfig = {
-  title: "NOW.TS",
-  description: "Collect and showcase powerful video and text testimonials",
-  prodUrl: "https://demo.nowts.app",
-  appId: "nowts",
-  domain: "demo.nowts.app",
+  title: "Impulsion",
+  description: "Plateforme de coaching sportif hybride - Elevate your training",
+  prodUrl: "https://impulsion.app",
+  appId: "impulsion",
+  domain: "impulsion.app",
   appIcon: "/images/icon.png",
   company: {
-    name: "NOW.TS LLC",
-    address: "421 Rue de Paris, France", // Remove if not needed
+    name: "Impulsion",
+    address: "France",
   },
   brand: {
-    primary: "#007291", // You can adjust this to your brand color
+    /** Electric Lime - Couleur primaire Impulsion */
+    primary: "#ccff00",
+    /** Neon Cyan - Couleur secondaire */
+    secondary: "#00f3ff",
   },
   team: {
-    image: "https://melvynx.com/images/me/twitter-en.jpg",
-    website: "https://melvynx.com",
-    twitter: "https://twitter.com/melvyn_me",
-    name: "Melvynx",
+    image: "/images/team.jpg",
+    website: "https://impulsion.app",
+    twitter: "https://twitter.com/impulsion_app",
+    name: "Impulsion",
   },
   features: {
     /**
-     * If enable, you need to specify the logic of upload here : src/features/images/uploadImageAction.tsx
-     * You can use Vercel Blob Storage : https://vercel.com/docs/storage/vercel-blob
-     * Or you can use Cloudflare R2 : https://mlv.sh/cloudflare-r2-tutorial
-     * Or you can use AWS S3 : https://mlv.sh/aws-s3-tutorial
+     * Enable image/video upload for athlete videos and session media
+     * Uses UploadThing for file handling
      */
-    enableImageUpload: false as boolean,
+    enableImageUpload: true as boolean,
     /**
      * If enable, the user will be redirected to `/orgs` when he visits the landing page at `/`
      * The logic is located in middleware.ts
      */
-    enableLandingRedirection: true as boolean,
+    enableLandingRedirection: false as boolean,
   },
+  /** Limites par plan */
+  limits: {
+    free: {
+      maxAthletes: 5,
+      maxVideosPerMonth: 10,
+      maxVideoSizeMB: 100,
+    },
+    pro: {
+      maxAthletes: -1, // illimité
+      maxVideosPerMonth: -1,
+      maxVideoSizeMB: 500,
+    },
+  },
+  /** Sports supportés */
+  sports: [
+    "athletisme",
+    "running",
+    "trail",
+    "triathlon",
+    "natation",
+    "cyclisme",
+    "fitness",
+    "crossfit",
+    "autre",
+  ] as const,
 };

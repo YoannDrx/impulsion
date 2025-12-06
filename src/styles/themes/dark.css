@@ -1,0 +1,113 @@
+/**
+ * Impulsion Design System - Dark Theme
+ *
+ * Theme principal "Cyber-Athletisme" avec fond sombre et accents neon.
+ * Ce theme est le theme par defaut de l'application.
+ */
+
+:root,
+.dark {
+  /* === CORE SEMANTIC COLORS === */
+
+  /* Backgrounds */
+  --background: var(--imp-dark-900);
+  --foreground: oklch(0.95 0 0);
+
+  /* Primary - Electric Lime pour les actions */
+  --primary: var(--imp-lime-400);
+  --primary-foreground: var(--imp-dark-900);
+
+  /* Secondary - Neon Cyan pour les donnees */
+  --secondary: var(--imp-cyan-400);
+  --secondary-foreground: var(--imp-dark-900);
+
+  /* Accent - Elements secondaires */
+  --accent: var(--imp-dark-700);
+  --accent-foreground: var(--imp-lime-400);
+
+  /* Muted - Elements discrets */
+  --muted: var(--imp-dark-700);
+  --muted-foreground: oklch(0.65 0 0);
+
+  /* Cards */
+  --card: var(--imp-dark-800);
+  --card-foreground: oklch(0.95 0 0);
+
+  /* Popover */
+  --popover: var(--imp-dark-800);
+  --popover-foreground: oklch(0.95 0 0);
+
+  /* Borders */
+  --border: var(--imp-dark-600);
+  --input: var(--imp-dark-700);
+  --ring: var(--imp-lime-400);
+
+  /* === SEMANTIC STATUS COLORS === */
+
+  --destructive: var(--imp-danger);
+  --destructive-foreground: oklch(0.95 0 0);
+
+  --success: var(--imp-success);
+  --success-foreground: var(--imp-dark-900);
+
+  --warning: var(--imp-warning);
+  --warning-foreground: var(--imp-dark-900);
+
+  --info: var(--imp-info);
+  --info-foreground: var(--imp-dark-900);
+
+  /* === SIDEBAR COLORS === */
+
+  --sidebar: var(--imp-dark-900);
+  --sidebar-foreground: oklch(0.85 0 0);
+  --sidebar-primary: var(--imp-lime-400);
+  --sidebar-primary-foreground: var(--imp-dark-900);
+  --sidebar-accent: var(--imp-dark-800);
+  --sidebar-accent-foreground: oklch(0.90 0 0);
+  --sidebar-border: var(--imp-dark-700);
+  --sidebar-ring: var(--imp-lime-400);
+
+  /* === CHART COLORS === */
+
+  --chart-1: var(--imp-chart-1);
+  --chart-2: var(--imp-chart-2);
+  --chart-3: var(--imp-chart-3);
+  --chart-4: var(--imp-chart-4);
+  --chart-5: var(--imp-chart-5);
+
+  /* === SPORT-SPECIFIC COLORS === */
+
+  --sport-running: var(--imp-running);
+  --sport-jumping: var(--imp-jumping);
+  --sport-strength: var(--imp-strength);
+  --sport-technique: var(--imp-technique);
+
+  /* === GLOW EFFECTS (Dark optimized) === */
+
+  --glow-primary: var(--imp-glow-lime);
+  --glow-secondary: var(--imp-glow-cyan);
+  --glow-intense: var(--imp-glow-lime-intense);
+
+  /* === GRADIENTS === */
+
+  --gradient-primary: var(--imp-gradient-lime);
+  --gradient-secondary: var(--imp-gradient-cyan);
+  --gradient-accent: var(--imp-gradient-lime-cyan);
+  --gradient-background: var(--imp-gradient-dark);
+  --gradient-mesh: var(--imp-gradient-mesh);
+
+  /* === GLASSMORPHISM === */
+
+  --glass-background: oklch(0.15 0.01 260 / 0.6);
+  --glass-border: oklch(1 0 0 / 0.1);
+  --glass-blur: blur(20px);
+
+  /* === TRANSITION DEFAULTS === */
+
+  --transition-default: var(--imp-transition-default);
+  --transition-fast: var(--imp-transition-fast);
+  --transition-slow: var(--imp-transition-slow);
+
+  /* === COLOR MODE INDICATOR === */
+  color-scheme: dark;
+}

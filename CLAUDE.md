@@ -1,223 +1,331 @@
-# AGENTS.md
+# CLAUDE.md - Impulsion
 
-This file provides guidance to AI Agents.
+Ce fichier fournit des instructions aux agents IA pour le projet Impulsion.
 
-## About the project <NAME>
+## A propos du projet Impulsion
 
-If you read this, ask question about the project to fill this part. You need to describe what is the purpose of the project, main feature and goals.
+**Impulsion** est une plateforme SaaS de coaching sportif hybride ("Hybrid Coaching OS") qui combine :
+- **Data** : Suivi des entrainements, stats, charge, synchronisation Strava
+- **Video** : Analyse technique avec commentaires timestamps
+- **Business** : Facturation, abonnements, marketplace pour coachs
 
-## Development Commands
+### Vision et Positionnement
 
-### Core Commands
+Le probleme : Les outils actuels sont soit trop austeres (Nolio, TrainingPeaks), trop automatises (Runna, Garmin Coach), ou trop sociaux (Strava).
 
-- `pnpm dev` - Start development server with Turbopack
-- `pnpm build` - Build the application
-- `pnpm start` - Start production server
-- `pnpm ts` - Run TypeScript type checking
-- `pnpm lint` - Run ESLint with auto-fix
-- `pnpm lint:ci` - Run ESLint without auto-fix for CI
-- `pnpm clean` - Run lint, type check, and format code
-- `pnpm format` - Format code with Prettier
+La solution : **Augmenter le coach humain** plutot que de le remplacer.
 
-### Testing Commands
+**Cible principale** : Coachs d'athletisme (saut, sprint, demi-fond), coachs running independants, preparateurs physiques.
 
-**CRITICAL - ALWAYS use CI commands for testing (non-interactive mode):**
+**Differenciateur** : La simplicite du feedback video technique - un coach peut envoyer un retour video annote en 2 minutes.
 
-- **ALWAYS run `pnpm test:ci`** - Run unit tests in CI mode (located in `__tests__/`)
-- **ALWAYS run `pnpm test:e2e:ci`** - Run e2e tests in CI mode (headless) (located in `e2e/`)
+### Design System "Cyber-Athletisme"
 
-**NEVER run these interactive commands:**
+L'identite visuelle d'Impulsion est moderne, energique et sportive :
+- **Theme par defaut** : Dark mode
+- **Couleur primaire** : Electric Lime (#ccff00) - oklch(0.91 0.23 120)
+- **Couleur secondaire** : Neon Cyan (#00f3ff) - oklch(0.85 0.16 195)
+- **Effets** : Glows neon, glassmorphism, animations fluides
 
-- **NEVER** `pnpm test` - Interactive mode (not compatible with Claude Code)
-- **NEVER** `pnpm test:e2e` - Interactive mode (not compatible with Claude Code)
+## Commandes de Developpement
 
-### Database Commands
+### Commandes Principales
 
-- `pnpm prisma:seed` - Seed the database
-- `pnpm better-auth:migrate` - Generate better-auth Prisma schema
+- `pnpm dev` - Demarrer le serveur de developpement avec Turbopack
+- `pnpm build` - Construire l'application
+- `pnpm start` - Demarrer le serveur de production
+- `pnpm ts` - Verifier les types TypeScript
+- `pnpm lint` - Lancer ESLint avec auto-fix
+- `pnpm lint:ci` - Lancer ESLint sans auto-fix pour CI
+- `pnpm clean` - Lancer lint, type check et formatter le code
+- `pnpm format` - Formatter le code avec Prettier
 
-### Development Tools
+### Commandes de Test
 
-- `pnpm email` - Email development server
-- `pnpm stripe-webhooks` - Listen for Stripe webhooks
-- `pnpm knip` - Run knip for unused code detection
+**CRITIQUE - Toujours utiliser les commandes CI (mode non-interactif) :**
 
-## Architecture Overview
+- **TOUJOURS utiliser `pnpm test:ci`** - Tests unitaires en mode CI (dans `__tests__/`)
+- **TOUJOURS utiliser `pnpm test:e2e:ci`** - Tests e2e en mode CI headless (dans `e2e/`)
 
-### Technology Stack
+**NE JAMAIS utiliser ces commandes interactives :**
 
-- **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript (strict mode)
-- **Styling**: TailwindCSS v4 with Shadcn/UI components
-- **Database**: PostgreSQL with Prisma ORM
-- **Authentication**: Better Auth with organization support
-- **Email**: React Email with Resend
-- **Payments**: Stripe integration
-- **Testing**: Vitest for unit tests, Playwright for e2e
-- **Package Manager**: pnpm
+- **JAMAIS** `pnpm test` - Mode interactif (incompatible avec Claude Code)
+- **JAMAIS** `pnpm test:e2e` - Mode interactif (incompatible avec Claude Code)
 
-### Project Structure
+### Commandes Base de Donnees
 
-- `app/` - Next.js App Router pages and layouts
-- `src/components/` - UI components (Shadcn/UI in `ui/`, custom in `nowts/`)
-- `src/features/` - Feature-specific components and logic
-- `src/lib/` - Utilities, configurations, and services
-- `src/hooks/` - Custom React hooks
-- `emails/` - Email templates using React Email
-- `prisma/` - Database schema and migrations
-- `e2e/` - End-to-end tests
-- `__tests__/` - Unit tests
+- `pnpm prisma:seed` - Peupler la base de donnees
+- `pnpm prisma:migrate` - Creer une migration
+- `pnpm better-auth:migrate` - Generer le schema Prisma de Better Auth
 
-### Key Features
+### Outils de Developpement
 
-- **Multi-tenant Organizations**: Full organization management with roles and permissions
-- **Authentication**: Email/password, magic links, OAuth (GitHub, Google)
-- **Billing**: Stripe subscriptions with plan management
-- **Dialog System**: Global dialog manager for modals and confirmations
-- **Forms**: React Hook Form with Zod validation and server actions
-- **Email System**: Transactional emails with React Email
+- `pnpm email` - Serveur de developpement email
+- `pnpm stripe-webhooks` - Ecouter les webhooks Stripe
+- `pnpm knip` - Detection du code inutilise
 
-## Code Conventions
+## Architecture Technique
+
+### Stack Technologique
+
+- **Framework** : Next.js 16 avec App Router
+- **Langage** : TypeScript (mode strict)
+- **Styling** : TailwindCSS v4 avec composants Shadcn/UI
+- **Base de donnees** : PostgreSQL avec Prisma ORM
+- **Cache** : Redis (ioredis)
+- **Authentification** : Better Auth avec support multi-tenant
+- **Email** : React Email avec Resend
+- **Paiements** : Integration Stripe
+- **Tests** : Vitest pour les tests unitaires, Playwright pour e2e
+- **Animations** : Motion (Framer Motion 12)
+- **Package Manager** : pnpm
+
+### Structure du Projet
+
+```
+app/                    # Pages et layouts Next.js App Router
+src/
+  components/
+    ui/                 # Composants Shadcn/UI
+    nowts/              # Composants custom NOW.TS
+    impulsion/          # Composants specifiques Impulsion
+    three/              # Composants Three.js (3D)
+  features/             # Logique et composants par feature
+    landing/            # Landing page
+    auth/               # Authentification
+    calendar/           # Calendrier entrainements
+    video/              # Module video
+    gamification/       # Badges, streaks, etc.
+  lib/                  # Utilitaires et services
+    animations/         # Presets et hooks d'animation
+  hooks/                # Hooks React custom
+  styles/               # Design system
+    tokens/             # Couleurs, typo, spacing, effets
+    themes/             # Themes dark et light
+  i18n/                 # Configuration i18n (a venir)
+  locales/              # Fichiers de traduction (a venir)
+emails/                 # Templates email React Email
+prisma/                 # Schema et migrations DB
+e2e/                    # Tests end-to-end
+__tests__/              # Tests unitaires
+```
+
+### Design System
+
+Le design system est organise en tokens CSS :
+
+```
+src/styles/
+  tokens/
+    colors.css         # Palette Impulsion (lime, cyan, dark, semantic)
+    typography.css     # Polices, tailles, poids
+    spacing.css        # Espacements, radius, containers
+    effects.css        # Ombres, glows, gradients
+    animations.css     # Keyframes et presets d'animation
+  themes/
+    dark.css           # Theme dark (defaut)
+    light.css          # Theme light
+  index.css            # Point d'entree
+```
+
+**Classes utilitaires disponibles :**
+- `.glow-lime`, `.glow-cyan` - Effets de glow neon
+- `.glass` - Glassmorphism
+- `.text-gradient-lime`, `.text-gradient-cyan` - Texte en degrade
+- `.bg-mesh` - Background mesh gradient
+- `.font-stat`, `.font-chrono` - Affichage de donnees numeriques
+- `.animate-pulse-glow` - Animation de pulsation lumineuse
+
+## Conventions de Code
 
 ### TypeScript
 
-- Use `type` over `interface` (enforced by ESLint)
-- Prefer functional components with TypeScript types
-- No enums - use maps instead
-- Strict TypeScript configuration
+- Utiliser `type` plutot que `interface` (enforce par ESLint)
+- Preferer les composants fonctionnels avec types TypeScript
+- Pas d'enums - utiliser des maps a la place
+- Configuration TypeScript stricte
 
 ### React/Next.js
 
-- Prefer React Server Components over client components
-- Use `"use client"` only for Web API access in small components
-- Wrap client components in `Suspense` with fallback
-- Use dynamic loading for non-critical components
-- **ALWAYS use the global `PageProps<"/route/path">` type for page components** - NEVER create local `PageProps` type definitions
-  - Example: `export default async function MyPage(props: PageProps<"/admin/users">) {}`
+- Preferer les React Server Components
+- Utiliser `"use client"` uniquement pour l'acces aux Web APIs dans de petits composants
+- Wrapper les composants client dans `Suspense` avec fallback
+- Utiliser le chargement dynamique pour les composants non-critiques
+- **TOUJOURS utiliser le type global `PageProps<"/route/path">` pour les pages**
+  - Exemple : `export default async function MyPage(props: PageProps<"/admin/users">) {}`
 
 ### Styling
 
-- Mobile-first approach with TailwindCSS
-- Use Shadcn/UI components from `src/components/ui/`
-- Custom components in `src/components/nowts/`
+- Approche mobile-first avec TailwindCSS
+- Utiliser les composants Shadcn/UI de `src/components/ui/`
+- Composants custom dans `src/components/impulsion/` pour les elements specifiques
+- **Ne jamais utiliser d'emojis** (preferer les icones Lucide)
+- **Ne jamais utiliser de gradients** sauf si explicitement demande
 
-### Styling preferences
+### Preferences de Style
 
-- Use the shared typography components in `@src/components/ui/typography.tsx` for paragraphs and headings (instead of creating custom `p`, `h1`, `h2`, etc.).
-- For spacing, prefer utility layouts like `flex flex-col gap-4` for vertical spacing and `flex gap-4` for horizontal spacing (instead of `space-y-4`).
-- Prefer the card container `@src/components/ui/card.tsx` for styled wrappers rather than adding custom styles directly to `<div>` elements.
+- Utiliser les composants de typographie partages dans `@/components/ui/typography.tsx`
+- Pour l'espacement, preferer `flex flex-col gap-4` plutot que `space-y-4`
+- Preferer le composant Card pour les conteneurs styles
 
-### State Management
+### Gestion d'Etat
 
-- Use `nuqs` for URL search parameter state
-- Zustand for global state (see dialog-store.ts)
-- TanStack Query for server state
+- Utiliser `nuqs` pour l'etat des parametres URL
+- Zustand pour l'etat global (voir dialog-store.ts)
+- TanStack Query pour l'etat serveur
 
-### Forms and Server Actions
+### Formulaires et Server Actions
 
-- Use React Hook Form with Zod validation
-- Server actions in `.action.ts` files
-- Use `resolveActionResult` helper for mutations
-- Follow form creation pattern in `/src/features/form/`
+- Utiliser React Hook Form avec validation Zod
+- Server actions dans les fichiers `.action.ts`
+- Utiliser le helper `resolveActionResult` pour les mutations
+- Suivre le pattern de creation de formulaire dans `/src/features/form/`
 
-### Authentication
+### Authentification
 
-- Use `getUser()` for optional user (server-side)
-- Use `getRequiredUser()` for required user (server-side)
-- Use `useSession()` from auth-client.ts (client-side)
-- Use `getCurrentOrgCache()` to get the current org
+- Utiliser `getUser()` pour un utilisateur optionnel (cote serveur)
+- Utiliser `getRequiredUser()` pour un utilisateur requis (cote serveur)
+- Utiliser `useSession()` depuis auth-client.ts (cote client)
+- Utiliser `getCurrentOrgCache()` pour obtenir l'organisation courante
 
-### Database
+### Base de Donnees
 
-- Prisma ORM with PostgreSQL
-- Database hooks for user creation setup
-- Organization-based data access patterns
+- Prisma ORM avec PostgreSQL
+- Hooks de base de donnees pour la configuration des utilisateurs
+- Patterns d'acces aux donnees bases sur les organisations
 
-### Dialog System
+### Systeme de Dialogues
 
-- Use `dialogManager` for global modals
-- Types: confirm, input, custom dialogs
-- Automatic loading states and error handling
+- Utiliser `dialogManager` pour les modales globales
+- Types : confirm, input, custom dialogs
+- Etats de chargement et gestion d'erreur automatiques
 
-## Testing
+### Animations
 
-### Unit Tests
+Pour les animations, utiliser les presets Impulsion :
 
-- Located in `__tests__/` directory
-- Use Vitest with React Testing Library
-- Mock extended with `vitest-mock-extended`
+```typescript
+import { impulsionVariants } from '@/lib/animations/presets/impulsion';
 
-### E2E Tests
+// Utilisation avec motion/react
+<motion.div
+  variants={impulsionVariants.glowIn}
+  initial="initial"
+  animate="animate"
+>
+  Contenu anime
+</motion.div>
+```
 
-- Located in `e2e/` directory
-- Use Playwright with custom test utilities
-- Helper functions in `e2e/utils/`
+Variants disponibles :
+- `glowIn` - Apparition avec effet de glow
+- `energyBounce` - Rebond energique (badges)
+- `neonPulse` - Pulsation neon continue
+- `slideUpSpring` - Slide vers le haut avec spring
 
-## Important Files
+## Tests
 
-- `src/lib/auth.ts` - Authentication configuration
-- `src/features/dialog-manager/` - Global dialog system
-- `src/lib/actions/actions-utils.ts` - Server action utilities
-- `src/components/ui/form.tsx` - Form components
-- `src/site-config.ts` - Site configuration
-- `src/lib/actions/safe-actions.ts` - All Server Action SHOULD use this logic
-- `src/lib/zod-route.ts` - All Next.js route (inside the folder `/app/api` and name `route.ts`) SHOULD use this logic
+### Tests Unitaires
 
-### Database Schemas
+- Situes dans le repertoire `__tests__/`
+- Utiliser Vitest avec React Testing Library
+- Mock extended avec `vitest-mock-extended`
 
-- `prisma/schema/schema.prisma` - Main database schema
-- `prisma/schema/better-auth.prisma` - Better Auth schema (auto-generated)
+### Tests E2E
 
-## Development Notes
+- Situes dans le repertoire `e2e/`
+- Utiliser Playwright avec utilitaires custom
+- Fonctions helper dans `e2e/utils/`
 
-- Always use `pnpm` for package management
-- Use TypeScript strict mode - no `any` types
-- Prefer server components and avoid unnecessary client-side state
-- Prefer using `??` than `||`
-- All API Route SHOULD use @src/lib/zod-route.ts, each file name `route.ts` should use Zod Route. ALWAYS READ zod-route.ts before creating any routes.
-- All API Request SHOULD use @src/lib/up-fetch.ts and NEVER use `fetch`
+## Fichiers Importants
 
-## Files naming
+- `src/lib/auth.ts` - Configuration authentification
+- `src/features/dialog-manager/` - Systeme de dialogues global
+- `src/lib/actions/actions-utils.ts` - Utilitaires server actions
+- `src/components/ui/form.tsx` - Composants de formulaire
+- `src/site-config.ts` - Configuration du site
+- `src/lib/actions/safe-actions.ts` - Toutes les Server Actions DOIVENT utiliser cette logique
+- `src/lib/zod-route.ts` - Toutes les routes Next.js DOIVENT utiliser cette logique
 
-- All server actions should be suffix by `.action.ts` eg. `user.action.ts`, `dashboard.action.ts`
+### Schemas Base de Donnees
 
-## Debugging and complexe tasks
+- `prisma/schema/schema.prisma` - Schema principal
+- `prisma/schema/better-auth.prisma` - Schema Better Auth (auto-genere)
 
-- For complexe logic and debugging, use logs. Add a lot of logs at each steps and ASK ME TO SEND YOU the logs so you can debugs easily.
+## Notes de Developpement
 
-## TypeScript imports
+- Toujours utiliser `pnpm` pour la gestion des packages
+- Utiliser le mode strict TypeScript - pas de types `any`
+- Preferer les server components et eviter l'etat client inutile
+- Preferer `??` a `||`
+- Toutes les routes API DOIVENT utiliser `@/lib/zod-route.ts`
+- Toutes les requetes API DOIVENT utiliser `@/lib/up-fetch.ts`, JAMAIS `fetch` directement
 
-Important, when you import thing try to always use TypeScript paths :
+## Nommage des Fichiers
 
-- `@/*` is link to @src
-- `@email/*` is link to @emails
-- `@app/*` is link to @app
+- Toutes les server actions doivent etre suffixees par `.action.ts` (ex: `user.action.ts`)
 
-## Workflow modification
+## Debugging et Taches Complexes
 
-🚨 **CRITICAL RULE - ALWAYS FOLLOW THIS** 🚨
+- Pour la logique complexe et le debugging, utiliser des logs
+- Ajouter beaucoup de logs a chaque etape et DEMANDER a l'utilisateur d'envoyer les logs
 
-**BEFORE editing any files, you MUST Read at least 3 files** that will help you to understand how to make a coherent and consistency.
+## Imports TypeScript
 
-This is **NON-NEGOTIABLE**. Do not skip this step under any circumstances. Reading existing files ensures:
+Toujours utiliser les paths TypeScript :
 
-- Code consistency with project patterns
-- Proper understanding of conventions
-- Following established architecture
-- Avoiding breaking changes
+- `@/*` est lie a `@src`
+- `@email/*` est lie a `@emails`
+- `@app/*` est lie a `@app`
 
-**Types of files you MUST read:**
+## Workflow de Modification
 
-1. **Similar files**: Read files that do similar functionality to understand patterns and conventions
-2. **Imported dependencies**: Read the definition/implementation of any imports you're not 100% sure how to use correctly - understand their API, types, and usage patterns
+**REGLE CRITIQUE - TOUJOURS SUIVRE** :
 
-**Steps to follow:**
+**AVANT d'editer des fichiers, vous DEVEZ lire au moins 3 fichiers** qui vous aideront a comprendre comment faire un code coherent et consistant.
 
-1. Read at least 3 relevant existing files (similar functionality + imported dependencies)
-2. Understand the patterns, conventions, and API usage
-3. Only then proceed with creating/editing files
+C'est **NON-NEGOCIABLE**. Ne sautez jamais cette etape.
 
-## UI / UX experiences
+**Types de fichiers a lire :**
 
-- Never use emojis (prefer Lucide Icon for illustration)
-- Never use gradients unless explicitly asked by user
+1. **Fichiers similaires** : Lire les fichiers avec des fonctionnalites similaires
+2. **Dependances importees** : Lire l'implementation des imports que vous n'etes pas sur d'utiliser correctement
+
+## UI / UX
+
+- Ne jamais utiliser d'emojis (preferer les icones Lucide)
+- Ne jamais utiliser de gradients sauf si explicitement demande par l'utilisateur
+- Suivre l'identite visuelle "Cyber-Athletisme" :
+  - Dark mode par defaut
+  - Accents Electric Lime pour les actions
+  - Accents Neon Cyan pour les donnees/info
+  - Animations fluides et micro-interactions
+
+## Internationalisation (a venir)
+
+Le projet supportera le francais (defaut) et l'anglais.
+Structure prevue avec `next-intl` :
+
+```
+src/
+  i18n/
+    config.ts           # Configuration
+    request.ts          # Helpers server-side
+    navigation.ts       # Links localises
+  locales/
+    fr/                 # Traductions francaises
+    en/                 # Traductions anglaises
+```
+
+## Three.js (a venir)
+
+Pour les elements 3D, toujours utiliser le lazy loading :
+
+```typescript
+import dynamic from 'next/dynamic';
+
+const ParticleField = dynamic(
+  () => import('@/components/three/backgrounds/particle-field'),
+  { ssr: false, loading: () => <div className="animate-pulse" /> }
+);
+```

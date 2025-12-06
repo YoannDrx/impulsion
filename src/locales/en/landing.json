@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "title": "Elevate your training",
+    "subtitle": "The hybrid sports coaching platform that connects coaches and athletes",
+    "cta": {
+      "primary": "Get started for free",
+      "secondary": "Discover features"
+    },
+    "stats": {
+      "coaches": "Active coaches",
+      "athletes": "Athletes tracked",
+      "sessions": "Sessions planned"
+    }
+  },
+  "features": {
+    "title": "Everything you need",
+    "subtitle": "Powerful tools for modern coaching",
+    "calendar": {
+      "title": "Smart Calendar",
+      "description": "Plan and track your athletes' sessions with an intuitive calendar"
+    },
+    "video": {
+      "title": "Video Analysis",
+      "description": "Comment and analyze your athletes' videos with timestamped markers"
+    },
+    "strava": {
+      "title": "Strava Sync",
+      "description": "Automatically import your athletes' activities from Strava"
+    },
+    "load": {
+      "title": "Load Management",
+      "description": "Monitor training load and prevent injuries"
+    },
+    "gamification": {
+      "title": "Gamification",
+      "description": "Motivate your athletes with badges, streaks and rewards"
+    },
+    "team": {
+      "title": "Team Management",
+      "description": "Easily manage your athlete groups and their access"
+    }
+  },
+  "pricing": {
+    "title": "Simple pricing",
+    "subtitle": "Choose the plan that fits your needs",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "/month",
+      "description": "To get started",
+      "features": [
+        "Up to 5 athletes",
+        "Basic calendar",
+        "10 videos/month",
+        "Email support"
+      ],
+      "cta": "Get started"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$29",
+      "period": "/month",
+      "description": "For serious coaches",
+      "features": [
+        "Unlimited athletes",
+        "Advanced calendar",
+        "Unlimited videos",
+        "Strava sync",
+        "Advanced analytics",
+        "Priority support"
+      ],
+      "cta": "14-day free trial"
+    }
+  },
+  "testimonials": {
+    "title": "What our users say",
+    "subtitle": "Coaches and athletes who trust us"
+  },
+  "cta": {
+    "title": "Ready to transform your coaching?",
+    "subtitle": "Join hundreds of coaches using Impulsion",
+    "button": "Create my free account"
+  },
+  "footer": {
+    "description": "Impulsion - The hybrid sports coaching platform",
+    "links": {
+      "product": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "roadmap": "Roadmap"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "social": {
+      "title": "Follow us"
+    },
+    "copyright": "© {year} Impulsion. All rights reserved."
+  }
+}

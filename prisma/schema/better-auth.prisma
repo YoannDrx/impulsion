@@ -12,12 +12,25 @@ model User {
   updatedAt       DateTime
   resendContactId String?
 
-  // Outgoing
+  // Outgoing - Better Auth
   sessions    Session[]
   accounts    Account[]
   feedbacks   Feedback[]
   members     Member[]
   invitations Invitation[]
+
+  // Outgoing - Impulsion
+  athleteProfile      AthleteProfile?
+  createdSessions     CoachingSession[]   @relation("SessionCreator")
+  sessionAssignments  SessionAssignment[] @relation("AthleteAssignments")
+  sessionFeedbacks    SessionFeedback[]   @relation("AthleteFeedbacks")
+  painReports         PainReport[]        @relation("AthletePainReports")
+  uploadedVideos      Video[]             @relation("VideoUploader")
+  videoMarkers        VideoMarker[]       @relation("MarkerAuthor")
+  createdTemplates    SessionTemplate[]   @relation("TemplateCreator")
+  userBadges          UserBadge[]
+  userStreak          UserStreak?
+  notifications       Notification[]
 
   role       String?
   banned     Boolean?
@@ -91,6 +104,11 @@ model Organization {
   invitations      Invitation[]
   subscription     Subscription?
   email            String?
+
+  // Impulsion relations
+  coachingSessions CoachingSession[]
+  videos           Video[]
+  sessionTemplates SessionTemplate[]
 
   @@unique([slug])
   @@map("organization")
