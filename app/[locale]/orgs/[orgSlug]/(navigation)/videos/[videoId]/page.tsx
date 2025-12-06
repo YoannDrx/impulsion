@@ -10,13 +10,14 @@ import {
 import {
   VideoPlayer,
   VideoMarkersPanel,
-  getVideoDetail,
   type VideoDetail,
 } from "@/features/video";
+import { upfetch } from "@/lib/up-fetch";
 import { useCurrentOrg } from "@app/[locale]/orgs/[orgSlug]/use-current-org";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { use, useCallback, useState } from "react";
+import { use, useCallback, useEffect, useState } from "react";
+import { z } from "zod";
 
 type VideoDetailPageProps = {
   params: Promise<{
@@ -26,21 +27,42 @@ type VideoDetailPageProps = {
   }>;
 };
 
+const videoDetailSchema = z.object({
+  video: z.any(),
+});
+
+const fetchVideoDetail = async (
+  orgId: string,
+  videoId: string,
+): Promise<VideoDetail | null> => {
+  try {
+    const result = await upfetch(`/api/orgs/${orgId}/videos/${videoId}`, {
+      schema: videoDetailSchema,
+    });
+    return (result.video as VideoDetail | null) ?? null;
+  } catch {
+    return null;
+  }
+};
+
 export default function Page(props: VideoDetailPageProps) {
   const params = use(props.params);
   const org = useCurrentOrg();
+  const localePrefix = `/${params.locale}`;
 
   const [video, setVideo] = useState<VideoDetail | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load video data on mount
-  if (isLoading && org) {
-    void getVideoDetail(params.videoId, org.id).then((data) => {
+  useEffect(() => {
+    if (!org) return;
+
+    setIsLoading(true);
+    void fetchVideoDetail(org.id, params.videoId).then((data) => {
       setVideo(data);
       setIsLoading(false);
     });
-  }
+  }, [org, params.videoId]);
 
   const handleTimeUpdate = useCallback((time: number) => {
     setCurrentTime(time);
@@ -54,9 +76,8 @@ export default function Page(props: VideoDetailPageProps) {
   }, []);
 
   const handleMarkersChange = useCallback(() => {
-    // Trigger reload by resetting loading state
     if (org) {
-      void getVideoDetail(params.videoId, org.id).then((data) => {
+      void fetchVideoDetail(org.id, params.videoId).then((data) => {
         setVideo(data);
       });
     }
@@ -85,7 +106,7 @@ export default function Page(props: VideoDetailPageProps) {
           <div className="flex h-96 flex-col items-center justify-center">
             <p className="text-muted-foreground mb-4">Vidéo non trouvée</p>
             <CyberButton variant="outline" asChild>
-              <Link href={`/orgs/${params.orgSlug}/videos`}>
+              <Link href={`${localePrefix}/orgs/${params.orgSlug}/videos`}>
                 <ArrowLeft className="mr-2 size-4" />
                 Retour aux vidéos
               </Link>
@@ -101,7 +122,7 @@ export default function Page(props: VideoDetailPageProps) {
       <LayoutHeader>
         <div className="flex items-center gap-4">
           <CyberButton variant="ghost" size="sm" asChild>
-            <Link href={`/orgs/${params.orgSlug}/videos`}>
+            <Link href={`${localePrefix}/orgs/${params.orgSlug}/videos`}>
               <ArrowLeft className="size-4" />
             </Link>
           </CyberButton>
