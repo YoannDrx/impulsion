@@ -28,7 +28,7 @@ export type DocType = {
   content: string;
 };
 
-export type DocParams = PageProps<"/docs/[slug]">;
+export type DocParams = PageProps<"/[locale]/docs/[slug]">;
 
 export async function getDocs(tags?: string[]) {
   try {

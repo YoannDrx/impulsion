@@ -16,7 +16,9 @@ export const generateMetadata = combineWithParentMetadata({
   description: "Gérez les séances d'entraînement de votre équipe.",
 });
 
-export default function Page(props: PageProps<"/orgs/[orgSlug]">) {
+export default function Page(
+  props: PageProps<"/[locale]/orgs/[orgSlug]/sessions">,
+) {
   return (
     <Suspense fallback={null}>
       <SessionsPage {...props} />
@@ -24,7 +26,9 @@ export default function Page(props: PageProps<"/orgs/[orgSlug]">) {
   );
 }
 
-async function SessionsPage(props: PageProps<"/orgs/[orgSlug]">) {
+async function SessionsPage(
+  props: PageProps<"/[locale]/orgs/[orgSlug]/sessions">,
+) {
   const params = await props.params;
   const org = await getRequiredCurrentOrgCache();
   const sessions = await getOrgSessions(org.id);

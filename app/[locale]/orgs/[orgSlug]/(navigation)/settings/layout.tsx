@@ -7,7 +7,7 @@ export const generateMetadata = combineWithParentMetadata({
 });
 
 export default async function RouteLayout(
-  props: LayoutProps<"/orgs/[orgSlug]">,
+  props: LayoutProps<"/[locale]/orgs/[orgSlug]/settings">,
 ) {
   return (
     <Layout size="lg">

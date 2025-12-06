@@ -18,7 +18,9 @@ import { OrganizationOverrideLimits } from "./_components/organization-override-
 import { OrganizationPayments } from "./_components/organization-payments";
 import { OrganizationSubscription } from "./_components/organization-subscription";
 
-export default function Page(props: PageProps<"/admin/organizations/[orgId]">) {
+export default function Page(
+  props: PageProps<"/[locale]/admin/organizations/[orgId]">,
+) {
   return (
     <Suspense fallback={null}>
       <OrganizationDetailPage {...props} />
@@ -27,7 +29,7 @@ export default function Page(props: PageProps<"/admin/organizations/[orgId]">) {
 }
 
 async function OrganizationDetailPage(
-  props: PageProps<"/admin/organizations/[orgId]">,
+  props: PageProps<"/[locale]/admin/organizations/[orgId]">,
 ) {
   const params = await props.params;
   await getRequiredAdmin();
@@ -61,7 +63,7 @@ async function OrganizationDetailPage(
     <Layout size="lg">
       <LayoutHeader>
         <div className="flex items-center gap-2">
-          <Link href="/admin/organizations">
+          <Link href={`/${params.locale}/admin/organizations`}>
             <Button variant="ghost" size="sm">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Organizations

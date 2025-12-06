@@ -3,11 +3,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AUTH_PLANS } from "@/lib/auth/stripe/auth-plans";
 import { prisma } from "@/lib/prisma";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { Building2, Crown, DollarSign, Users } from "lucide-react";
 import { cacheLife } from "next/dist/server/use-cache/cache-life";
 
 async function calculateTotalMRR() {
+  const stripe = getStripe();
+
   const subscriptions = await prisma.subscription.findMany({
     where: {
       status: { in: ["active", "trialing", "past_due"] },

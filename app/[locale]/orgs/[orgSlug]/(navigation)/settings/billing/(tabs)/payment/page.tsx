@@ -21,7 +21,7 @@ import {
 import { dayjs } from "@/lib/dayjs";
 import { logger } from "@/lib/logger";
 import { getRequiredCurrentOrgCache } from "@/lib/react/cache";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { cn } from "@/lib/utils";
 import { Download } from "lucide-react";
 import { redirect } from "next/navigation";
@@ -189,6 +189,8 @@ async function BillingPaymentPage() {
   if (!org.subscription?.stripeCustomerId) {
     redirect(`/orgs/${org.slug}/settings/billing`);
   }
+
+  const stripe = getStripe();
 
   const [invoices, upcomingInvoice] = await Promise.all([
     stripe.invoices.list({

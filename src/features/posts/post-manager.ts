@@ -79,7 +79,7 @@ export const getPostsTags = async () => {
   return Array.from(tags);
 };
 
-export type PostParams = PageProps<"/posts/[slug]">;
+export type PostParams = PageProps<"/[locale]/posts/[slug]">;
 
 export const getCurrentPost = async (slug: string) => {
   const posts = await getPosts();

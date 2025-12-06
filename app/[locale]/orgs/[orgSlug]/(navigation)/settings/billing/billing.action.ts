@@ -5,8 +5,10 @@ import { hasPermission } from "@/lib/auth/auth-org";
 import { ActionError } from "@/lib/errors/action-error";
 import { prisma } from "@/lib/prisma";
 import { getServerUrl } from "@/lib/server-url";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { z } from "zod";
+
+const stripe = getStripe();
 
 export const openStripePortalAction = orgAction
   .metadata({

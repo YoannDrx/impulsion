@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/item";
 import { dayjs } from "@/lib/dayjs";
 import type { CurrentOrgPayload } from "@/lib/organizations/get-org";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 
 function formatCurrency(amount: number, currency?: string | null) {
   const normalizedCurrency = currency ?? "USD";
@@ -32,6 +32,8 @@ export async function UpcomingInvoiceCard({ org }: UpcomingInvoiceCardProps) {
   if (!org.subscription?.stripeCustomerId) {
     return null;
   }
+
+  const stripe = getStripe();
 
   const upcomingInvoice = await stripe.invoices
     .createPreview({

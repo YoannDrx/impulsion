@@ -1,5 +1,6 @@
 import type { Subscription } from "@/generated/prisma";
 import { logger } from "@/lib/logger";
+import type { LucideIcon } from "lucide-react";
 import {
   Clock,
   FolderArchive,
@@ -129,7 +130,7 @@ export const AUTH_PLANS: AppAuthPlan[] = [
 export const LIMITS_CONFIG: Record<
   keyof PlanLimit,
   {
-    icon: React.ElementType;
+    icon: LucideIcon;
     getLabel: (value: number) => string;
     description: string;
   }

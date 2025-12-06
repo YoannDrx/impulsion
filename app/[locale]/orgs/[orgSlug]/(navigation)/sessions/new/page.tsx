@@ -16,7 +16,9 @@ export const generateMetadata = combineWithParentMetadata({
   description: "Créez une nouvelle séance d'entraînement.",
 });
 
-export default function Page(props: PageProps<"/orgs/[orgSlug]">) {
+export default function Page(
+  props: PageProps<"/[locale]/orgs/[orgSlug]/sessions/new">,
+) {
   return (
     <Suspense fallback={null}>
       <NewSessionPage {...props} />
@@ -24,7 +26,9 @@ export default function Page(props: PageProps<"/orgs/[orgSlug]">) {
   );
 }
 
-async function NewSessionPage(props: PageProps<"/orgs/[orgSlug]">) {
+async function NewSessionPage(
+  props: PageProps<"/[locale]/orgs/[orgSlug]/sessions/new">,
+) {
   const params = await props.params;
   const org = await getRequiredCurrentOrgCache();
   const athletes = await getOrgAthletes(org.id);

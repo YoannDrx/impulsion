@@ -19,21 +19,23 @@ export const generateMetadata = combineWithParentMetadata({
   description: "Gérez vos équipes et accédez à vos athlètes.",
 });
 
-export default function Page() {
+export default function Page(props: PageProps<"/[locale]/orgs">) {
   return (
     <Suspense fallback={null}>
-      <TeamsPage />
+      <TeamsPage {...props} />
     </Suspense>
   );
 }
 
-async function TeamsPage() {
+async function TeamsPage(props: PageProps<"/[locale]/orgs">) {
   await getRequiredUser();
   const userOrgs = await getUsersOrgs();
+  const { locale } = await props.params;
+  const localePrefix = `/${locale}`;
 
   // If user has only one org, redirect directly to it
   if (userOrgs.length === 1) {
-    redirect(`/orgs/${userOrgs[0].slug}`);
+    redirect(`${localePrefix}/orgs/${userOrgs[0].slug}`);
   }
 
   return (
@@ -47,7 +49,7 @@ async function TeamsPage() {
       <LayoutContent>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {userOrgs.map((org) => (
-            <Link key={org.id} href={`/orgs/${org.slug}`}>
+            <Link key={org.id} href={`${localePrefix}/orgs/${org.slug}`}>
               <GlowCard
                 variant="elevated"
                 glow="none"
@@ -69,7 +71,7 @@ async function TeamsPage() {
           ))}
 
           {/* Create new team card */}
-          <Link href="/orgs/new">
+          <Link href={`${localePrefix}/orgs/new`}>
             <GlowCard
               variant="default"
               glow="none"

@@ -16,14 +16,15 @@ import { redirect } from "next/navigation";
 import { SignInProviders } from "../../../auth/signin/sign-in-providers";
 
 export default async function RoutePage(
-  props: PageProps<"/orgs/accept-invitation/[id]">,
+  props: PageProps<"/[locale]/orgs/accept-invitation/[id]">,
 ) {
   const params = await props.params;
+  const { id, locale } = params;
   const user = await getUser();
 
   const invitation = await prisma.invitation.findUnique({
     where: {
-      id: params.id,
+      id,
     },
     include: {
       organization: {
@@ -86,19 +87,19 @@ export default async function RoutePage(
                 formAction={async () => {
                   "use server";
 
-                  await auth.api.acceptInvitation({
-                    body: {
-                      invitationId: params.id,
-                    },
-                    headers: await headers(),
-                  });
+                await auth.api.acceptInvitation({
+                  body: {
+                    invitationId: id,
+                  },
+                  headers: await headers(),
+                });
 
-                  redirect(`/orgs/${invitation.organization.slug}`);
-                }}
-              >
-                Accept Invitation
-              </Button>
-            </form>
+                redirect(`/${locale}/orgs/${invitation.organization.slug}`);
+              }}
+            >
+              Accept Invitation
+            </Button>
+          </form>
           </CardFooter>
         ) : (
           <CardContent className="border-t pt-6">
@@ -106,7 +107,7 @@ export default async function RoutePage(
               Sign in to accept this invitation
             </p>
             <SignInProviders
-              callbackUrl={`/orgs/accept-invitation/${params.id}`}
+              callbackUrl={`/${locale}/orgs/accept-invitation/${id}`}
               providers={Object.keys(SocialProviders ?? {})}
             />
           </CardContent>

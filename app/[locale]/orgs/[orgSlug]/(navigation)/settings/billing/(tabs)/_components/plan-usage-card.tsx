@@ -30,7 +30,8 @@ type PlanUsageCardProps = {
 export async function PlanUsageCard({ org }: PlanUsageCardProps) {
   const currentPlan = org.subscription;
   const planName = currentPlan?.plan ?? "free";
-  const planLimits = currentPlan?.limits ?? AUTH_PLANS[0].limits;
+  const planLimits: PlanLimit =
+    (currentPlan?.limits as PlanLimit | undefined) ?? AUTH_PLANS[0].limits;
 
   const currentPlanIndex = AUTH_PLANS.findIndex((p) => p.name === planName);
   const hasUpgrades = currentPlanIndex < AUTH_PLANS.length - 1;

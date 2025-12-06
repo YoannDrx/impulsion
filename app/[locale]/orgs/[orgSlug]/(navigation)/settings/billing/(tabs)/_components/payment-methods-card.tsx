@@ -9,7 +9,7 @@ import {
   ItemTitle,
 } from "@/components/ui/item";
 import type { CurrentOrgPayload } from "@/lib/organizations/get-org";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 
 type PaymentMethodsCardProps = {
   org: CurrentOrgPayload;
@@ -19,6 +19,8 @@ export async function PaymentMethodsCard({ org }: PaymentMethodsCardProps) {
   if (!org.subscription?.stripeCustomerId) {
     return null;
   }
+
+  const stripe = getStripe();
 
   const paymentMethods = await stripe.paymentMethods
     .list({

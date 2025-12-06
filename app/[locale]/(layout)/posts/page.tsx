@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RoutePage(props: PageProps<"/posts">) {
+export default async function RoutePage(props: PageProps<"/[locale]/posts">) {
   const tags = await getPostsTags();
   const posts = await getPosts();
 

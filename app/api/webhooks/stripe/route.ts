@@ -2,12 +2,14 @@ import { AUTH_PLANS } from "@/lib/auth/stripe/auth-plans";
 import { env } from "@/lib/env";
 import { logger } from "@/lib/logger";
 import { prisma } from "@/lib/prisma";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { headers } from "next/headers";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 export const maxDuration = 300;
+
+const stripe = getStripe();
 
 // Utility function to get plan from subscription metadata
 const getPlanFromSubscription = (subscription: Stripe.Subscription) => {

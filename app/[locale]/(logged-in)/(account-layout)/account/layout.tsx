@@ -10,7 +10,11 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-export default async function RouteLayout(props: LayoutProps<"/account">) {
+export default async function RouteLayout(
+  props: LayoutProps<"/[locale]/account">,
+) {
+  const params = await props.params;
+
   return (
     <Layout size="lg">
       <LayoutHeader>
@@ -24,7 +28,7 @@ export default async function RouteLayout(props: LayoutProps<"/account">) {
               await auth.api.signOut({
                 headers: await headers(),
               });
-              redirect("/auth/signin");
+              redirect(`/${params.locale}/auth/signin`);
             }}
           >
             Sign out

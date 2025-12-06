@@ -12,7 +12,7 @@ export const generateMetadata = combineWithParentMetadata({
 });
 
 export default function Page(
-  props: PageProps<"/orgs/[orgSlug]/settings/members">,
+  props: PageProps<"/[locale]/orgs/[orgSlug]/settings/members">,
 ) {
   return (
     <Suspense fallback={null}>
@@ -21,7 +21,9 @@ export default function Page(
   );
 }
 
-async function RoutePage(props: PageProps<"/orgs/[orgSlug]/settings/members">) {
+async function RoutePage(
+  props: PageProps<"/[locale]/orgs/[orgSlug]/settings/members">,
+) {
   const org = await getRequiredCurrentOrgCache({
     permissions: {
       member: ["create", "update", "delete"],

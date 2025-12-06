@@ -27,7 +27,9 @@ import { UserActions } from "./_components/user-actions";
 import { UserProviders } from "./_components/user-providers";
 import { UserSessions } from "./_components/user-sessions";
 
-export default async function Page(props: PageProps<"/admin/users/[userId]">) {
+export default async function Page(
+  props: PageProps<"/[locale]/admin/users/[userId]">,
+) {
   return (
     <Suspense fallback={null}>
       <RoutePage {...props} />
@@ -35,7 +37,9 @@ export default async function Page(props: PageProps<"/admin/users/[userId]">) {
   );
 }
 
-async function RoutePage(props: PageProps<"/admin/users/[userId]">) {
+async function RoutePage(
+  props: PageProps<"/[locale]/admin/users/[userId]">,
+) {
   const params = await props.params;
   await getRequiredAdmin();
 
@@ -93,7 +97,7 @@ async function RoutePage(props: PageProps<"/admin/users/[userId]">) {
                 {userData.members.map((memberRole) => (
                   <Item key={memberRole.id} variant="outline" size="sm" asChild>
                     <Link
-                      href={`/admin/organizations/${memberRole.organization.id}`}
+                      href={`/${params.locale}/admin/organizations/${memberRole.organization.id}`}
                     >
                       <ItemMedia variant="image">
                         <Avatar className="size-10">

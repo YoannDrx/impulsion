@@ -30,7 +30,7 @@ export async function generateMetadata(
   };
 }
 
-type CategoryParams = PageProps<"/posts/categories/[category]">;
+type CategoryParams = PageProps<"/[locale]/posts/categories/[category]">;
 
 export default async function RoutePage(props: CategoryParams) {
   const tags = await getPostsTags();

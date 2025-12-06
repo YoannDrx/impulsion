@@ -11,7 +11,7 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function OpenGraphImage(
-  props: PageProps<"/posts/[slug]">,
+  props: PageProps<"/[locale]/posts/[slug]">,
 ) {
   const params = await props.params;
   const post = await getCurrentPost(params.slug);

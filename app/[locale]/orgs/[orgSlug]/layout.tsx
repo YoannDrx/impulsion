@@ -5,14 +5,14 @@ import { Suspense } from "react";
 import { InjectCurrentOrgStore } from "./use-current-org";
 
 export async function generateMetadata(
-  props: LayoutProps<"/orgs/[orgSlug]">,
+  props: LayoutProps<"/[locale]/orgs/[orgSlug]">,
 ): Promise<Metadata> {
   const params = await props.params;
   return orgMetadata(params.orgSlug);
 }
 
 export default async function RouteLayout(
-  props: LayoutProps<"/orgs/[orgSlug]">,
+  props: LayoutProps<"/[locale]/orgs/[orgSlug]">,
 ) {
   return (
     <>

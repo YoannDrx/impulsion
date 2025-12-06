@@ -17,7 +17,7 @@ export const generateMetadata = combineWithParentMetadata({
 });
 
 export default function Page(
-  props: PageProps<"/orgs/[orgSlug]/settings/danger">,
+  props: PageProps<"/[locale]/orgs/[orgSlug]/settings/danger">,
 ) {
   return (
     <Suspense fallback={null}>
@@ -26,7 +26,9 @@ export default function Page(
   );
 }
 
-async function RoutePage(props: PageProps<"/orgs/[orgSlug]/settings/danger">) {
+async function RoutePage(
+  props: PageProps<"/[locale]/orgs/[orgSlug]/settings/danger">,
+) {
   const org = await getRequiredCurrentOrgCache({
     permissions: {
       organization: ["delete"],

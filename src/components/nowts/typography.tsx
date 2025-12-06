@@ -2,17 +2,15 @@
 import { cn } from "@/lib/utils";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import type { ComponentPropsWithRef, ElementType, ForwardedRef } from "react";
-
-import type React from "react";
+import type {
+  ComponentPropsWithRef,
+  ElementRef,
+  ElementType,
+  ForwardedRef,
+  ReactElement,
+  Ref,
+} from "react";
 import { forwardRef } from "react";
-
-// Source : https://www.totaltypescript.com/pass-component-as-prop-react
-type FixedForwardRef = <T, P = {}>(
-  render: (props: P, ref: React.Ref<T>) => React.ReactNode,
-) => (props: P & React.RefAttributes<T>) => React.ReactNode;
-
-const fixedForwardRef = forwardRef as FixedForwardRef;
 
 type DistributiveOmit<T, TOmitted extends PropertyKey> = T extends any
   ? Omit<T, TOmitted>
@@ -56,11 +54,6 @@ const defaultElementMapping = {
   default: "p",
 } satisfies Record<NonNullable<TypographyCvaProps["variant"]>, ElementType>;
 
-type ElementMapping = typeof defaultElementMapping;
-
-type ElementTypeForVariant<TVariant extends keyof ElementMapping> =
-  ElementMapping[TVariant];
-
 /**
  * The Typography component is useful to add Text to your page
  *
@@ -79,36 +72,33 @@ type ElementTypeForVariant<TVariant extends keyof ElementMapping> =
  * @param ref The ref of the element. Untyped because it's a generic
  * @returns
  */
-const InnerTypography = <
-  TAs extends ElementType,
-  TVariant extends TypographyCvaProps["variant"] = "default",
->(
+type TypographyProps<TAs extends ElementType = ElementType> = {
+  as?: TAs;
+  variant?: TypographyCvaProps["variant"];
+  className?: string;
+} & DistributiveOmit<ComponentPropsWithRef<TAs>, "as" | "className">;
+
+type TypographyComponent = <TAs extends ElementType = ElementType>(
+  props: TypographyProps<TAs> & { ref?: Ref<ElementRef<TAs>> },
+) => ReactElement | null;
+
+const InnerTypography = <TAs extends ElementType = ElementType>(
   {
     variant = "default",
     className,
     as,
     ...props
-  }: {
-    as?: TAs;
-    variant?: TVariant;
-  } & DistributiveOmit<
-    ComponentPropsWithRef<
-      ElementType extends TAs
-        ? ElementTypeForVariant<NonNullable<TVariant>>
-        : TAs
-    >,
-    "as"
-  >,
-  ref: ForwardedRef<any>,
+  }: TypographyProps<TAs>,
+  ref: ForwardedRef<ElementRef<TAs>>,
 ) => {
   const Comp = as ?? defaultElementMapping[variant ?? "default"];
   return (
     <Comp
-      {...props}
+      {...(props as ComponentPropsWithRef<ElementType>)}
       className={cn(typographyVariants({ variant }), className)}
       ref={ref}
     ></Comp>
   );
 };
 
-export const Typography = fixedForwardRef(InnerTypography);
+export const Typography = forwardRef(InnerTypography) as TypographyComponent;

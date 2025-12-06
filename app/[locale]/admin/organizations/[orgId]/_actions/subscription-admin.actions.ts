@@ -4,8 +4,10 @@ import { adminAction } from "@/lib/actions/safe-actions";
 import { AUTH_PLANS } from "@/lib/auth/stripe/auth-plans";
 import { invalidateOrgSubscription } from "@/lib/cache-invalidation";
 import { prisma } from "@/lib/prisma";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { z } from "zod";
+
+const stripe = getStripe();
 
 export const updateSubscriptionPlanAction = adminAction
   .inputSchema(

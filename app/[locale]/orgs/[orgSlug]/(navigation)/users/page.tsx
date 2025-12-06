@@ -19,7 +19,7 @@ export const generateMetadata = combineWithParentMetadata({
 });
 
 export default async function RoutePage(
-  props: PageProps<"/orgs/[orgSlug]/users">,
+  props: PageProps<"/[locale]/orgs/[orgSlug]/users">,
 ) {
   return (
     <Layout size="lg">

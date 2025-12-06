@@ -18,7 +18,7 @@ export const metadata = {
   description: `Everything you need to know about using ${SiteConfig.title}`,
 };
 
-export default function Page(props: PageProps<"/docs">) {
+export default function Page(props: PageProps<"/[locale]/docs">) {
   return (
     <Suspense fallback={null}>
       <DocsPage {...props} />
@@ -26,7 +26,7 @@ export default function Page(props: PageProps<"/docs">) {
   );
 }
 
-async function DocsPage(_props: PageProps<"/docs">) {
+async function DocsPage(_props: PageProps<"/[locale]/docs">) {
   const docs = await getDocs();
 
   const sortedDocs = [...docs].sort((a, b) => {

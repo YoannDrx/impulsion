@@ -16,9 +16,13 @@ export const metadata: Metadata = {
  * Onboarding page for new users.
  * Allows users to choose their role (coach or athlete) and set up their profile.
  */
-export default async function Page(props: PageProps<"/auth/new-user">) {
+export default async function Page(
+  props: PageProps<"/[locale]/auth/new-user">,
+) {
   // Check if user is authenticated
   await getRequiredUser();
+  const params = await props.params;
+  const localePrefix = `/${params.locale}`;
 
   // If user already has organizations, they're already onboarded
   // Redirect to orgs page
@@ -28,7 +32,7 @@ export default async function Page(props: PageProps<"/auth/new-user">) {
     const callbackUrl =
       typeof searchParams.callbackUrl === "string"
         ? searchParams.callbackUrl
-        : "/orgs";
+        : `${localePrefix}/orgs`;
     redirect(callbackUrl);
   }
 
