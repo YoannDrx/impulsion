@@ -57,11 +57,21 @@ export default function Page(props: VideoDetailPageProps) {
   useEffect(() => {
     if (!org) return;
 
-    setIsLoading(true);
-    void fetchVideoDetail(org.id, params.videoId).then((data) => {
-      setVideo(data);
-      setIsLoading(false);
-    });
+    let cancelled = false;
+
+    const loadVideo = async () => {
+      const data = await fetchVideoDetail(org.id, params.videoId);
+      if (!cancelled) {
+        setVideo(data);
+        setIsLoading(false);
+      }
+    };
+
+    void loadVideo();
+
+    return () => {
+      cancelled = true;
+    };
   }, [org, params.videoId]);
 
   const handleTimeUpdate = useCallback((time: number) => {

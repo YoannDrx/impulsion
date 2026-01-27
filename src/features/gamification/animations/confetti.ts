@@ -67,7 +67,7 @@ export async function fireConfetti(options: ConfettiOptions = {}) {
     origin: { x: 0.5, y: 0.5 },
   };
 
-  confetti({
+  void confetti({
     ...defaults,
     ...options,
   });
