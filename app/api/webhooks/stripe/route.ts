@@ -9,8 +9,6 @@ import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 export const maxDuration = 300;
 
-const stripe = getStripe();
-
 // Utility function to get plan from subscription metadata
 const getPlanFromSubscription = (subscription: Stripe.Subscription) => {
   const planName = subscription.items.data[0].price.metadata.plan;
@@ -20,6 +18,8 @@ const getPlanFromSubscription = (subscription: Stripe.Subscription) => {
 };
 
 export const POST = async (req: NextRequest) => {
+  const stripe = getStripe();
+
   const headerList = await headers();
   const body = await req.text();
 
@@ -43,13 +43,13 @@ export const POST = async (req: NextRequest) => {
   try {
     switch (event.type) {
       case "checkout.session.completed":
-        await checkoutSessionCompleted(event.data.object, req);
+        await checkoutSessionCompleted(event.data.object, req, stripe);
         break;
       case "customer.subscription.updated":
-        await customerSubscriptionUpdated(event.data.object, req);
+        await customerSubscriptionUpdated(event.data.object, req, stripe);
         break;
       case "customer.subscription.deleted":
-        await customerSubscriptionDeleted(event.data.object, req);
+        await customerSubscriptionDeleted(event.data.object, req, stripe);
         break;
       default:
         logger.error(`Unhandled event type: ${event.type}`);
@@ -71,6 +71,7 @@ export const POST = async (req: NextRequest) => {
 const checkoutSessionCompleted = async (
   sessionData: Stripe.Checkout.Session,
   req: NextRequest,
+  stripe: ReturnType<typeof getStripe>,
 ) => {
   const session = sessionData;
 
@@ -188,6 +189,7 @@ const checkoutSessionCompleted = async (
 const customerSubscriptionUpdated = async (
   subscriptionData: Stripe.Subscription,
   req: NextRequest,
+  _stripe: ReturnType<typeof getStripe>,
 ) => {
   const subscription = subscriptionData;
 
@@ -264,6 +266,7 @@ const customerSubscriptionUpdated = async (
 const customerSubscriptionDeleted = async (
   subscriptionData: Stripe.Subscription,
   req: NextRequest,
+  _stripe: ReturnType<typeof getStripe>,
 ) => {
   const subscription = subscriptionData;
 
