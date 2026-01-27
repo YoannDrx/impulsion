@@ -1,6 +1,87 @@
-# CLAUDE.md - Impulsion
+# CLAUDE.md
+
+---
+
+## ⚡ AUTO-START mgrep (à faire automatiquement)
+
+**Dès que tu commences à travailler sur ce projet, lance cette commande en background :**
+
+```bash
+mgrep watch --store "impulsion" &
+```
+
+> Lance cette commande UNE SEULE FOIS au début de la session. Ne la relance pas à chaque question.
+
+---
+
 
 Ce fichier fournit des instructions aux agents IA pour le projet Impulsion.
+
+---
+
+## mgrep - Assistant de recherche de code
+
+**mgrep est l'outil principal pour explorer ce codebase.** Il retourne une réponse en langage naturel + les sources pertinentes.
+
+### Store : `impulsion`
+
+### Lancer le watch (à faire à chaque ouverture du projet)
+
+```bash
+cd ~/Projets/impulsion
+mgrep watch --store "impulsion"
+```
+
+> Garde ce terminal ouvert : il surveille les modifications en temps réel.
+
+### Commande de recherche
+
+```bash
+mgrep "ta question en langage naturel" --store "impulsion" -a -m <nombre>
+```
+
+### Paramètres
+
+| Paramètre | Description |
+|-----------|-------------|
+| `--store "impulsion"` | **Obligatoire** - le store indexé du projet |
+| `-a` | Active la réponse en langage naturel |
+| `-m <n>` | Nombre de résultats (minimum 10) |
+
+### Ajuster `-m` selon la complexité
+
+| Type de requête | `-m` recommandé |
+|-----------------|-----------------|
+| Question simple (1-2 fichiers) | 10 |
+| Question moyenne (flow, feature) | 20-30 |
+| Question complexe (debug, architecture) | 30-50 |
+
+### Stratégie pour requêtes complexes
+
+Lance plusieurs mgrep en parallèle plutôt qu'une seule requête surchargée :
+
+```bash
+mgrep "comment fonctionne le calendrier d'entrainements" --store "impulsion" -a -m 20
+mgrep "comment sont gérées les vidéos avec annotations" --store "impulsion" -a -m 20
+mgrep "comment fonctionne la synchronisation Strava" --store "impulsion" -a -m 20
+```
+
+### Règles
+
+- **OBLIGATOIRE** : Utilise mgrep pour TOUTE recherche de code. N'utilise JAMAIS grep, Grep tool, ou Glob.
+- **Langage naturel** : Parle à mgrep comme à un collègue
+  - ❌ `"calendar training video strava"` (mots-clés)
+  - ✅ `"Comment fonctionne le calendrier d'entrainements et l'affichage des sessions ?"` (question naturelle)
+
+---
+
+## Subagents (Task tool)
+
+**Les subagents n'héritent PAS des instructions de ce fichier.**
+
+Quand tu lances un subagent, copie-colle cette section mgrep dans le prompt du subagent.
+
+---
 
 ## A propos du projet Impulsion
 
