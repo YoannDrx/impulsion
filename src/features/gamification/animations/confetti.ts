@@ -41,7 +41,6 @@ const IMPULSION_COLORS = [
  */
 async function getConfetti() {
   try {
-    // @ts-expect-error - canvas-confetti is an optional dependency
     const confettiModule = await import("canvas-confetti");
     return confettiModule.default;
   } catch {
