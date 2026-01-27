@@ -2,7 +2,9 @@ import { Resend } from "resend";
 import { env } from "../env";
 import type { MailAdapter } from "./send-email";
 
-export const resend = new Resend(env.RESEND_API_KEY);
+// Use a dummy key in CI/test environments to allow build to succeed
+const apiKey = env.RESEND_API_KEY || "re_dummy_key_for_ci";
+export const resend = new Resend(apiKey);
 
 export const resendMailAdapter: MailAdapter = {
   send: async (params) => {
