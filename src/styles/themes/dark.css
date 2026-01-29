@@ -110,4 +110,32 @@
 
   /* === COLOR MODE INDICATOR === */
   color-scheme: dark;
+
+  /* === CYBERPUNK INDUSTRIAL DEFAULTS FOR DARK === */
+
+  /* These are already defined in colors.css but we ensure they're accessible */
+  /* as semantic theme variables here */
+
+  /* Terminal/HUD backgrounds */
+  --cyber-bg-primary: var(--imp-void);
+  --cyber-bg-secondary: var(--imp-charcoal);
+  --cyber-bg-tertiary: var(--imp-dark-800);
+
+  /* HUD accent colors */
+  --cyber-accent-primary: var(--imp-lime-400);
+  --cyber-accent-secondary: var(--imp-cyan-400);
+  --cyber-accent-danger: var(--imp-danger-neon);
+
+  /* Terminal text */
+  --cyber-text-primary: oklch(0.95 0 0);
+  --cyber-text-secondary: oklch(0.70 0 0);
+  --cyber-text-muted: oklch(0.50 0 0);
+  --cyber-text-accent: var(--imp-lime-400);
+
+  /* Status indicators */
+  --cyber-status-online: var(--imp-lime-400);
+  --cyber-status-offline: oklch(0.40 0 0);
+  --cyber-status-warning: var(--imp-warning);
+  --cyber-status-critical: var(--imp-danger-neon);
+  --cyber-status-optimal: var(--imp-cyan-400);
 }

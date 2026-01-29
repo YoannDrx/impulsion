@@ -124,4 +124,92 @@
   /* Focus ring composite */
   --imp-focus-ring: 0 0 0 var(--imp-ring-offset) var(--background),
                     0 0 0 calc(var(--imp-ring-offset) + var(--imp-ring-width)) var(--imp-ring-color-lime);
+
+  /* === CYBERPUNK INDUSTRIAL EFFECTS === */
+
+  /* Scanlines overlay */
+  --imp-scanlines: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    oklch(0 0 0 / 0.03) 2px,
+    oklch(0 0 0 / 0.03) 4px
+  );
+  --imp-scanlines-size: 100% 4px;
+
+  /* Scanlines heavy (plus visible) */
+  --imp-scanlines-heavy: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 1px,
+    oklch(0 0 0 / 0.08) 1px,
+    oklch(0 0 0 / 0.08) 2px
+  );
+
+  /* Noise texture SVG inline */
+  --imp-noise-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  --imp-noise-opacity: 0.03;
+
+  /* HUD Corner decorations */
+  --imp-hud-corner-size: 12px;
+  --imp-hud-corner-width: 2px;
+  --imp-hud-corner-color: var(--imp-lime-400);
+
+  /* HUD Border composite styles */
+  --imp-hud-border-lime:
+    linear-gradient(to right, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 0,
+    linear-gradient(to right, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 100%,
+    linear-gradient(to right, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 0,
+    linear-gradient(to right, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 100%,
+    linear-gradient(to bottom, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 0,
+    linear-gradient(to bottom, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 0,
+    linear-gradient(to bottom, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 100%,
+    linear-gradient(to bottom, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 100%;
+
+  --imp-hud-border-cyan:
+    linear-gradient(to right, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 0,
+    linear-gradient(to right, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 100%,
+    linear-gradient(to right, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 0,
+    linear-gradient(to right, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 100%,
+    linear-gradient(to bottom, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 0,
+    linear-gradient(to bottom, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 0,
+    linear-gradient(to bottom, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 100%,
+    linear-gradient(to bottom, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 100%;
+
+  /* Perspective grid for backgrounds */
+  --imp-perspective-grid:
+    linear-gradient(var(--imp-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--imp-grid-line) 1px, transparent 1px);
+  --imp-perspective-grid-size: 40px 40px;
+
+  /* Danger neon glow */
+  --imp-glow-danger-neon: 0 0 20px oklch(0.65 0.25 15 / 0.5);
+  --imp-glow-danger-neon-intense: 0 0 30px oklch(0.65 0.25 15 / 0.7);
+
+  /* Purple neon glow */
+  --imp-glow-purple-neon: 0 0 20px oklch(0.65 0.25 300 / 0.5);
+
+  /* Text glow effects */
+  --imp-text-glow-lime: 0 0 10px oklch(0.91 0.23 120 / 0.5), 0 0 20px oklch(0.91 0.23 120 / 0.3);
+  --imp-text-glow-cyan: 0 0 10px oklch(0.85 0.16 195 / 0.5), 0 0 20px oklch(0.85 0.16 195 / 0.3);
+  --imp-text-glow-danger: 0 0 10px oklch(0.65 0.25 15 / 0.5), 0 0 20px oklch(0.65 0.25 15 / 0.3);
+
+  /* Cyberpunk glass panel */
+  --imp-cyber-glass-bg: oklch(0.08 0.01 260 / 0.85);
+  --imp-cyber-glass-border: oklch(1 0 0 / 0.08);
+  --imp-cyber-glass-blur: blur(16px);
+
+  /* Vignette effect for immersive screens */
+  --imp-vignette: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    oklch(0 0 0 / 0.4) 100%
+  );
+
+  /* CRT screen effect */
+  --imp-crt-curve: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    oklch(0 0 0 / 0.15) 100%
+  );
 }

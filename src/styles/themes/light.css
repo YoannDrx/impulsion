@@ -117,4 +117,67 @@
 
   /* === COLOR MODE INDICATOR === */
   color-scheme: light;
+
+  /* === CYBERPUNK ADAPTATIONS FOR LIGHT MODE === */
+
+  /* Void becomes light gray in light mode */
+  --imp-void: oklch(0.97 0 0);
+  --imp-void-soft: oklch(0.95 0.005 120);
+
+  /* Charcoal becomes soft grays */
+  --imp-charcoal: oklch(0.94 0.01 260);
+  --imp-charcoal-light: oklch(0.96 0.01 260);
+  --imp-charcoal-dark: oklch(0.90 0.01 260);
+
+  /* Scanlines inverted for light mode (darker on light bg) */
+  --imp-scanlines: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    oklch(0 0 0 / 0.02) 2px,
+    oklch(0 0 0 / 0.02) 4px
+  );
+
+  /* Noise with inverted opacity */
+  --imp-noise-opacity: 0.02;
+
+  /* HUD corners more visible on light bg */
+  --imp-hud-corner-color: var(--imp-lime-600);
+
+  /* Glass backgrounds for light mode */
+  --imp-glass-5: oklch(0 0 0 / 0.03);
+  --imp-glass-10: oklch(0 0 0 / 0.06);
+  --imp-glass-15: oklch(0 0 0 / 0.09);
+  --imp-glass-20: oklch(0 0 0 / 0.12);
+
+  /* Dark glass for overlays in light mode */
+  --imp-glass-dark-50: oklch(0 0 0 / 0.40);
+  --imp-glass-dark-70: oklch(0 0 0 / 0.60);
+  --imp-glass-dark-80: oklch(0 0 0 / 0.70);
+  --imp-glass-dark-90: oklch(0 0 0 / 0.85);
+
+  /* Colored glass more opaque for light mode */
+  --imp-glass-lime: oklch(0.72 0.20 120 / 0.08);
+  --imp-glass-cyan: oklch(0.65 0.14 195 / 0.08);
+  --imp-glass-danger: oklch(0.55 0.22 15 / 0.08);
+
+  /* Grid lines darker on light bg */
+  --imp-grid-line: oklch(0 0 0 / 0.05);
+  --imp-grid-line-accent: oklch(0.65 0.14 195 / 0.12);
+
+  /* Cyber glass for light mode */
+  --imp-cyber-glass-bg: oklch(1 0 0 / 0.85);
+  --imp-cyber-glass-border: oklch(0 0 0 / 0.08);
+
+  /* Text glows more subtle in light mode */
+  --imp-text-glow-lime: 0 0 8px oklch(0.72 0.20 120 / 0.4);
+  --imp-text-glow-cyan: 0 0 8px oklch(0.65 0.14 195 / 0.4);
+  --imp-text-glow-danger: 0 0 8px oklch(0.55 0.22 15 / 0.4);
+
+  /* Vignette lighter */
+  --imp-vignette: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    oklch(0 0 0 / 0.15) 100%
+  );
 }

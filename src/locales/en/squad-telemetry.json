@@ -1,0 +1,87 @@
+{
+  "header": {
+    "title": "SQUAD TELEMETRY",
+    "subtitle": "Team roster"
+  },
+  "overview": {
+    "title": "OVERVIEW",
+    "total": "TOTAL",
+    "optimal": "OPTIMAL",
+    "fatigued": "FATIGUED",
+    "atRisk": "AT RISK",
+    "injured": "INJURED"
+  },
+  "filters": {
+    "search": "Search athlete...",
+    "status": {
+      "all": "ALL",
+      "optimal": "OPTIMAL",
+      "fatigued": "FATIGUED",
+      "atRisk": "AT RISK",
+      "injured": "INJURED"
+    },
+    "group": {
+      "label": "GROUP",
+      "all": "All groups"
+    },
+    "sport": {
+      "label": "SPORT",
+      "all": "All sports"
+    },
+    "sort": {
+      "label": "SORT BY",
+      "name": "Name",
+      "status": "Status",
+      "readiness": "Readiness",
+      "lastActive": "Last active"
+    }
+  },
+  "list": {
+    "empty": "No athletes found",
+    "columns": {
+      "athlete": "ATHLETE",
+      "status": "STATUS",
+      "readiness": "READINESS",
+      "load": "LOAD",
+      "trend": "TREND",
+      "lastSession": "LAST SESSION",
+      "actions": "ACTIONS"
+    }
+  },
+  "athlete": {
+    "status": {
+      "optimal": "OPTIMAL",
+      "fatigued": "FATIGUED",
+      "atRisk": "AT RISK",
+      "injured": "INJURED"
+    },
+    "trend": {
+      "up": "TRENDING UP",
+      "stable": "STABLE",
+      "down": "TRENDING DOWN"
+    },
+    "noData": "No data"
+  },
+  "actions": {
+    "viewProfile": "VIEW PROFILE",
+    "sendMessage": "MESSAGE",
+    "assignSession": "ASSIGN SESSION",
+    "viewHistory": "HISTORY",
+    "more": "MORE"
+  },
+  "quickActions": {
+    "title": "QUICK ACTIONS",
+    "messageAll": "MESSAGE ALL",
+    "exportRoster": "EXPORT ROSTER",
+    "importAthletes": "IMPORT",
+    "groupAssign": "GROUP ASSIGN"
+  },
+  "metrics": {
+    "strip": {
+      "avgReadiness": "AVG READINESS",
+      "activeSessions": "ACTIVE SESSIONS",
+      "completionRate": "COMPLETION RATE",
+      "weeklyLoad": "WEEKLY LOAD"
+    }
+  }
+}

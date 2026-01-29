@@ -1,0 +1,59 @@
+{
+  "title": "ACCESS TERMINAL",
+  "subtitle": "Authentication required",
+  "scanner": {
+    "title": "BIOMETRIC SCAN",
+    "status": {
+      "awaiting": "AWAITING SCAN",
+      "scanning": "SCANNING...",
+      "processing": "PROCESSING...",
+      "granted": "ACCESS GRANTED",
+      "denied": "ACCESS DENIED"
+    },
+    "instruction": "CLICK TO INITIATE SCAN"
+  },
+  "form": {
+    "coachId": {
+      "label": "COACH_ID",
+      "placeholder": "Enter your identifier",
+      "prefix": ">"
+    },
+    "passKey": {
+      "label": "PASS_KEY",
+      "placeholder": "Enter your access key",
+      "prefix": "$"
+    },
+    "rememberMe": "Keep session active",
+    "submit": "AUTHENTICATE",
+    "submitting": "VERIFYING..."
+  },
+  "divider": "OR",
+  "socialAuth": {
+    "google": "CONTINUE WITH GOOGLE",
+    "github": "CONTINUE WITH GITHUB"
+  },
+  "systemLogs": {
+    "title": "SYSTEM LOGS",
+    "messages": [
+      "[SYS] Secure connection established",
+      "[AUTH] Awaiting credentials",
+      "[SEC] TLS 1.3 protocol active",
+      "[SYS] Attempt monitoring enabled"
+    ]
+  },
+  "errors": {
+    "invalidCredentials": "ERROR: Invalid credentials",
+    "accountLocked": "ERROR: Account locked. Contact administrator.",
+    "networkError": "ERROR: Unable to connect to server",
+    "tooManyAttempts": "ALERT: Too many attempts. Please wait."
+  },
+  "links": {
+    "forgotPassword": "Reset access",
+    "createAccount": "Request access",
+    "backToHome": "< Back to main terminal"
+  },
+  "footer": {
+    "securityLevel": "SECURITY LEVEL: HIGH",
+    "encryption": "ENCRYPTION: AES-256"
+  }
+}

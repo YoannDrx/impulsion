@@ -1,0 +1,88 @@
+{
+  "header": {
+    "title": "MISSION CONTROL",
+    "subtitle": "Centre de commandement coaching"
+  },
+  "widgets": {
+    "squadReadiness": {
+      "title": "ÉTAT DE PRÉPARATION",
+      "subtitle": "Index de disponibilité global",
+      "levels": {
+        "optimal": "OPTIMAL",
+        "good": "BON",
+        "moderate": "MODÉRÉ",
+        "low": "FAIBLE",
+        "critical": "CRITIQUE"
+      }
+    },
+    "criticalAlerts": {
+      "title": "ALERTES CRITIQUES",
+      "empty": "Aucune alerte active",
+      "types": {
+        "injury": "RISQUE BLESSURE",
+        "overload": "SURCHARGE",
+        "fatigue": "FATIGUE ÉLEVÉE",
+        "missed": "SÉANCE MANQUÉE",
+        "inactive": "INACTIVITÉ"
+      },
+      "actions": {
+        "view": "VOIR",
+        "dismiss": "IGNORER",
+        "contact": "CONTACTER"
+      }
+    },
+    "financialVelocity": {
+      "title": "VÉLOCITÉ FINANCIÈRE",
+      "revenue": "REVENUS",
+      "mrr": "MRR",
+      "growth": "CROISSANCE",
+      "period": {
+        "day": "JOUR",
+        "week": "SEMAINE",
+        "month": "MOIS",
+        "year": "ANNÉE"
+      }
+    },
+    "liveDataFeed": {
+      "title": "FLUX TEMPS RÉEL",
+      "events": {
+        "sessionCompleted": "{athlete} a terminé sa séance",
+        "videoUploaded": "Nouvelle vidéo de {athlete}",
+        "stravaSync": "Sync Strava: {count} activités",
+        "goalReached": "{athlete} a atteint son objectif"
+      }
+    },
+    "teamOverview": {
+      "title": "VUE D'ENSEMBLE ÉQUIPE",
+      "total": "TOTAL ATHLÈTES",
+      "active": "ACTIFS",
+      "atRisk": "À RISQUE",
+      "injured": "BLESSÉS"
+    },
+    "upcomingSessions": {
+      "title": "PROCHAINES SÉANCES",
+      "today": "AUJOURD'HUI",
+      "tomorrow": "DEMAIN",
+      "thisWeek": "CETTE SEMAINE",
+      "empty": "Aucune séance planifiée"
+    }
+  },
+  "filters": {
+    "period": "PÉRIODE",
+    "team": "ÉQUIPE",
+    "status": "STATUT",
+    "sport": "SPORT"
+  },
+  "actions": {
+    "refresh": "ACTUALISER",
+    "export": "EXPORTER",
+    "fullscreen": "PLEIN ÉCRAN",
+    "settings": "PARAMÈTRES"
+  },
+  "status": {
+    "lastUpdate": "Dernière mise à jour",
+    "connected": "Connecté",
+    "syncing": "Synchronisation...",
+    "error": "Erreur de connexion"
+  }
+}

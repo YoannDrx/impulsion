@@ -1,0 +1,105 @@
+{
+  "header": {
+    "title": "THE VAULT",
+    "subtitle": "Video library"
+  },
+  "search": {
+    "placeholder": "Search videos...",
+    "filters": "FILTERS",
+    "clear": "CLEAR"
+  },
+  "filters": {
+    "category": {
+      "label": "CATEGORY",
+      "all": "All",
+      "technique": "TECHNIQUE",
+      "competition": "COMPETITION",
+      "training": "TRAINING",
+      "analysis": "ANALYSIS"
+    },
+    "athlete": {
+      "label": "ATHLETE",
+      "all": "All athletes"
+    },
+    "date": {
+      "label": "PERIOD",
+      "all": "All dates",
+      "today": "Today",
+      "week": "This week",
+      "month": "This month",
+      "year": "This year"
+    },
+    "status": {
+      "label": "STATUS",
+      "all": "All",
+      "analyzed": "Analyzed",
+      "pending": "Pending",
+      "archived": "Archived"
+    }
+  },
+  "grid": {
+    "empty": "No videos found",
+    "loading": "Loading videos..."
+  },
+  "card": {
+    "duration": "DURATION",
+    "views": "VIEWS",
+    "annotations": "ANNOTATIONS",
+    "uploadedAt": "Uploaded on {date}",
+    "by": "by {author}",
+    "analyzed": "ANALYZED",
+    "pending": "PENDING"
+  },
+  "actions": {
+    "upload": "UPLOAD",
+    "analyze": "ANALYZE",
+    "share": "SHARE",
+    "download": "DOWNLOAD",
+    "archive": "ARCHIVE",
+    "delete": "DELETE"
+  },
+  "upload": {
+    "title": "UPLOAD VIDEO",
+    "dragDrop": "Drag and drop or click to select",
+    "formats": "Supported formats: MP4, MOV, AVI",
+    "maxSize": "Max size: 500 MB",
+    "uploading": "Uploading...",
+    "processing": "Processing...",
+    "complete": "Upload complete"
+  },
+  "detail": {
+    "title": "VIDEO DETAILS",
+    "info": {
+      "title": "INFORMATION",
+      "filename": "Filename",
+      "duration": "Duration",
+      "resolution": "Resolution",
+      "fps": "Frames/sec",
+      "size": "Size"
+    },
+    "metadata": {
+      "title": "METADATA",
+      "athlete": "Athlete",
+      "category": "Category",
+      "date": "Date",
+      "location": "Location",
+      "tags": "Tags"
+    },
+    "annotations": {
+      "title": "ANNOTATIONS",
+      "count": "{count} annotation(s)",
+      "empty": "No annotations"
+    },
+    "actions": {
+      "openInLab": "OPEN IN LAB",
+      "edit": "EDIT",
+      "share": "SHARE"
+    }
+  },
+  "stats": {
+    "total": "TOTAL VIDEOS",
+    "analyzed": "ANALYZED",
+    "thisMonth": "THIS MONTH",
+    "storage": "STORAGE USED"
+  }
+}

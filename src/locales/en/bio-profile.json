@@ -1,0 +1,99 @@
+{
+  "header": {
+    "title": "BIO PROFILE",
+    "subtitle": "Deep athlete analysis"
+  },
+  "bodyMap": {
+    "title": "BODY MAPPING",
+    "instruction": "Click on a zone to see details",
+    "zones": {
+      "head": "HEAD",
+      "neck": "NECK",
+      "left-shoulder": "L. SHOULDER",
+      "right-shoulder": "R. SHOULDER",
+      "chest": "CHEST",
+      "left-arm": "L. ARM",
+      "right-arm": "R. ARM",
+      "core": "CORE",
+      "left-hip": "L. HIP",
+      "right-hip": "R. HIP",
+      "left-thigh": "L. THIGH",
+      "right-thigh": "R. THIGH",
+      "left-knee": "L. KNEE",
+      "right-knee": "R. KNEE",
+      "left-calf": "L. CALF",
+      "right-calf": "R. CALF",
+      "left-foot": "L. FOOT",
+      "right-foot": "R. FOOT"
+    },
+    "status": {
+      "optimal": "OPTIMAL",
+      "fatigued": "FATIGUED",
+      "at-risk": "AT RISK",
+      "injured": "INJURED"
+    }
+  },
+  "widgets": {
+    "readiness": {
+      "title": "READINESS SCORE",
+      "subtitle": "Global availability"
+    },
+    "sleep": {
+      "title": "SLEEP QUALITY",
+      "metrics": {
+        "duration": "DURATION",
+        "quality": "QUALITY",
+        "hrv": "NIGHT HRV"
+      }
+    },
+    "hrv": {
+      "title": "HEART RATE VARIABILITY",
+      "baseline": "BASELINE",
+      "current": "CURRENT",
+      "trend": "TREND"
+    },
+    "load": {
+      "title": "TRAINING LOAD",
+      "acute": "ACUTE LOAD (ATL)",
+      "chronic": "CHRONIC LOAD (CTL)",
+      "balance": "BALANCE (TSB)",
+      "strain": "STRAIN"
+    },
+    "performance": {
+      "title": "PERFORMANCE INDICATORS",
+      "power": "POWER",
+      "speed": "SPEED",
+      "endurance": "ENDURANCE",
+      "technique": "TECHNIQUE"
+    }
+  },
+  "diagnosis": {
+    "title": "ZONE DIAGNOSIS",
+    "noSelection": "Select a zone on the body map",
+    "sections": {
+      "status": "CURRENT STATUS",
+      "history": "HISTORY",
+      "recommendations": "RECOMMENDATIONS",
+      "exercises": "TARGETED EXERCISES"
+    }
+  },
+  "trainingHistory": {
+    "title": "LOAD HISTORY",
+    "period": {
+      "week": "7 DAYS",
+      "month": "30 DAYS",
+      "quarter": "90 DAYS"
+    },
+    "metrics": {
+      "volume": "VOLUME",
+      "intensity": "INTENSITY",
+      "frequency": "FREQUENCY"
+    }
+  },
+  "actions": {
+    "export": "EXPORT REPORT",
+    "share": "SHARE",
+    "history": "VIEW HISTORY",
+    "edit": "EDIT PROFILE"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "BIOMECHANICS LAB",
+    "subtitle": "Analyse vidéo technique"
+  },
+  "player": {
+    "title": "ZONE D'ANALYSE",
+    "noVideo": "Aucune vidéo sélectionnée",
+    "loading": "Chargement de la vidéo...",
+    "error": "Erreur de lecture"
+  },
+  "controls": {
+    "play": "LECTURE",
+    "pause": "PAUSE",
+    "stop": "STOP",
+    "speed": {
+      "label": "VITESSE",
+      "options": {
+        "0.25": "0.25x",
+        "0.5": "0.5x",
+        "1": "1x",
+        "2": "2x"
+      }
+    },
+    "frame": {
+      "prev": "IMAGE PRÉC.",
+      "next": "IMAGE SUIV."
+    },
+    "zoom": {
+      "in": "ZOOM +",
+      "out": "ZOOM -",
+      "fit": "AJUSTER"
+    },
+    "fullscreen": "PLEIN ÉCRAN"
+  },
+  "timeline": {
+    "title": "TIMELINE",
+    "markers": "MARQUEURS",
+    "waveform": "FORME D'ONDE",
+    "addMarker": "AJOUTER MARQUEUR",
+    "deleteMarker": "SUPPRIMER"
+  },
+  "tools": {
+    "title": "OUTILS D'ANALYSE",
+    "categories": {
+      "draw": "DESSIN",
+      "measure": "MESURE",
+      "compare": "COMPARAISON"
+    },
+    "items": {
+      "line": "LIGNE",
+      "arrow": "FLÈCHE",
+      "angle": "ANGLE",
+      "circle": "CERCLE",
+      "freehand": "LIBRE",
+      "text": "TEXTE",
+      "ruler": "RÈGLE",
+      "protractor": "RAPPORTEUR"
+    },
+    "colors": {
+      "lime": "VERT",
+      "cyan": "CYAN",
+      "red": "ROUGE",
+      "white": "BLANC"
+    }
+  },
+  "telemetry": {
+    "title": "TÉLÉMÉTRIE TEMPS RÉEL",
+    "physics": {
+      "velocity": "VÉLOCITÉ",
+      "acceleration": "ACCÉLÉRATION",
+      "angle": "ANGLE",
+      "force": "FORCE EST."
+    },
+    "biomechanics": {
+      "jointAngle": "ANGLE ARTICULAIRE",
+      "rangeOfMotion": "AMPLITUDE",
+      "symmetry": "SYMÉTRIE"
+    }
+  },
+  "annotations": {
+    "title": "ANNOTATIONS",
+    "add": "NOUVELLE ANNOTATION",
+    "placeholder": "Ajouter un commentaire...",
+    "timestamp": "à {time}",
+    "empty": "Aucune annotation"
+  },
+  "comparison": {
+    "title": "MODE COMPARAISON",
+    "sideBy": "CÔTE À CÔTE",
+    "overlay": "SUPERPOSITION",
+    "select": "SÉLECTIONNER UNE VIDÉO"
+  },
+  "export": {
+    "title": "EXPORTER",
+    "options": {
+      "video": "VIDÉO ANNOTÉE",
+      "report": "RAPPORT PDF",
+      "data": "DONNÉES JSON"
+    }
+  },
+  "shortcuts": {
+    "title": "RACCOURCIS",
+    "space": "Lecture/Pause",
+    "left": "5s en arrière",
+    "right": "5s en avant",
+    "comma": "Image préc.",
+    "period": "Image suiv."
+  }
+}

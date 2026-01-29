@@ -250,6 +250,213 @@
   100% { background-position: 0% 50%; }
 }
 
+/* === CYBERPUNK INDUSTRIAL ANIMATIONS === */
+
+/* Slow rotation for concentric circles, radars, gauges */
+@keyframes imp-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Marquee ticker horizontal */
+@keyframes imp-marquee {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Vertical scan line effect */
+@keyframes imp-scan-vertical {
+  from {
+    top: -10%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+/* Horizontal scan line effect */
+@keyframes imp-scan-horizontal {
+  from {
+    left: -10%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+/* Glitch text effect using clip-path */
+@keyframes imp-glitch {
+  0%, 100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  5% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translate(-3px, 2px);
+  }
+  10% {
+    clip-path: inset(60% 0 20% 0);
+    transform: translate(3px, -2px);
+  }
+  15% {
+    clip-path: inset(40% 0 40% 0);
+    transform: translate(-2px, 0);
+  }
+  20%, 95% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+}
+
+/* Glitch with color shift */
+@keyframes imp-glitch-color {
+  0%, 100% {
+    text-shadow: none;
+    transform: translate(0);
+  }
+  5% {
+    text-shadow: -2px 0 oklch(0.65 0.25 15), 2px 0 oklch(0.85 0.16 195);
+    transform: translate(-1px, 1px);
+  }
+  10% {
+    text-shadow: 2px 0 oklch(0.65 0.25 15), -2px 0 oklch(0.85 0.16 195);
+    transform: translate(1px, -1px);
+  }
+  15% {
+    text-shadow: -1px 0 oklch(0.91 0.23 120);
+    transform: translate(0);
+  }
+  20%, 95% {
+    text-shadow: none;
+    transform: translate(0);
+  }
+}
+
+/* Fast pulse for status indicators */
+@keyframes imp-pulse-fast {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Typing effect for terminal text */
+@keyframes imp-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor blink for terminal */
+@keyframes imp-blink-cursor {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
+  }
+}
+
+/* Data stream effect (vertical scroll) */
+@keyframes imp-data-stream {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+/* Boot sequence progress */
+@keyframes imp-boot-progress {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Radar sweep */
+@keyframes imp-radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Neon pulse glow */
+@keyframes imp-neon-pulse {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 5px currentColor);
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 15px currentColor) drop-shadow(0 0 30px currentColor);
+  }
+}
+
+/* HUD corner animation */
+@keyframes imp-hud-corner-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Scale pulse for widgets */
+@keyframes imp-scale-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Flicker effect for damaged/alert states */
+@keyframes imp-flicker {
+  0%, 100% { opacity: 1; }
+  10% { opacity: 0.8; }
+  20% { opacity: 1; }
+  30% { opacity: 0.7; }
+  40% { opacity: 1; }
+  50% { opacity: 0.9; }
+  60% { opacity: 1; }
+  70% { opacity: 0.85; }
+  80% { opacity: 1; }
+  90% { opacity: 0.95; }
+}
+
 /* Accordion animations (keeping existing) */
 @keyframes accordion-down {
   from { height: 0; }
@@ -273,4 +480,14 @@
   --imp-animate-spin: imp-spin 1s var(--imp-ease-linear) infinite;
   --imp-animate-ping: imp-ping 1s var(--imp-ease-in-out) infinite;
   --imp-animate-float: imp-float 3s var(--imp-ease-in-out) infinite;
+
+  /* Cyberpunk animation presets */
+  --imp-animate-spin-slow: imp-spin-slow 12s var(--imp-ease-linear) infinite;
+  --imp-animate-marquee: imp-marquee 25s var(--imp-ease-linear) infinite;
+  --imp-animate-scan-vertical: imp-scan-vertical 3s var(--imp-ease-linear) infinite;
+  --imp-animate-glitch: imp-glitch 2s var(--imp-ease-linear) infinite;
+  --imp-animate-pulse-fast: imp-pulse-fast 1s var(--imp-ease-in-out) infinite;
+  --imp-animate-typing: imp-typing 3s steps(30) forwards;
+  --imp-animate-blink-cursor: imp-blink-cursor 1s step-end infinite;
+  --imp-animate-data-stream: imp-data-stream 8s var(--imp-ease-linear) infinite;
 }

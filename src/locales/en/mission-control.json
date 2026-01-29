@@ -1,0 +1,88 @@
+{
+  "header": {
+    "title": "MISSION CONTROL",
+    "subtitle": "Coaching command center"
+  },
+  "widgets": {
+    "squadReadiness": {
+      "title": "READINESS STATE",
+      "subtitle": "Global availability index",
+      "levels": {
+        "optimal": "OPTIMAL",
+        "good": "GOOD",
+        "moderate": "MODERATE",
+        "low": "LOW",
+        "critical": "CRITICAL"
+      }
+    },
+    "criticalAlerts": {
+      "title": "CRITICAL ALERTS",
+      "empty": "No active alerts",
+      "types": {
+        "injury": "INJURY RISK",
+        "overload": "OVERLOAD",
+        "fatigue": "HIGH FATIGUE",
+        "missed": "MISSED SESSION",
+        "inactive": "INACTIVITY"
+      },
+      "actions": {
+        "view": "VIEW",
+        "dismiss": "DISMISS",
+        "contact": "CONTACT"
+      }
+    },
+    "financialVelocity": {
+      "title": "FINANCIAL VELOCITY",
+      "revenue": "REVENUE",
+      "mrr": "MRR",
+      "growth": "GROWTH",
+      "period": {
+        "day": "DAY",
+        "week": "WEEK",
+        "month": "MONTH",
+        "year": "YEAR"
+      }
+    },
+    "liveDataFeed": {
+      "title": "LIVE DATA FEED",
+      "events": {
+        "sessionCompleted": "{athlete} completed their session",
+        "videoUploaded": "New video from {athlete}",
+        "stravaSync": "Strava sync: {count} activities",
+        "goalReached": "{athlete} reached their goal"
+      }
+    },
+    "teamOverview": {
+      "title": "TEAM OVERVIEW",
+      "total": "TOTAL ATHLETES",
+      "active": "ACTIVE",
+      "atRisk": "AT RISK",
+      "injured": "INJURED"
+    },
+    "upcomingSessions": {
+      "title": "UPCOMING SESSIONS",
+      "today": "TODAY",
+      "tomorrow": "TOMORROW",
+      "thisWeek": "THIS WEEK",
+      "empty": "No scheduled sessions"
+    }
+  },
+  "filters": {
+    "period": "PERIOD",
+    "team": "TEAM",
+    "status": "STATUS",
+    "sport": "SPORT"
+  },
+  "actions": {
+    "refresh": "REFRESH",
+    "export": "EXPORT",
+    "fullscreen": "FULLSCREEN",
+    "settings": "SETTINGS"
+  },
+  "status": {
+    "lastUpdate": "Last update",
+    "connected": "Connected",
+    "syncing": "Syncing...",
+    "error": "Connection error"
+  }
+}

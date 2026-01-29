@@ -1,0 +1,105 @@
+{
+  "header": {
+    "title": "THE VAULT",
+    "subtitle": "Bibliothèque vidéo"
+  },
+  "search": {
+    "placeholder": "Rechercher une vidéo...",
+    "filters": "FILTRES",
+    "clear": "EFFACER"
+  },
+  "filters": {
+    "category": {
+      "label": "CATÉGORIE",
+      "all": "Toutes",
+      "technique": "TECHNIQUE",
+      "competition": "COMPÉTITION",
+      "training": "ENTRAÎNEMENT",
+      "analysis": "ANALYSE"
+    },
+    "athlete": {
+      "label": "ATHLÈTE",
+      "all": "Tous les athlètes"
+    },
+    "date": {
+      "label": "PÉRIODE",
+      "all": "Toutes les dates",
+      "today": "Aujourd'hui",
+      "week": "Cette semaine",
+      "month": "Ce mois",
+      "year": "Cette année"
+    },
+    "status": {
+      "label": "STATUT",
+      "all": "Tous",
+      "analyzed": "Analysée",
+      "pending": "En attente",
+      "archived": "Archivée"
+    }
+  },
+  "grid": {
+    "empty": "Aucune vidéo trouvée",
+    "loading": "Chargement des vidéos..."
+  },
+  "card": {
+    "duration": "DURÉE",
+    "views": "VUES",
+    "annotations": "ANNOTATIONS",
+    "uploadedAt": "Uploadée le {date}",
+    "by": "par {author}",
+    "analyzed": "ANALYSÉE",
+    "pending": "EN ATTENTE"
+  },
+  "actions": {
+    "upload": "UPLOADER",
+    "analyze": "ANALYSER",
+    "share": "PARTAGER",
+    "download": "TÉLÉCHARGER",
+    "archive": "ARCHIVER",
+    "delete": "SUPPRIMER"
+  },
+  "upload": {
+    "title": "UPLOADER UNE VIDÉO",
+    "dragDrop": "Glissez-déposez ou cliquez pour sélectionner",
+    "formats": "Formats supportés: MP4, MOV, AVI",
+    "maxSize": "Taille max: 500 MB",
+    "uploading": "Upload en cours...",
+    "processing": "Traitement...",
+    "complete": "Upload terminé"
+  },
+  "detail": {
+    "title": "DÉTAILS VIDÉO",
+    "info": {
+      "title": "INFORMATIONS",
+      "filename": "Nom du fichier",
+      "duration": "Durée",
+      "resolution": "Résolution",
+      "fps": "Images/sec",
+      "size": "Taille"
+    },
+    "metadata": {
+      "title": "MÉTADONNÉES",
+      "athlete": "Athlète",
+      "category": "Catégorie",
+      "date": "Date",
+      "location": "Lieu",
+      "tags": "Tags"
+    },
+    "annotations": {
+      "title": "ANNOTATIONS",
+      "count": "{count} annotation(s)",
+      "empty": "Aucune annotation"
+    },
+    "actions": {
+      "openInLab": "OUVRIR DANS LE LAB",
+      "edit": "MODIFIER",
+      "share": "PARTAGER"
+    }
+  },
+  "stats": {
+    "total": "TOTAL VIDÉOS",
+    "analyzed": "ANALYSÉES",
+    "thisMonth": "CE MOIS",
+    "storage": "STOCKAGE UTILISÉ"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "header": {
+    "title": "THE BLUEPRINT",
+    "subtitle": "Planificateur macro-cycles"
+  },
+  "sidebar": {
+    "title": "MODULES",
+    "categories": {
+      "phases": "PHASES",
+      "blocks": "BLOCS",
+      "events": "ÉVÉNEMENTS"
+    },
+    "phases": {
+      "preparation": "PRÉPARATION",
+      "buildUp": "MONTÉE EN CHARGE",
+      "competition": "COMPÉTITION",
+      "transition": "TRANSITION",
+      "recovery": "RÉCUPÉRATION"
+    },
+    "blocks": {
+      "endurance": "ENDURANCE",
+      "strength": "FORCE",
+      "speed": "VITESSE",
+      "technique": "TECHNIQUE",
+      "tapering": "AFFÛTAGE"
+    },
+    "events": {
+      "competition": "COMPÉTITION",
+      "test": "TEST",
+      "camp": "STAGE",
+      "rest": "REPOS PROGRAMMÉ"
+    },
+    "dragHint": "Glissez sur la grille"
+  },
+  "grid": {
+    "title": "GRILLE DE PLANIFICATION",
+    "views": {
+      "year": "ANNÉE",
+      "quarter": "TRIMESTRE",
+      "month": "MOIS"
+    },
+    "weekNumber": "S{week}",
+    "today": "AUJOURD'HUI",
+    "empty": "Glissez des modules ici"
+  },
+  "block": {
+    "duration": "DURÉE",
+    "weeks": "{count} sem.",
+    "objectives": "OBJECTIFS",
+    "load": "CHARGE",
+    "notes": "NOTES",
+    "delete": "SUPPRIMER",
+    "edit": "MODIFIER",
+    "resize": "REDIMENSIONNER"
+  },
+  "loadProjection": {
+    "title": "PROJECTION DE CHARGE",
+    "metrics": {
+      "volume": "VOLUME",
+      "intensity": "INTENSITÉ",
+      "density": "DENSITÉ"
+    },
+    "zones": {
+      "optimal": "ZONE OPTIMALE",
+      "overreaching": "SURCHARGE FONCTIONNELLE",
+      "overtraining": "RISQUE SURENTRAÎNEMENT"
+    }
+  },
+  "timeline": {
+    "phases": "PHASES",
+    "mesocycles": "MÉSOCYCLES",
+    "microcycles": "MICROCYCLES",
+    "competitions": "COMPÉTITIONS"
+  },
+  "athlete": {
+    "select": "SÉLECTIONNER ATHLÈTE",
+    "all": "TOUS LES ATHLÈTES",
+    "group": "GROUPE"
+  },
+  "actions": {
+    "save": "SAUVEGARDER",
+    "export": "EXPORTER",
+    "import": "IMPORTER",
+    "template": "UTILISER TEMPLATE",
+    "undo": "ANNULER",
+    "redo": "REFAIRE",
+    "clear": "EFFACER TOUT"
+  },
+  "templates": {
+    "title": "TEMPLATES",
+    "categories": {
+      "running": "COURSE",
+      "athletics": "ATHLÉTISME",
+      "strength": "FORCE",
+      "custom": "PERSONNALISÉ"
+    }
+  }
+}

@@ -7,7 +7,12 @@ import { cn } from "@/lib/utils";
 import { SiteConfig } from "@/site-config";
 import { routing } from "@/i18n/navigation";
 import type { Metadata } from "next";
-import { Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
+import {
+  Geist_Mono,
+  Inter,
+  JetBrains_Mono,
+  Space_Grotesk,
+} from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 import "./globals.css";
@@ -34,6 +39,11 @@ const GeistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
+const JetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+});
+
 type Props = {
   children: React.ReactNode;
   params?: Promise<{ locale?: string }>;
@@ -53,6 +63,7 @@ export default async function RootLayout({ children, params }: Props) {
           GeistMono.variable,
           GeistSans.variable,
           CaptionFont.variable,
+          JetBrainsMono.variable,
         )}
       >
         <NuqsAdapter>

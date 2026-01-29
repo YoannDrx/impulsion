@@ -1,0 +1,87 @@
+{
+  "header": {
+    "title": "SQUAD TELEMETRY",
+    "subtitle": "Roster d'équipe"
+  },
+  "overview": {
+    "title": "VUE D'ENSEMBLE",
+    "total": "TOTAL",
+    "optimal": "OPTIMAL",
+    "fatigued": "FATIGUÉ",
+    "atRisk": "À RISQUE",
+    "injured": "BLESSÉ"
+  },
+  "filters": {
+    "search": "Rechercher un athlète...",
+    "status": {
+      "all": "TOUS",
+      "optimal": "OPTIMAL",
+      "fatigued": "FATIGUÉ",
+      "atRisk": "À RISQUE",
+      "injured": "BLESSÉ"
+    },
+    "group": {
+      "label": "GROUPE",
+      "all": "Tous les groupes"
+    },
+    "sport": {
+      "label": "SPORT",
+      "all": "Tous les sports"
+    },
+    "sort": {
+      "label": "TRIER PAR",
+      "name": "Nom",
+      "status": "Statut",
+      "readiness": "Readiness",
+      "lastActive": "Dernière activité"
+    }
+  },
+  "list": {
+    "empty": "Aucun athlète trouvé",
+    "columns": {
+      "athlete": "ATHLÈTE",
+      "status": "STATUT",
+      "readiness": "READINESS",
+      "load": "CHARGE",
+      "trend": "TENDANCE",
+      "lastSession": "DERNIÈRE SÉANCE",
+      "actions": "ACTIONS"
+    }
+  },
+  "athlete": {
+    "status": {
+      "optimal": "OPTIMAL",
+      "fatigued": "FATIGUÉ",
+      "atRisk": "À RISQUE",
+      "injured": "BLESSÉ"
+    },
+    "trend": {
+      "up": "EN HAUSSE",
+      "stable": "STABLE",
+      "down": "EN BAISSE"
+    },
+    "noData": "Pas de données"
+  },
+  "actions": {
+    "viewProfile": "VOIR PROFIL",
+    "sendMessage": "MESSAGE",
+    "assignSession": "ASSIGNER SÉANCE",
+    "viewHistory": "HISTORIQUE",
+    "more": "PLUS"
+  },
+  "quickActions": {
+    "title": "ACTIONS RAPIDES",
+    "messageAll": "MESSAGE À TOUS",
+    "exportRoster": "EXPORTER ROSTER",
+    "importAthletes": "IMPORTER",
+    "groupAssign": "ASSIGNER GROUPE"
+  },
+  "metrics": {
+    "strip": {
+      "avgReadiness": "READINESS MOY.",
+      "activeSessions": "SÉANCES ACTIVES",
+      "completionRate": "TAUX COMPLÉTION",
+      "weeklyLoad": "CHARGE HEBDO"
+    }
+  }
+}

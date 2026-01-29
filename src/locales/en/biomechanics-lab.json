@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "BIOMECHANICS LAB",
+    "subtitle": "Technical video analysis"
+  },
+  "player": {
+    "title": "ANALYSIS ZONE",
+    "noVideo": "No video selected",
+    "loading": "Loading video...",
+    "error": "Playback error"
+  },
+  "controls": {
+    "play": "PLAY",
+    "pause": "PAUSE",
+    "stop": "STOP",
+    "speed": {
+      "label": "SPEED",
+      "options": {
+        "0.25": "0.25x",
+        "0.5": "0.5x",
+        "1": "1x",
+        "2": "2x"
+      }
+    },
+    "frame": {
+      "prev": "PREV FRAME",
+      "next": "NEXT FRAME"
+    },
+    "zoom": {
+      "in": "ZOOM +",
+      "out": "ZOOM -",
+      "fit": "FIT"
+    },
+    "fullscreen": "FULLSCREEN"
+  },
+  "timeline": {
+    "title": "TIMELINE",
+    "markers": "MARKERS",
+    "waveform": "WAVEFORM",
+    "addMarker": "ADD MARKER",
+    "deleteMarker": "DELETE"
+  },
+  "tools": {
+    "title": "ANALYSIS TOOLS",
+    "categories": {
+      "draw": "DRAW",
+      "measure": "MEASURE",
+      "compare": "COMPARE"
+    },
+    "items": {
+      "line": "LINE",
+      "arrow": "ARROW",
+      "angle": "ANGLE",
+      "circle": "CIRCLE",
+      "freehand": "FREEHAND",
+      "text": "TEXT",
+      "ruler": "RULER",
+      "protractor": "PROTRACTOR"
+    },
+    "colors": {
+      "lime": "GREEN",
+      "cyan": "CYAN",
+      "red": "RED",
+      "white": "WHITE"
+    }
+  },
+  "telemetry": {
+    "title": "REAL-TIME TELEMETRY",
+    "physics": {
+      "velocity": "VELOCITY",
+      "acceleration": "ACCELERATION",
+      "angle": "ANGLE",
+      "force": "EST. FORCE"
+    },
+    "biomechanics": {
+      "jointAngle": "JOINT ANGLE",
+      "rangeOfMotion": "RANGE OF MOTION",
+      "symmetry": "SYMMETRY"
+    }
+  },
+  "annotations": {
+    "title": "ANNOTATIONS",
+    "add": "NEW ANNOTATION",
+    "placeholder": "Add a comment...",
+    "timestamp": "at {time}",
+    "empty": "No annotations"
+  },
+  "comparison": {
+    "title": "COMPARISON MODE",
+    "sideBy": "SIDE BY SIDE",
+    "overlay": "OVERLAY",
+    "select": "SELECT A VIDEO"
+  },
+  "export": {
+    "title": "EXPORT",
+    "options": {
+      "video": "ANNOTATED VIDEO",
+      "report": "PDF REPORT",
+      "data": "JSON DATA"
+    }
+  },
+  "shortcuts": {
+    "title": "SHORTCUTS",
+    "space": "Play/Pause",
+    "left": "5s backward",
+    "right": "5s forward",
+    "comma": "Prev frame",
+    "period": "Next frame"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "header": {
+    "title": "THE BLUEPRINT",
+    "subtitle": "Macro-cycle planner"
+  },
+  "sidebar": {
+    "title": "MODULES",
+    "categories": {
+      "phases": "PHASES",
+      "blocks": "BLOCKS",
+      "events": "EVENTS"
+    },
+    "phases": {
+      "preparation": "PREPARATION",
+      "buildUp": "BUILD-UP",
+      "competition": "COMPETITION",
+      "transition": "TRANSITION",
+      "recovery": "RECOVERY"
+    },
+    "blocks": {
+      "endurance": "ENDURANCE",
+      "strength": "STRENGTH",
+      "speed": "SPEED",
+      "technique": "TECHNIQUE",
+      "tapering": "TAPERING"
+    },
+    "events": {
+      "competition": "COMPETITION",
+      "test": "TEST",
+      "camp": "CAMP",
+      "rest": "SCHEDULED REST"
+    },
+    "dragHint": "Drag to grid"
+  },
+  "grid": {
+    "title": "PLANNING GRID",
+    "views": {
+      "year": "YEAR",
+      "quarter": "QUARTER",
+      "month": "MONTH"
+    },
+    "weekNumber": "W{week}",
+    "today": "TODAY",
+    "empty": "Drag modules here"
+  },
+  "block": {
+    "duration": "DURATION",
+    "weeks": "{count} wks",
+    "objectives": "OBJECTIVES",
+    "load": "LOAD",
+    "notes": "NOTES",
+    "delete": "DELETE",
+    "edit": "EDIT",
+    "resize": "RESIZE"
+  },
+  "loadProjection": {
+    "title": "LOAD PROJECTION",
+    "metrics": {
+      "volume": "VOLUME",
+      "intensity": "INTENSITY",
+      "density": "DENSITY"
+    },
+    "zones": {
+      "optimal": "OPTIMAL ZONE",
+      "overreaching": "FUNCTIONAL OVERREACHING",
+      "overtraining": "OVERTRAINING RISK"
+    }
+  },
+  "timeline": {
+    "phases": "PHASES",
+    "mesocycles": "MESOCYCLES",
+    "microcycles": "MICROCYCLES",
+    "competitions": "COMPETITIONS"
+  },
+  "athlete": {
+    "select": "SELECT ATHLETE",
+    "all": "ALL ATHLETES",
+    "group": "GROUP"
+  },
+  "actions": {
+    "save": "SAVE",
+    "export": "EXPORT",
+    "import": "IMPORT",
+    "template": "USE TEMPLATE",
+    "undo": "UNDO",
+    "redo": "REDO",
+    "clear": "CLEAR ALL"
+  },
+  "templates": {
+    "title": "TEMPLATES",
+    "categories": {
+      "running": "RUNNING",
+      "athletics": "ATHLETICS",
+      "strength": "STRENGTH",
+      "custom": "CUSTOM"
+    }
+  }
+}

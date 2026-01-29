@@ -1,0 +1,87 @@
+{
+  "header": {
+    "title": "SESSION ARCHITECT",
+    "subtitle": "Session builder"
+  },
+  "library": {
+    "title": "EXERCISE LIBRARY",
+    "search": "Search exercises...",
+    "filters": {
+      "all": "ALL",
+      "warmup": "WARM-UP",
+      "main": "MAIN",
+      "cooldown": "COOL-DOWN",
+      "strength": "STRENGTH",
+      "cardio": "CARDIO",
+      "technique": "TECHNIQUE",
+      "recovery": "RECOVERY"
+    },
+    "empty": "No exercises found",
+    "dragHint": "Drag to timeline"
+  },
+  "timeline": {
+    "title": "SESSION TIMELINE",
+    "phases": {
+      "warmup": "WARM-UP",
+      "main": "MAIN BLOCK",
+      "cooldown": "COOL-DOWN"
+    },
+    "dropHere": "DROP HERE",
+    "empty": "Drag exercises here to build your session"
+  },
+  "exercise": {
+    "duration": "DURATION",
+    "sets": "SETS",
+    "reps": "REPS",
+    "rest": "REST",
+    "intensity": "INTENSITY",
+    "notes": "NOTES",
+    "delete": "DELETE",
+    "duplicate": "DUPLICATE"
+  },
+  "neuralLoad": {
+    "title": "NEURAL LOAD",
+    "subtitle": "Estimated impact on nervous system",
+    "levels": {
+      "low": "LOW",
+      "moderate": "MODERATE",
+      "high": "HIGH",
+      "extreme": "EXTREME"
+    },
+    "warning": "Warning: high load for this athlete",
+    "metrics": {
+      "muscular": "MUSCULAR",
+      "cardiovascular": "CARDIO",
+      "neurological": "NEUROLOGICAL",
+      "metabolic": "METABOLIC"
+    }
+  },
+  "summary": {
+    "title": "SUMMARY",
+    "totalDuration": "TOTAL DURATION",
+    "exerciseCount": "EXERCISES",
+    "estimatedLoad": "ESTIMATED LOAD",
+    "targetZone": "TARGET ZONE"
+  },
+  "templates": {
+    "title": "TEMPLATES",
+    "save": "SAVE AS TEMPLATE",
+    "load": "LOAD TEMPLATE",
+    "recent": "RECENT"
+  },
+  "actions": {
+    "preview": "PREVIEW",
+    "save": "SAVE",
+    "saveDraft": "DRAFT",
+    "assign": "ASSIGN",
+    "cancel": "CANCEL",
+    "clear": "CLEAR ALL"
+  },
+  "assign": {
+    "title": "ASSIGN SESSION",
+    "selectAthletes": "Select athletes",
+    "selectDate": "Choose a date",
+    "recurring": "Recurring",
+    "confirm": "CONFIRM"
+  }
+}

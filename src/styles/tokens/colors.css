@@ -91,4 +91,56 @@
   --imp-chart-3: oklch(0.75 0.18 320);
   --imp-chart-4: oklch(0.80 0.16 50);
   --imp-chart-5: oklch(0.70 0.20 200);
+
+  /* === CYBERPUNK INDUSTRIAL PALETTE === */
+
+  /* Void - Background ultra-dark pour effet terminal */
+  --imp-void: oklch(0.05 0 0);
+  --imp-void-soft: oklch(0.08 0.005 260);
+
+  /* Charcoal - Surfaces secondaires sombres */
+  --imp-charcoal: oklch(0.12 0.02 260);
+  --imp-charcoal-light: oklch(0.16 0.02 260);
+  --imp-charcoal-dark: oklch(0.08 0.015 260);
+
+  /* Danger Neon - Alertes style cyberpunk */
+  --imp-danger-neon: oklch(0.65 0.25 15);
+  --imp-danger-neon-light: oklch(0.75 0.22 15);
+  --imp-danger-neon-dark: oklch(0.55 0.25 15);
+
+  /* Purple Neon - Accent tertiaire */
+  --imp-purple-neon: oklch(0.65 0.25 300);
+  --imp-purple-neon-light: oklch(0.75 0.22 300);
+
+  /* === GLASS / TRANSPARENCY VARIANTS === */
+
+  /* Glass backgrounds avec differentes opacites */
+  --imp-glass-5: oklch(1 0 0 / 0.05);
+  --imp-glass-10: oklch(1 0 0 / 0.10);
+  --imp-glass-15: oklch(1 0 0 / 0.15);
+  --imp-glass-20: oklch(1 0 0 / 0.20);
+
+  /* Dark glass pour overlays */
+  --imp-glass-dark-50: oklch(0 0 0 / 0.50);
+  --imp-glass-dark-70: oklch(0 0 0 / 0.70);
+  --imp-glass-dark-80: oklch(0 0 0 / 0.80);
+  --imp-glass-dark-90: oklch(0 0 0 / 0.90);
+
+  /* Colored glass */
+  --imp-glass-lime: oklch(0.91 0.23 120 / 0.10);
+  --imp-glass-cyan: oklch(0.85 0.16 195 / 0.10);
+  --imp-glass-danger: oklch(0.65 0.25 15 / 0.10);
+
+  /* === HUD COLORS === */
+
+  /* Status colors pour interfaces HUD */
+  --imp-hud-online: var(--imp-lime-400);
+  --imp-hud-offline: oklch(0.50 0 0);
+  --imp-hud-warning: var(--imp-warning);
+  --imp-hud-critical: var(--imp-danger-neon);
+  --imp-hud-optimal: var(--imp-cyan-400);
+
+  /* Grid et lignes de structure */
+  --imp-grid-line: oklch(1 0 0 / 0.06);
+  --imp-grid-line-accent: oklch(0.85 0.16 195 / 0.15);
 }
