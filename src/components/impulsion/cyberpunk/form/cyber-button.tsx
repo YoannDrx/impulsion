@@ -90,6 +90,31 @@ export function CyberButton({
 }: CyberButtonProps) {
   const Comp = asChild ? Slot : "button";
 
+  // When asChild is true, we wrap the content in a span to ensure a single child for Slot
+  const content = loading ? (
+    <>
+      <span className="size-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+      {loadingText ?? children}
+    </>
+  ) : (
+    <>
+      {leftIcon}
+      {children}
+      {rightIcon}
+    </>
+  );
+
+  if (asChild) {
+    return (
+      <Comp
+        className={cn(cyberButtonVariants({ variant, size, className }))}
+        {...props}
+      >
+        {children}
+      </Comp>
+    );
+  }
+
   return (
     <Comp
       className={cn(cyberButtonVariants({ variant, size, className }))}
@@ -101,18 +126,7 @@ export function CyberButton({
       <span className="pointer-events-none absolute right-0 bottom-0 h-2 w-2 border-r-2 border-b-2 border-inherit" />
 
       {/* Content */}
-      {loading ? (
-        <>
-          <span className="size-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-          {loadingText ?? children}
-        </>
-      ) : (
-        <>
-          {leftIcon}
-          {children}
-          {rightIcon}
-        </>
-      )}
+      {content}
     </Comp>
   );
 }
