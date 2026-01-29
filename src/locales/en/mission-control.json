@@ -1,4 +1,15 @@
 {
+  "title": "MISSION CONTROL",
+  "subtitle": "Coaching command center",
+  "ticker": "SYSTEM OPERATIONAL • REAL-TIME DATA • 24 ATHLETES CONNECTED • LAST SYNC: 2 MIN AGO",
+  "stats": {
+    "athletes": "Athletes",
+    "sessions": "Sessions",
+    "videos": "Videos",
+    "avgLoad": "Avg Load",
+    "compliance": "Compliance",
+    "performance": "Performance"
+  },
   "header": {
     "title": "MISSION CONTROL",
     "subtitle": "Coaching command center"
@@ -7,6 +18,11 @@
     "squadReadiness": {
       "title": "READINESS STATE",
       "subtitle": "Global availability index",
+      "athletes": "active athletes",
+      "readiness": "Readiness",
+      "optimal": "Optimal",
+      "warning": "Warning",
+      "critical": "Critical",
       "levels": {
         "optimal": "OPTIMAL",
         "good": "GOOD",
@@ -14,6 +30,27 @@
         "low": "LOW",
         "critical": "CRITICAL"
       }
+    },
+    "alerts": {
+      "title": "ACTIVE ALERTS",
+      "active": "active",
+      "athlete": "Athlete",
+      "metric": "Metric",
+      "value": "Value",
+      "risk": "Risk",
+      "time": "Time",
+      "noAlerts": "No active alerts"
+    },
+    "liveFeed": {
+      "title": "LIVE FEED",
+      "realtime": "REAL-TIME"
+    },
+    "quickStats": {
+      "title": "QUICK STATS",
+      "avgTraining": "Avg training duration",
+      "avgAcwr": "Avg ACWR",
+      "teamReadiness": "Team readiness",
+      "pendingReviews": "Pending reviews"
     },
     "criticalAlerts": {
       "title": "CRITICAL ALERTS",

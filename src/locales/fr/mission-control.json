@@ -1,4 +1,15 @@
 {
+  "title": "MISSION CONTROL",
+  "subtitle": "Centre de commandement coaching",
+  "ticker": "SYSTÈME OPÉRATIONNEL • DONNÉES EN TEMPS RÉEL • 24 ATHLÈTES CONNECTÉS • DERNIÈRE SYNC: IL Y A 2 MIN",
+  "stats": {
+    "athletes": "Athlètes",
+    "sessions": "Séances",
+    "videos": "Vidéos",
+    "avgLoad": "Charge moy.",
+    "compliance": "Compliance",
+    "performance": "Performance"
+  },
   "header": {
     "title": "MISSION CONTROL",
     "subtitle": "Centre de commandement coaching"
@@ -7,6 +18,11 @@
     "squadReadiness": {
       "title": "ÉTAT DE PRÉPARATION",
       "subtitle": "Index de disponibilité global",
+      "athletes": "athlètes actifs",
+      "readiness": "Readiness",
+      "optimal": "Optimal",
+      "warning": "Attention",
+      "critical": "Critique",
       "levels": {
         "optimal": "OPTIMAL",
         "good": "BON",
@@ -14,6 +30,27 @@
         "low": "FAIBLE",
         "critical": "CRITIQUE"
       }
+    },
+    "alerts": {
+      "title": "ALERTES ACTIVES",
+      "active": "actives",
+      "athlete": "Athlète",
+      "metric": "Métrique",
+      "value": "Valeur",
+      "risk": "Risque",
+      "time": "Heure",
+      "noAlerts": "Aucune alerte active"
+    },
+    "liveFeed": {
+      "title": "FLUX EN DIRECT",
+      "realtime": "TEMPS RÉEL"
+    },
+    "quickStats": {
+      "title": "STATS RAPIDES",
+      "avgTraining": "Durée moy. entraînement",
+      "avgAcwr": "ACWR moyen",
+      "teamReadiness": "Readiness équipe",
+      "pendingReviews": "Analyses en attente"
     },
     "criticalAlerts": {
       "title": "ALERTES CRITIQUES",

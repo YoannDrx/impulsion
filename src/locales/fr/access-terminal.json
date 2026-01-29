@@ -3,7 +3,9 @@
   "subtitle": "Authentification requise",
   "scanner": {
     "title": "SCAN BIOMÉTRIQUE",
-    "status": {
+    "status": "SCAN BIOMÉTRIQUE ACTIF",
+    "instructions": "Placez votre visage devant la caméra pour l'authentification biométrique",
+    "phases": {
       "awaiting": "EN ATTENTE DE SCAN",
       "scanning": "SCAN EN COURS...",
       "processing": "TRAITEMENT...",
@@ -12,7 +14,15 @@
     },
     "instruction": "CLIQUEZ POUR INITIER LE SCAN"
   },
+  "status": {
+    "secure": "CONNEXION SÉCURISÉE",
+    "encryption": "Chiffrement",
+    "protocol": "Protocole",
+    "session": "Session"
+  },
   "form": {
+    "title": "AUTHENTIFICATION",
+    "subtitle": "Entrez vos identifiants pour accéder au système",
     "coachId": {
       "label": "COACH_ID",
       "placeholder": "Entrez votre identifiant",
@@ -25,7 +35,11 @@
     },
     "rememberMe": "Maintenir la session active",
     "submit": "AUTHENTIFIER",
-    "submitting": "VÉRIFICATION..."
+    "loading": "VÉRIFICATION...",
+    "submitting": "VÉRIFICATION...",
+    "forgotPassword": "Réinitialiser les accès",
+    "noAccount": "Pas encore de compte ?",
+    "register": "Créer un compte"
   },
   "divider": "OU",
   "socialAuth": {
