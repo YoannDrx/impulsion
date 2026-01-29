@@ -33,22 +33,22 @@
     "dataCore": {
       "title": "DATA CORE",
       "description": "Synchronisation temps réel avec Strava, Garmin, Polar. Analyse de charge et prévention des blessures.",
-      "metrics": ["TSS", "CTL", "ATL", "TSB"]
+      "tags": ["TSS", "CTL", "ATL", "TSB"]
     },
     "videoLab": {
       "title": "VIDEO LAB",
       "description": "Analyse biomécanique avec marqueurs temporels et superposition vectorielle.",
-      "features": ["Annotations", "Slow-motion", "Comparaison A/B"]
+      "tags": ["Annotations", "Slow-motion", "Comparaison A/B"]
     },
     "missionControl": {
       "title": "MISSION CONTROL",
       "description": "Dashboard centralisé pour monitorer l'état de préparation de votre squad.",
-      "widgets": ["Readiness Score", "Risk Matrix", "Load Trends"]
+      "tags": ["Readiness Score", "Risk Matrix", "Load Trends"]
     },
     "neuralPlanner": {
       "title": "NEURAL PLANNER",
       "description": "Planification intelligente des micro et macro-cycles d'entraînement.",
-      "modes": ["Auto-adjust", "Template", "Custom"]
+      "tags": ["Auto-adjust", "Template", "Custom"]
     }
   },
   "pricing": {

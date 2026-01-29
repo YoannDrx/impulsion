@@ -110,27 +110,23 @@ export function ManifestoFeatures() {
                       {t(`features.${feature.key}.description`)}
                     </p>
 
-                    {/* Metrics/Features tags */}
+                    {/* Feature tags */}
                     <div className="flex flex-wrap gap-2">
-                      {(
-                        t.raw(`features.${feature.key}.metrics`) ??
-                        t.raw(`features.${feature.key}.features`) ??
-                        t.raw(`features.${feature.key}.widgets`) ??
-                        t.raw(`features.${feature.key}.modes`) ??
-                        []
-                      ).map((tag: string) => (
-                        <span
-                          key={tag}
-                          className={cn(
-                            "rounded border px-2 py-0.5 font-mono text-xs",
-                            feature.color === "lime"
-                              ? "border-[var(--imp-lime-400)]/30 text-[var(--imp-lime-400)]/70"
-                              : "border-[var(--imp-cyan-400)]/30 text-[var(--imp-cyan-400)]/70",
-                          )}
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                      {(t.raw(`features.${feature.key}.tags`) as string[]).map(
+                        (tag: string) => (
+                          <span
+                            key={tag}
+                            className={cn(
+                              "rounded border px-2 py-0.5 font-mono text-xs",
+                              feature.color === "lime"
+                                ? "border-[var(--imp-lime-400)]/30 text-[var(--imp-lime-400)]/70"
+                                : "border-[var(--imp-cyan-400)]/30 text-[var(--imp-cyan-400)]/70",
+                            )}
+                          >
+                            {tag}
+                          </span>
+                        ),
+                      )}
                     </div>
                   </div>
                 </GlassPanel>
