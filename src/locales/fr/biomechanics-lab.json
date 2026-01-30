@@ -16,10 +16,10 @@
     "speed": {
       "label": "VITESSE",
       "options": {
-        "0.25": "0.25x",
-        "0.5": "0.5x",
-        "1": "1x",
-        "2": "2x"
+        "quarter": "0.25x",
+        "half": "0.5x",
+        "normal": "1x",
+        "double": "2x"
       }
     },
     "frame": {
