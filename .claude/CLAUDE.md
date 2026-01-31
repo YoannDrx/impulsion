@@ -2,34 +2,32 @@
 
 ---
 
-## ⚡ AUTO-START mgrep (à faire automatiquement)
+## ⚡ AUTO-START grepai (à faire automatiquement)
 
 **Dès que tu commences à travailler sur ce projet, lance cette commande en background :**
 
 ```bash
-mgrep watch --store "impulsion" &
+~/.local/bin/grepai watch &
 ```
 
 > Lance cette commande UNE SEULE FOIS au début de la session. Ne la relance pas à chaque question.
 
 ---
 
-
 Ce fichier fournit des instructions aux agents IA pour le projet Impulsion.
 
 ---
 
-## mgrep - Assistant de recherche de code
+## grepai - Recherche sémantique de code (100% local et gratuit)
 
-**mgrep est l'outil principal pour explorer ce codebase.** Il retourne une réponse en langage naturel + les sources pertinentes.
+**grepai est l'outil principal pour explorer ce codebase.** Il utilise des embeddings locaux (Ollama) pour la recherche sémantique.
 
-### Store : `impulsion`
 
 ### Lancer le watch (à faire à chaque ouverture du projet)
 
 ```bash
 cd ~/Projets/impulsion
-mgrep watch --store "impulsion"
+~/.local/bin/grepai watch
 ```
 
 > Garde ce terminal ouvert : il surveille les modifications en temps réel.
@@ -37,39 +35,36 @@ mgrep watch --store "impulsion"
 ### Commande de recherche
 
 ```bash
-mgrep "ta question en langage naturel" --store "impulsion" -a -m <nombre>
+~/.local/bin/grepai search "ta question en langage naturel"<nombre>
 ```
 
 ### Paramètres
 
-| Paramètre | Description |
-|-----------|-------------|
-| `--store "impulsion"` | **Obligatoire** - le store indexé du projet |
-| `-a` | Active la réponse en langage naturel |
-| `-m <n>` | Nombre de résultats (minimum 10) |
+| Paramètre             | Description                                 |
+| --------------------- | ------------------------------------------- |
 
 ### Ajuster `-m` selon la complexité
 
-| Type de requête | `-m` recommandé |
-|-----------------|-----------------|
-| Question simple (1-2 fichiers) | 10 |
-| Question moyenne (flow, feature) | 20-30 |
-| Question complexe (debug, architecture) | 30-50 |
+| Type de requête                         | `-m` recommandé |
+| --------------------------------------- | --------------- |
+| Question simple (1-2 fichiers)          | 10              |
+| Question moyenne (flow, feature)        | 20-30           |
+| Question complexe (debug, architecture) | 30-50           |
 
 ### Stratégie pour requêtes complexes
 
-Lance plusieurs mgrep en parallèle plutôt qu'une seule requête surchargée :
+Lance plusieurs grepai en parallèle plutôt qu'une seule requête surchargée :
 
 ```bash
-mgrep "comment fonctionne le calendrier d'entrainements" --store "impulsion" -a -m 20
-mgrep "comment sont gérées les vidéos avec annotations" --store "impulsion" -a -m 20
-mgrep "comment fonctionne la synchronisation Strava" --store "impulsion" -a -m 20
+~/.local/bin/grepai search "comment fonctionne le calendrier d'entrainements"
+~/.local/bin/grepai search "comment sont gérées les vidéos avec annotations"
+~/.local/bin/grepai search "comment fonctionne la synchronisation Strava"
 ```
 
 ### Règles
 
-- **OBLIGATOIRE** : Utilise mgrep pour TOUTE recherche de code. N'utilise JAMAIS grep, Grep tool, ou Glob.
-- **Langage naturel** : Parle à mgrep comme à un collègue
+- **OBLIGATOIRE** : Utilise grepai pour TOUTE recherche de code. N'utilise JAMAIS grep, Grep tool, ou Glob.
+- **Langage naturel** : Parle à grepai comme à un collègue
   - ❌ `"calendar training video strava"` (mots-clés)
   - ✅ `"Comment fonctionne le calendrier d'entrainements et l'affichage des sessions ?"` (question naturelle)
 
@@ -79,13 +74,14 @@ mgrep "comment fonctionne la synchronisation Strava" --store "impulsion" -a -m 2
 
 **Les subagents n'héritent PAS des instructions de ce fichier.**
 
-Quand tu lances un subagent, copie-colle cette section mgrep dans le prompt du subagent.
+Quand tu lances un subagent, copie-colle cette section grepai dans le prompt du subagent.
 
 ---
 
 ## A propos du projet Impulsion
 
 **Impulsion** est une plateforme SaaS de coaching sportif hybride ("Hybrid Coaching OS") qui combine :
+
 - **Data** : Suivi des entrainements, stats, charge, synchronisation Strava
 - **Video** : Analyse technique avec commentaires timestamps
 - **Business** : Facturation, abonnements, marketplace pour coachs
@@ -103,6 +99,7 @@ La solution : **Augmenter le coach humain** plutot que de le remplacer.
 ### Design System "Cyber-Athletisme"
 
 L'identite visuelle d'Impulsion est moderne, energique et sportive :
+
 - **Theme par defaut** : Dark mode
 - **Couleur primaire** : Electric Lime (#ccff00) - oklch(0.91 0.23 120)
 - **Couleur secondaire** : Neon Cyan (#00f3ff) - oklch(0.85 0.16 195)
@@ -210,6 +207,7 @@ src/styles/
 ```
 
 **Classes utilitaires disponibles :**
+
 - `.glow-lime`, `.glow-cyan` - Effets de glow neon
 - `.glass` - Glassmorphism
 - `.text-gradient-lime`, `.text-gradient-cyan` - Texte en degrade
@@ -299,6 +297,7 @@ import { impulsionVariants } from '@/lib/animations/presets/impulsion';
 ```
 
 Variants disponibles :
+
 - `glowIn` - Apparition avec effet de glow
 - `energyBounce` - Rebond energique (badges)
 - `neonPulse` - Pulsation neon continue
