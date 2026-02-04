@@ -46,7 +46,8 @@
   /* === TRANSITION PRESETS === */
 
   /* Common transitions */
-  --imp-transition-colors: color, background-color, border-color, text-decoration-color, fill, stroke;
+  --imp-transition-colors:
+    color, background-color, border-color, text-decoration-color, fill, stroke;
   --imp-transition-opacity: opacity;
   --imp-transition-shadow: box-shadow;
   --imp-transition-transform: transform;
@@ -74,13 +75,21 @@
 
 /* Fade animations */
 @keyframes imp-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes imp-fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes imp-fade-in-up {
@@ -148,7 +157,8 @@
 
 /* Pulse glow animation */
 @keyframes imp-pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 oklch(0.91 0.23 120 / 0.4);
   }
   50% {
@@ -157,7 +167,8 @@
 }
 
 @keyframes imp-pulse-glow-cyan {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 oklch(0.85 0.16 195 / 0.4);
   }
   50% {
@@ -167,11 +178,22 @@
 
 /* Neon flicker effect */
 @keyframes imp-neon-flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
     opacity: 1;
-    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    text-shadow:
+      0 0 10px currentColor,
+      0 0 20px currentColor;
   }
-  20%, 24%, 55% {
+  20%,
+  24%,
+  55% {
     opacity: 0.8;
     text-shadow: none;
   }
@@ -179,20 +201,39 @@
 
 /* Shake animation for errors */
 @keyframes imp-shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
-  20%, 40%, 60%, 80% { transform: translateX(4px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-4px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(4px);
+  }
 }
 
 /* Spin animation */
 @keyframes imp-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Ping animation for notifications */
 @keyframes imp-ping {
-  75%, 100% {
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }
@@ -200,29 +241,51 @@
 
 /* Slide animations for modals/drawers */
 @keyframes imp-slide-in-from-top {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes imp-slide-in-from-bottom {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes imp-slide-in-from-left {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes imp-slide-in-from-right {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Progress/streak counter animation */
 @keyframes imp-count-up {
-  from { transform: translateY(100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Confetti burst keyframes */
@@ -239,29 +302,48 @@
 
 /* Float animation for 3D elements */
 @keyframes imp-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Gradient shift for backgrounds */
 @keyframes imp-gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* === CYBERPUNK INDUSTRIAL ANIMATIONS === */
 
 /* Slow rotation for concentric circles, radars, gauges */
 @keyframes imp-spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Marquee ticker horizontal */
 @keyframes imp-marquee {
-  from { transform: translateX(0%); }
-  to { transform: translateX(-100%); }
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* Vertical scan line effect */
@@ -302,7 +384,8 @@
 
 /* Glitch text effect using clip-path */
 @keyframes imp-glitch {
-  0%, 100% {
+  0%,
+  100% {
     clip-path: inset(0 0 0 0);
     transform: translate(0);
   }
@@ -318,7 +401,8 @@
     clip-path: inset(40% 0 40% 0);
     transform: translate(-2px, 0);
   }
-  20%, 95% {
+  20%,
+  95% {
     clip-path: inset(0 0 0 0);
     transform: translate(0);
   }
@@ -326,23 +410,29 @@
 
 /* Glitch with color shift */
 @keyframes imp-glitch-color {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: none;
     transform: translate(0);
   }
   5% {
-    text-shadow: -2px 0 oklch(0.65 0.25 15), 2px 0 oklch(0.85 0.16 195);
+    text-shadow:
+      -2px 0 oklch(0.65 0.25 15),
+      2px 0 oklch(0.85 0.16 195);
     transform: translate(-1px, 1px);
   }
   10% {
-    text-shadow: 2px 0 oklch(0.65 0.25 15), -2px 0 oklch(0.85 0.16 195);
+    text-shadow:
+      2px 0 oklch(0.65 0.25 15),
+      -2px 0 oklch(0.85 0.16 195);
     transform: translate(1px, -1px);
   }
   15% {
     text-shadow: -1px 0 oklch(0.91 0.23 120);
     transform: translate(0);
   }
-  20%, 95% {
+  20%,
+  95% {
     text-shadow: none;
     transform: translate(0);
   }
@@ -350,7 +440,8 @@
 
 /* Fast pulse for status indicators */
 @keyframes imp-pulse-fast {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -370,7 +461,8 @@
 
 /* Cursor blink for terminal */
 @keyframes imp-blink-cursor {
-  0%, 100% {
+  0%,
+  100% {
     border-color: transparent;
   }
   50% {
@@ -415,17 +507,20 @@
 
 /* Neon pulse glow */
 @keyframes imp-neon-pulse {
-  0%, 100% {
+  0%,
+  100% {
     filter: brightness(1) drop-shadow(0 0 5px currentColor);
   }
   50% {
-    filter: brightness(1.2) drop-shadow(0 0 15px currentColor) drop-shadow(0 0 30px currentColor);
+    filter: brightness(1.2) drop-shadow(0 0 15px currentColor)
+      drop-shadow(0 0 30px currentColor);
   }
 }
 
 /* HUD corner animation */
 @keyframes imp-hud-corner-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -435,7 +530,8 @@
 
 /* Scale pulse for widgets */
 @keyframes imp-scale-pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -445,37 +541,70 @@
 
 /* Flicker effect for damaged/alert states */
 @keyframes imp-flicker {
-  0%, 100% { opacity: 1; }
-  10% { opacity: 0.8; }
-  20% { opacity: 1; }
-  30% { opacity: 0.7; }
-  40% { opacity: 1; }
-  50% { opacity: 0.9; }
-  60% { opacity: 1; }
-  70% { opacity: 0.85; }
-  80% { opacity: 1; }
-  90% { opacity: 0.95; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.95;
+  }
 }
 
 /* Accordion animations (keeping existing) */
 @keyframes accordion-down {
-  from { height: 0; }
-  to { height: var(--radix-accordion-content-height); }
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
 }
 
 @keyframes accordion-up {
-  from { height: var(--radix-accordion-content-height); }
-  to { height: 0; }
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
 
 /* === ANIMATION UTILITY CLASSES === */
 
 :root {
   /* Animation presets using keyframes */
-  --imp-animate-fade-in: imp-fade-in var(--imp-duration-normal) var(--imp-ease-out);
-  --imp-animate-fade-in-up: imp-fade-in-up var(--imp-duration-normal) var(--imp-ease-out);
-  --imp-animate-scale-in: imp-scale-in var(--imp-duration-normal) var(--imp-ease-spring);
-  --imp-animate-bounce-in: imp-bounce-in var(--imp-duration-500) var(--imp-ease-bounce);
+  --imp-animate-fade-in: imp-fade-in var(--imp-duration-normal)
+    var(--imp-ease-out);
+  --imp-animate-fade-in-up: imp-fade-in-up var(--imp-duration-normal)
+    var(--imp-ease-out);
+  --imp-animate-scale-in: imp-scale-in var(--imp-duration-normal)
+    var(--imp-ease-spring);
+  --imp-animate-bounce-in: imp-bounce-in var(--imp-duration-500)
+    var(--imp-ease-bounce);
   --imp-animate-pulse-glow: imp-pulse-glow 2s var(--imp-ease-in-out) infinite;
   --imp-animate-spin: imp-spin 1s var(--imp-ease-linear) infinite;
   --imp-animate-ping: imp-ping 1s var(--imp-ease-in-out) infinite;
@@ -484,7 +613,8 @@
   /* Cyberpunk animation presets */
   --imp-animate-spin-slow: imp-spin-slow 12s var(--imp-ease-linear) infinite;
   --imp-animate-marquee: imp-marquee 25s var(--imp-ease-linear) infinite;
-  --imp-animate-scan-vertical: imp-scan-vertical 3s var(--imp-ease-linear) infinite;
+  --imp-animate-scan-vertical: imp-scan-vertical 3s var(--imp-ease-linear)
+    infinite;
   --imp-animate-glitch: imp-glitch 2s var(--imp-ease-linear) infinite;
   --imp-animate-pulse-fast: imp-pulse-fast 1s var(--imp-ease-in-out) infinite;
   --imp-animate-typing: imp-typing 3s steps(30) forwards;

@@ -13,53 +13,53 @@
   --imp-lime-50: oklch(0.97 0.08 120);
   --imp-lime-100: oklch(0.94 0.12 120);
   --imp-lime-200: oklch(0.92 0.16 120);
-  --imp-lime-300: oklch(0.91 0.20 120);
+  --imp-lime-300: oklch(0.91 0.2 120);
   --imp-lime-400: oklch(0.91 0.23 120);
   --imp-lime-500: oklch(0.82 0.22 120);
-  --imp-lime-600: oklch(0.72 0.20 120);
+  --imp-lime-600: oklch(0.72 0.2 120);
   --imp-lime-700: oklch(0.62 0.18 120);
   --imp-lime-800: oklch(0.52 0.15 120);
   --imp-lime-900: oklch(0.42 0.12 120);
-  --imp-lime-950: oklch(0.32 0.10 120);
+  --imp-lime-950: oklch(0.32 0.1 120);
 
   /* Neon Cyan - Couleur secondaire pour data et info */
   --imp-cyan: oklch(0.85 0.16 195);
   --imp-cyan-50: oklch(0.97 0.04 195);
   --imp-cyan-100: oklch(0.94 0.08 195);
-  --imp-cyan-200: oklch(0.90 0.12 195);
+  --imp-cyan-200: oklch(0.9 0.12 195);
   --imp-cyan-300: oklch(0.87 0.14 195);
   --imp-cyan-400: oklch(0.85 0.16 195);
   --imp-cyan-500: oklch(0.75 0.15 195);
   --imp-cyan-600: oklch(0.65 0.14 195);
   --imp-cyan-700: oklch(0.55 0.12 195);
-  --imp-cyan-800: oklch(0.45 0.10 195);
+  --imp-cyan-800: oklch(0.45 0.1 195);
   --imp-cyan-900: oklch(0.35 0.08 195);
   --imp-cyan-950: oklch(0.25 0.06 195);
 
   /* Dark Backgrounds - Tons sombres pour le mode dark */
-  --imp-dark-950: oklch(0.10 0.01 260);
+  --imp-dark-950: oklch(0.1 0.01 260);
   --imp-dark-900: oklch(0.13 0.01 260);
   --imp-dark-800: oklch(0.17 0.01 260);
   --imp-dark-700: oklch(0.21 0.01 260);
   --imp-dark-600: oklch(0.25 0.01 260);
-  --imp-dark-500: oklch(0.30 0.01 260);
-  --imp-dark-400: oklch(0.40 0.01 260);
-  --imp-dark-300: oklch(0.50 0.01 260);
-  --imp-dark-200: oklch(0.60 0.01 260);
-  --imp-dark-100: oklch(0.70 0.01 260);
-  --imp-dark-50: oklch(0.80 0.01 260);
+  --imp-dark-500: oklch(0.3 0.01 260);
+  --imp-dark-400: oklch(0.4 0.01 260);
+  --imp-dark-300: oklch(0.5 0.01 260);
+  --imp-dark-200: oklch(0.6 0.01 260);
+  --imp-dark-100: oklch(0.7 0.01 260);
+  --imp-dark-50: oklch(0.8 0.01 260);
 
   /* Neutrals - Gris neutres */
-  --imp-neutral-950: oklch(0.10 0 0);
+  --imp-neutral-950: oklch(0.1 0 0);
   --imp-neutral-900: oklch(0.15 0 0);
-  --imp-neutral-800: oklch(0.20 0 0);
-  --imp-neutral-700: oklch(0.30 0 0);
-  --imp-neutral-600: oklch(0.40 0 0);
-  --imp-neutral-500: oklch(0.50 0 0);
-  --imp-neutral-400: oklch(0.60 0 0);
-  --imp-neutral-300: oklch(0.70 0 0);
-  --imp-neutral-200: oklch(0.80 0 0);
-  --imp-neutral-100: oklch(0.90 0 0);
+  --imp-neutral-800: oklch(0.2 0 0);
+  --imp-neutral-700: oklch(0.3 0 0);
+  --imp-neutral-600: oklch(0.4 0 0);
+  --imp-neutral-500: oklch(0.5 0 0);
+  --imp-neutral-400: oklch(0.6 0 0);
+  --imp-neutral-300: oklch(0.7 0 0);
+  --imp-neutral-200: oklch(0.8 0 0);
+  --imp-neutral-100: oklch(0.9 0 0);
   --imp-neutral-50: oklch(0.95 0 0);
 
   /* Semantic Colors */
@@ -68,29 +68,29 @@
   --imp-success-dark: oklch(0.55 0.17 145);
 
   --imp-warning: oklch(0.82 0.18 85);
-  --imp-warning-light: oklch(0.90 0.14 85);
+  --imp-warning-light: oklch(0.9 0.14 85);
   --imp-warning-dark: oklch(0.65 0.16 85);
 
   --imp-danger: oklch(0.65 0.22 25);
-  --imp-danger-light: oklch(0.80 0.18 25);
-  --imp-danger-dark: oklch(0.50 0.20 25);
+  --imp-danger-light: oklch(0.8 0.18 25);
+  --imp-danger-dark: oklch(0.5 0.2 25);
 
   --imp-info: var(--imp-cyan-400);
   --imp-info-light: var(--imp-cyan-200);
   --imp-info-dark: var(--imp-cyan-600);
 
   /* Sport-specific accent colors */
-  --imp-running: oklch(0.75 0.20 30);
-  --imp-jumping: oklch(0.80 0.18 280);
-  --imp-strength: oklch(0.70 0.15 340);
+  --imp-running: oklch(0.75 0.2 30);
+  --imp-jumping: oklch(0.8 0.18 280);
+  --imp-strength: oklch(0.7 0.15 340);
   --imp-technique: var(--imp-cyan-400);
 
   /* Chart Colors - Pour les visualisations de donnees */
   --imp-chart-1: var(--imp-lime-400);
   --imp-chart-2: var(--imp-cyan-400);
   --imp-chart-3: oklch(0.75 0.18 320);
-  --imp-chart-4: oklch(0.80 0.16 50);
-  --imp-chart-5: oklch(0.70 0.20 200);
+  --imp-chart-4: oklch(0.8 0.16 50);
+  --imp-chart-5: oklch(0.7 0.2 200);
 
   /* === CYBERPUNK INDUSTRIAL PALETTE === */
 
@@ -116,26 +116,26 @@
 
   /* Glass backgrounds avec differentes opacites */
   --imp-glass-5: oklch(1 0 0 / 0.05);
-  --imp-glass-10: oklch(1 0 0 / 0.10);
+  --imp-glass-10: oklch(1 0 0 / 0.1);
   --imp-glass-15: oklch(1 0 0 / 0.15);
-  --imp-glass-20: oklch(1 0 0 / 0.20);
+  --imp-glass-20: oklch(1 0 0 / 0.2);
 
   /* Dark glass pour overlays */
-  --imp-glass-dark-50: oklch(0 0 0 / 0.50);
-  --imp-glass-dark-70: oklch(0 0 0 / 0.70);
-  --imp-glass-dark-80: oklch(0 0 0 / 0.80);
-  --imp-glass-dark-90: oklch(0 0 0 / 0.90);
+  --imp-glass-dark-50: oklch(0 0 0 / 0.5);
+  --imp-glass-dark-70: oklch(0 0 0 / 0.7);
+  --imp-glass-dark-80: oklch(0 0 0 / 0.8);
+  --imp-glass-dark-90: oklch(0 0 0 / 0.9);
 
   /* Colored glass */
-  --imp-glass-lime: oklch(0.91 0.23 120 / 0.10);
-  --imp-glass-cyan: oklch(0.85 0.16 195 / 0.10);
-  --imp-glass-danger: oklch(0.65 0.25 15 / 0.10);
+  --imp-glass-lime: oklch(0.91 0.23 120 / 0.1);
+  --imp-glass-cyan: oklch(0.85 0.16 195 / 0.1);
+  --imp-glass-danger: oklch(0.65 0.25 15 / 0.1);
 
   /* === HUD COLORS === */
 
   /* Status colors pour interfaces HUD */
   --imp-hud-online: var(--imp-lime-400);
-  --imp-hud-offline: oklch(0.50 0 0);
+  --imp-hud-offline: oklch(0.5 0 0);
   --imp-hud-warning: var(--imp-warning);
   --imp-hud-critical: var(--imp-danger-neon);
   --imp-hud-optimal: var(--imp-cyan-400);

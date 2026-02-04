@@ -37,9 +37,7 @@ export default async function Page(
   );
 }
 
-async function RoutePage(
-  props: PageProps<"/[locale]/admin/users/[userId]">,
-) {
+async function RoutePage(props: PageProps<"/[locale]/admin/users/[userId]">) {
   const params = await props.params;
   await getRequiredAdmin();
 

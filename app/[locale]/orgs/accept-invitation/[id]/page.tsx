@@ -87,19 +87,19 @@ export default async function RoutePage(
                 formAction={async () => {
                   "use server";
 
-                await auth.api.acceptInvitation({
-                  body: {
-                    invitationId: id,
-                  },
-                  headers: await headers(),
-                });
+                  await auth.api.acceptInvitation({
+                    body: {
+                      invitationId: id,
+                    },
+                    headers: await headers(),
+                  });
 
-                redirect(`/${locale}/orgs/${invitation.organization.slug}`);
-              }}
-            >
-              Accept Invitation
-            </Button>
-          </form>
+                  redirect(`/${locale}/orgs/${invitation.organization.slug}`);
+                }}
+              >
+                Accept Invitation
+              </Button>
+            </form>
           </CardFooter>
         ) : (
           <CardContent className="border-t pt-6">

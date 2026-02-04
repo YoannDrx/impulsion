@@ -204,10 +204,7 @@ export function createStaggerContainer(
   };
 }
 
-export function createStaggerItem(
-  yOffset = 20,
-  duration = 0.4,
-): Variants {
+export function createStaggerItem(yOffset = 20, duration = 0.4): Variants {
   return {
     initial: { opacity: 0, y: yOffset },
     animate: {

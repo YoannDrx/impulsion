@@ -7,6 +7,7 @@ Impulsion est une plateforme SaaS de coaching sportif hybride qui combine data, 
 ## Vision
 
 Le probleme avec les outils actuels :
+
 - **Nolio, TrainingPeaks** : Trop austeres, tableaux Excel glorifies
 - **Runna, Garmin Coach** : Trop automatises, remplacent le coach humain
 - **Strava** : Trop social, pas un outil de travail
@@ -107,20 +108,20 @@ L'application sera disponible sur [http://localhost:3000](http://localhost:3000)
 
 ## Scripts Disponibles
 
-| Commande | Description |
-|----------|-------------|
-| `pnpm dev` | Serveur de developpement (Turbopack) |
-| `pnpm build` | Build de production |
-| `pnpm start` | Serveur de production |
-| `pnpm ts` | Verification des types TypeScript |
-| `pnpm lint` | ESLint avec auto-fix |
-| `pnpm format` | Formatter avec Prettier |
-| `pnpm clean` | Lint + Type check + Format |
-| `pnpm test:ci` | Tests unitaires (CI) |
-| `pnpm test:e2e:ci` | Tests E2E (CI) |
-| `pnpm email` | Serveur de dev email |
-| `pnpm prisma:migrate` | Creer une migration |
-| `pnpm prisma:seed` | Peupler la DB |
+| Commande              | Description                          |
+| --------------------- | ------------------------------------ |
+| `pnpm dev`            | Serveur de developpement (Turbopack) |
+| `pnpm build`          | Build de production                  |
+| `pnpm start`          | Serveur de production                |
+| `pnpm ts`             | Verification des types TypeScript    |
+| `pnpm lint`           | ESLint avec auto-fix                 |
+| `pnpm format`         | Formatter avec Prettier              |
+| `pnpm clean`          | Lint + Type check + Format           |
+| `pnpm test:ci`        | Tests unitaires (CI)                 |
+| `pnpm test:e2e:ci`    | Tests E2E (CI)                       |
+| `pnpm email`          | Serveur de dev email                 |
+| `pnpm prisma:migrate` | Creer une migration                  |
+| `pnpm prisma:seed`    | Peupler la DB                        |
 
 ## Structure du Projet
 
@@ -174,17 +175,20 @@ Impulsion utilise un design system "Cyber-Athletisme" :
 ## Features Principales
 
 ### MVP (Phase 1)
+
 - Auth & gestion d'equipe
 - Calendrier des seances
 - Module video avec commentaires timestamps
 - Feedback athlete (RPE, sensations)
 
 ### Phase 2
+
 - Synchronisation Strava
 - Gestion de la charge
 - Bibliotheque de templates
 
 ### Phase 3
+
 - Gamification (badges, streaks)
 - Paiements (abonnements)
 - Internationalisation FR/EN

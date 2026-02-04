@@ -12,50 +12,50 @@
 
   --imp-space-0: 0;
   --imp-space-px: 1px;
-  --imp-space-0-5: calc(var(--imp-spacing-unit) * 0.5);   /* 2px */
-  --imp-space-1: var(--imp-spacing-unit);                  /* 4px */
-  --imp-space-1-5: calc(var(--imp-spacing-unit) * 1.5);   /* 6px */
-  --imp-space-2: calc(var(--imp-spacing-unit) * 2);       /* 8px */
-  --imp-space-2-5: calc(var(--imp-spacing-unit) * 2.5);   /* 10px */
-  --imp-space-3: calc(var(--imp-spacing-unit) * 3);       /* 12px */
-  --imp-space-3-5: calc(var(--imp-spacing-unit) * 3.5);   /* 14px */
-  --imp-space-4: calc(var(--imp-spacing-unit) * 4);       /* 16px */
-  --imp-space-5: calc(var(--imp-spacing-unit) * 5);       /* 20px */
-  --imp-space-6: calc(var(--imp-spacing-unit) * 6);       /* 24px */
-  --imp-space-7: calc(var(--imp-spacing-unit) * 7);       /* 28px */
-  --imp-space-8: calc(var(--imp-spacing-unit) * 8);       /* 32px */
-  --imp-space-9: calc(var(--imp-spacing-unit) * 9);       /* 36px */
-  --imp-space-10: calc(var(--imp-spacing-unit) * 10);     /* 40px */
-  --imp-space-11: calc(var(--imp-spacing-unit) * 11);     /* 44px */
-  --imp-space-12: calc(var(--imp-spacing-unit) * 12);     /* 48px */
-  --imp-space-14: calc(var(--imp-spacing-unit) * 14);     /* 56px */
-  --imp-space-16: calc(var(--imp-spacing-unit) * 16);     /* 64px */
-  --imp-space-20: calc(var(--imp-spacing-unit) * 20);     /* 80px */
-  --imp-space-24: calc(var(--imp-spacing-unit) * 24);     /* 96px */
-  --imp-space-28: calc(var(--imp-spacing-unit) * 28);     /* 112px */
-  --imp-space-32: calc(var(--imp-spacing-unit) * 32);     /* 128px */
-  --imp-space-36: calc(var(--imp-spacing-unit) * 36);     /* 144px */
-  --imp-space-40: calc(var(--imp-spacing-unit) * 40);     /* 160px */
-  --imp-space-44: calc(var(--imp-spacing-unit) * 44);     /* 176px */
-  --imp-space-48: calc(var(--imp-spacing-unit) * 48);     /* 192px */
-  --imp-space-52: calc(var(--imp-spacing-unit) * 52);     /* 208px */
-  --imp-space-56: calc(var(--imp-spacing-unit) * 56);     /* 224px */
-  --imp-space-60: calc(var(--imp-spacing-unit) * 60);     /* 240px */
-  --imp-space-64: calc(var(--imp-spacing-unit) * 64);     /* 256px */
-  --imp-space-72: calc(var(--imp-spacing-unit) * 72);     /* 288px */
-  --imp-space-80: calc(var(--imp-spacing-unit) * 80);     /* 320px */
-  --imp-space-96: calc(var(--imp-spacing-unit) * 96);     /* 384px */
+  --imp-space-0-5: calc(var(--imp-spacing-unit) * 0.5); /* 2px */
+  --imp-space-1: var(--imp-spacing-unit); /* 4px */
+  --imp-space-1-5: calc(var(--imp-spacing-unit) * 1.5); /* 6px */
+  --imp-space-2: calc(var(--imp-spacing-unit) * 2); /* 8px */
+  --imp-space-2-5: calc(var(--imp-spacing-unit) * 2.5); /* 10px */
+  --imp-space-3: calc(var(--imp-spacing-unit) * 3); /* 12px */
+  --imp-space-3-5: calc(var(--imp-spacing-unit) * 3.5); /* 14px */
+  --imp-space-4: calc(var(--imp-spacing-unit) * 4); /* 16px */
+  --imp-space-5: calc(var(--imp-spacing-unit) * 5); /* 20px */
+  --imp-space-6: calc(var(--imp-spacing-unit) * 6); /* 24px */
+  --imp-space-7: calc(var(--imp-spacing-unit) * 7); /* 28px */
+  --imp-space-8: calc(var(--imp-spacing-unit) * 8); /* 32px */
+  --imp-space-9: calc(var(--imp-spacing-unit) * 9); /* 36px */
+  --imp-space-10: calc(var(--imp-spacing-unit) * 10); /* 40px */
+  --imp-space-11: calc(var(--imp-spacing-unit) * 11); /* 44px */
+  --imp-space-12: calc(var(--imp-spacing-unit) * 12); /* 48px */
+  --imp-space-14: calc(var(--imp-spacing-unit) * 14); /* 56px */
+  --imp-space-16: calc(var(--imp-spacing-unit) * 16); /* 64px */
+  --imp-space-20: calc(var(--imp-spacing-unit) * 20); /* 80px */
+  --imp-space-24: calc(var(--imp-spacing-unit) * 24); /* 96px */
+  --imp-space-28: calc(var(--imp-spacing-unit) * 28); /* 112px */
+  --imp-space-32: calc(var(--imp-spacing-unit) * 32); /* 128px */
+  --imp-space-36: calc(var(--imp-spacing-unit) * 36); /* 144px */
+  --imp-space-40: calc(var(--imp-spacing-unit) * 40); /* 160px */
+  --imp-space-44: calc(var(--imp-spacing-unit) * 44); /* 176px */
+  --imp-space-48: calc(var(--imp-spacing-unit) * 48); /* 192px */
+  --imp-space-52: calc(var(--imp-spacing-unit) * 52); /* 208px */
+  --imp-space-56: calc(var(--imp-spacing-unit) * 56); /* 224px */
+  --imp-space-60: calc(var(--imp-spacing-unit) * 60); /* 240px */
+  --imp-space-64: calc(var(--imp-spacing-unit) * 64); /* 256px */
+  --imp-space-72: calc(var(--imp-spacing-unit) * 72); /* 288px */
+  --imp-space-80: calc(var(--imp-spacing-unit) * 80); /* 320px */
+  --imp-space-96: calc(var(--imp-spacing-unit) * 96); /* 384px */
 
   /* === BORDER RADIUS === */
 
   --imp-radius-none: 0;
-  --imp-radius-sm: 0.125rem;     /* 2px */
+  --imp-radius-sm: 0.125rem; /* 2px */
   --imp-radius-default: 0.25rem; /* 4px */
-  --imp-radius-md: 0.375rem;     /* 6px */
-  --imp-radius-lg: 0.5rem;       /* 8px */
-  --imp-radius-xl: 0.75rem;      /* 12px */
-  --imp-radius-2xl: 1rem;        /* 16px */
-  --imp-radius-3xl: 1.5rem;      /* 24px */
+  --imp-radius-md: 0.375rem; /* 6px */
+  --imp-radius-lg: 0.5rem; /* 8px */
+  --imp-radius-xl: 0.75rem; /* 12px */
+  --imp-radius-2xl: 1rem; /* 16px */
+  --imp-radius-3xl: 1.5rem; /* 24px */
   --imp-radius-full: 9999px;
 
   /* === BORDER WIDTHS === */
@@ -68,18 +68,18 @@
 
   /* === CONTAINER WIDTHS === */
 
-  --imp-container-xs: 20rem;     /* 320px */
-  --imp-container-sm: 24rem;     /* 384px */
-  --imp-container-md: 28rem;     /* 448px */
-  --imp-container-lg: 32rem;     /* 512px */
-  --imp-container-xl: 36rem;     /* 576px */
-  --imp-container-2xl: 42rem;    /* 672px */
-  --imp-container-3xl: 48rem;    /* 768px */
-  --imp-container-4xl: 56rem;    /* 896px */
-  --imp-container-5xl: 64rem;    /* 1024px */
-  --imp-container-6xl: 72rem;    /* 1152px */
-  --imp-container-7xl: 80rem;    /* 1280px */
-  --imp-container-8xl: 112rem;   /* 1792px */
+  --imp-container-xs: 20rem; /* 320px */
+  --imp-container-sm: 24rem; /* 384px */
+  --imp-container-md: 28rem; /* 448px */
+  --imp-container-lg: 32rem; /* 512px */
+  --imp-container-xl: 36rem; /* 576px */
+  --imp-container-2xl: 42rem; /* 672px */
+  --imp-container-3xl: 48rem; /* 768px */
+  --imp-container-4xl: 56rem; /* 896px */
+  --imp-container-5xl: 64rem; /* 1024px */
+  --imp-container-6xl: 72rem; /* 1152px */
+  --imp-container-7xl: 80rem; /* 1280px */
+  --imp-container-8xl: 112rem; /* 1792px */
   --imp-container-full: 100%;
 
   /* === ASPECT RATIOS === */
@@ -136,6 +136,6 @@
   --imp-page-max-width: var(--imp-container-7xl);
 
   /* Sidebar */
-  --imp-sidebar-width: 16rem;    /* 256px */
+  --imp-sidebar-width: 16rem; /* 256px */
   --imp-sidebar-collapsed: 4rem; /* 64px */
 }

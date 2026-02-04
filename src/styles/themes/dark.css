@@ -63,7 +63,7 @@
   --sidebar-primary: var(--imp-lime-400);
   --sidebar-primary-foreground: var(--imp-dark-900);
   --sidebar-accent: var(--imp-dark-800);
-  --sidebar-accent-foreground: oklch(0.90 0 0);
+  --sidebar-accent-foreground: oklch(0.9 0 0);
   --sidebar-border: var(--imp-dark-700);
   --sidebar-ring: var(--imp-lime-400);
 
@@ -128,13 +128,13 @@
 
   /* Terminal text */
   --cyber-text-primary: oklch(0.95 0 0);
-  --cyber-text-secondary: oklch(0.70 0 0);
-  --cyber-text-muted: oklch(0.50 0 0);
+  --cyber-text-secondary: oklch(0.7 0 0);
+  --cyber-text-muted: oklch(0.5 0 0);
   --cyber-text-accent: var(--imp-lime-400);
 
   /* Status indicators */
   --cyber-status-online: var(--imp-lime-400);
-  --cyber-status-offline: oklch(0.40 0 0);
+  --cyber-status-offline: oklch(0.4 0 0);
   --cyber-status-warning: var(--imp-warning);
   --cyber-status-critical: var(--imp-danger-neon);
   --cyber-status-optimal: var(--imp-cyan-400);

@@ -83,12 +83,7 @@ type TypographyComponent = <TAs extends ElementType = ElementType>(
 ) => ReactElement | null;
 
 const InnerTypography = <TAs extends ElementType = ElementType>(
-  {
-    variant = "default",
-    className,
-    as,
-    ...props
-  }: TypographyProps<TAs>,
+  { variant = "default", className, as, ...props }: TypographyProps<TAs>,
   ref: ForwardedRef<ElementRef<TAs>>,
 ) => {
   const Comp = as ?? defaultElementMapping[variant ?? "default"];

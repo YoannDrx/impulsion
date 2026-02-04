@@ -10,11 +10,16 @@
 
   /* Standard shadows */
   --imp-shadow-2xs: 0 1px 2px 0 oklch(0 0 0 / 0.05);
-  --imp-shadow-xs: 0 1px 3px 0 oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
-  --imp-shadow-sm: 0 2px 4px 0 oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
-  --imp-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1);
-  --imp-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1);
-  --imp-shadow-xl: 0 20px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
+  --imp-shadow-xs:
+    0 1px 3px 0 oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
+  --imp-shadow-sm:
+    0 2px 4px 0 oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
+  --imp-shadow-md:
+    0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1);
+  --imp-shadow-lg:
+    0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1);
+  --imp-shadow-xl:
+    0 20px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
   --imp-shadow-2xl: 0 25px 50px -12px oklch(0 0 0 / 0.25);
   --imp-shadow-inner: inset 0 2px 4px 0 oklch(0 0 0 / 0.05);
   --imp-shadow-none: none;
@@ -40,36 +45,82 @@
 
   /* Combined shadow + glow for elevated elements */
   --imp-elevated-lime:
-    0 4px 6px -1px oklch(0 0 0 / 0.1),
-    0 0 20px oklch(0.91 0.23 120 / 0.2);
+    0 4px 6px -1px oklch(0 0 0 / 0.1), 0 0 20px oklch(0.91 0.23 120 / 0.2);
 
   --imp-elevated-cyan:
-    0 4px 6px -1px oklch(0 0 0 / 0.1),
-    0 0 20px oklch(0.85 0.16 195 / 0.2);
+    0 4px 6px -1px oklch(0 0 0 / 0.1), 0 0 20px oklch(0.85 0.16 195 / 0.2);
 
   /* === GRADIENTS === */
 
   /* Primary gradients */
-  --imp-gradient-lime: linear-gradient(135deg, var(--imp-lime-400), var(--imp-lime-600));
-  --imp-gradient-cyan: linear-gradient(135deg, var(--imp-cyan-400), var(--imp-cyan-600));
-  --imp-gradient-lime-cyan: linear-gradient(135deg, var(--imp-lime-400), var(--imp-cyan-400));
+  --imp-gradient-lime: linear-gradient(
+    135deg,
+    var(--imp-lime-400),
+    var(--imp-lime-600)
+  );
+  --imp-gradient-cyan: linear-gradient(
+    135deg,
+    var(--imp-cyan-400),
+    var(--imp-cyan-600)
+  );
+  --imp-gradient-lime-cyan: linear-gradient(
+    135deg,
+    var(--imp-lime-400),
+    var(--imp-cyan-400)
+  );
 
   /* Dark gradients for backgrounds */
-  --imp-gradient-dark: linear-gradient(180deg, var(--imp-dark-900), var(--imp-dark-950));
-  --imp-gradient-dark-radial: radial-gradient(ellipse at top, var(--imp-dark-800), var(--imp-dark-950));
+  --imp-gradient-dark: linear-gradient(
+    180deg,
+    var(--imp-dark-900),
+    var(--imp-dark-950)
+  );
+  --imp-gradient-dark-radial: radial-gradient(
+    ellipse at top,
+    var(--imp-dark-800),
+    var(--imp-dark-950)
+  );
 
   /* Mesh gradients for hero sections */
   --imp-gradient-mesh:
-    radial-gradient(at 40% 20%, oklch(0.91 0.23 120 / 0.1) 0px, transparent 50%),
+    radial-gradient(
+      at 40% 20%,
+      oklch(0.91 0.23 120 / 0.1) 0px,
+      transparent 50%
+    ),
     radial-gradient(at 80% 0%, oklch(0.85 0.16 195 / 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, oklch(0.91 0.23 120 / 0.05) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, oklch(0.85 0.16 195 / 0.05) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, oklch(0.85 0.16 195 / 0.08) 0px, transparent 50%);
+    radial-gradient(
+      at 0% 50%,
+      oklch(0.91 0.23 120 / 0.05) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 50%,
+      oklch(0.85 0.16 195 / 0.05) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 100%,
+      oklch(0.85 0.16 195 / 0.08) 0px,
+      transparent 50%
+    );
 
   /* Text gradients */
-  --imp-text-gradient-lime: linear-gradient(90deg, var(--imp-lime-300), var(--imp-lime-500));
-  --imp-text-gradient-cyan: linear-gradient(90deg, var(--imp-cyan-300), var(--imp-cyan-500));
-  --imp-text-gradient-primary: linear-gradient(90deg, var(--imp-lime-400), var(--imp-cyan-400));
+  --imp-text-gradient-lime: linear-gradient(
+    90deg,
+    var(--imp-lime-300),
+    var(--imp-lime-500)
+  );
+  --imp-text-gradient-cyan: linear-gradient(
+    90deg,
+    var(--imp-cyan-300),
+    var(--imp-cyan-500)
+  );
+  --imp-text-gradient-primary: linear-gradient(
+    90deg,
+    var(--imp-lime-400),
+    var(--imp-cyan-400)
+  );
 
   /* === GLASSMORPHISM === */
 
@@ -80,10 +131,9 @@
   --imp-glass-blur-heavy: blur(40px);
 
   /* Glass card composite */
-  --imp-glass-card:
-    background: var(--imp-glass-bg);
-    backdrop-filter: var(--imp-glass-blur);
-    border: 1px solid var(--imp-glass-border);
+  --imp-glass-card: background: var(--imp-glass-bg);
+  backdrop-filter: var(--imp-glass-blur);
+  border: 1px solid var(--imp-glass-border);
 
   /* === OPACITY === */
 
@@ -122,8 +172,10 @@
   --imp-ring-color-cyan: var(--imp-cyan-400);
 
   /* Focus ring composite */
-  --imp-focus-ring: 0 0 0 var(--imp-ring-offset) var(--background),
-                    0 0 0 calc(var(--imp-ring-offset) + var(--imp-ring-width)) var(--imp-ring-color-lime);
+  --imp-focus-ring:
+    0 0 0 var(--imp-ring-offset) var(--background),
+    0 0 0 calc(var(--imp-ring-offset) + var(--imp-ring-width))
+      var(--imp-ring-color-lime);
 
   /* === CYBERPUNK INDUSTRIAL EFFECTS === */
 
@@ -157,24 +209,104 @@
 
   /* HUD Border composite styles */
   --imp-hud-border-lime:
-    linear-gradient(to right, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 0,
-    linear-gradient(to right, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 100%,
-    linear-gradient(to right, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 0,
-    linear-gradient(to right, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 100%,
-    linear-gradient(to bottom, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 0,
-    linear-gradient(to bottom, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 0,
-    linear-gradient(to bottom, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 100%,
-    linear-gradient(to bottom, var(--imp-lime-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 100%;
+    linear-gradient(
+        to right,
+        var(--imp-lime-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      0 0,
+    linear-gradient(
+        to right,
+        var(--imp-lime-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      0 100%,
+    linear-gradient(
+        to right,
+        var(--imp-lime-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      100% 0,
+    linear-gradient(
+        to right,
+        var(--imp-lime-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      100% 100%,
+    linear-gradient(
+        to bottom,
+        var(--imp-lime-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      0 0,
+    linear-gradient(
+        to bottom,
+        var(--imp-lime-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      100% 0,
+    linear-gradient(
+        to bottom,
+        var(--imp-lime-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      0 100%,
+    linear-gradient(
+        to bottom,
+        var(--imp-lime-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      100% 100%;
 
   --imp-hud-border-cyan:
-    linear-gradient(to right, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 0,
-    linear-gradient(to right, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 100%,
-    linear-gradient(to right, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 0,
-    linear-gradient(to right, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 100%,
-    linear-gradient(to bottom, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 0,
-    linear-gradient(to bottom, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 0,
-    linear-gradient(to bottom, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 0 100%,
-    linear-gradient(to bottom, var(--imp-cyan-400) var(--imp-hud-corner-size), transparent var(--imp-hud-corner-size)) 100% 100%;
+    linear-gradient(
+        to right,
+        var(--imp-cyan-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      0 0,
+    linear-gradient(
+        to right,
+        var(--imp-cyan-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      0 100%,
+    linear-gradient(
+        to right,
+        var(--imp-cyan-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      100% 0,
+    linear-gradient(
+        to right,
+        var(--imp-cyan-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      100% 100%,
+    linear-gradient(
+        to bottom,
+        var(--imp-cyan-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      0 0,
+    linear-gradient(
+        to bottom,
+        var(--imp-cyan-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      100% 0,
+    linear-gradient(
+        to bottom,
+        var(--imp-cyan-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      0 100%,
+    linear-gradient(
+        to bottom,
+        var(--imp-cyan-400) var(--imp-hud-corner-size),
+        transparent var(--imp-hud-corner-size)
+      )
+      100% 100%;
 
   /* Perspective grid for backgrounds */
   --imp-perspective-grid:
@@ -190,9 +322,12 @@
   --imp-glow-purple-neon: 0 0 20px oklch(0.65 0.25 300 / 0.5);
 
   /* Text glow effects */
-  --imp-text-glow-lime: 0 0 10px oklch(0.91 0.23 120 / 0.5), 0 0 20px oklch(0.91 0.23 120 / 0.3);
-  --imp-text-glow-cyan: 0 0 10px oklch(0.85 0.16 195 / 0.5), 0 0 20px oklch(0.85 0.16 195 / 0.3);
-  --imp-text-glow-danger: 0 0 10px oklch(0.65 0.25 15 / 0.5), 0 0 20px oklch(0.65 0.25 15 / 0.3);
+  --imp-text-glow-lime:
+    0 0 10px oklch(0.91 0.23 120 / 0.5), 0 0 20px oklch(0.91 0.23 120 / 0.3);
+  --imp-text-glow-cyan:
+    0 0 10px oklch(0.85 0.16 195 / 0.5), 0 0 20px oklch(0.85 0.16 195 / 0.3);
+  --imp-text-glow-danger:
+    0 0 10px oklch(0.65 0.25 15 / 0.5), 0 0 20px oklch(0.65 0.25 15 / 0.3);
 
   /* Cyberpunk glass panel */
   --imp-cyber-glass-bg: oklch(0.08 0.01 260 / 0.85);

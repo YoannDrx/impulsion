@@ -319,13 +319,13 @@ Phase 5 : Scale               [Futur]
 
 ## Risques Identifies
 
-| Risque | Impact | Mitigation |
-|--------|--------|------------|
-| Player video complexe | Eleve | Commencer simple, iterer |
-| Sync Strava (rate limits) | Moyen | Cache agressif, webhooks |
-| Adoption coachs | Eleve | Beta test early, feedback continu |
-| Performance calendrier | Moyen | Virtualisation si necessaire |
-| Cout stockage video | Moyen | Compression, limites de duree |
+| Risque                    | Impact | Mitigation                        |
+| ------------------------- | ------ | --------------------------------- |
+| Player video complexe     | Eleve  | Commencer simple, iterer          |
+| Sync Strava (rate limits) | Moyen  | Cache agressif, webhooks          |
+| Adoption coachs           | Eleve  | Beta test early, feedback continu |
+| Performance calendrier    | Moyen  | Virtualisation si necessaire      |
+| Cout stockage video       | Moyen  | Compression, limites de duree     |
 
 ---
 
@@ -389,4 +389,4 @@ Phase 5 : Scale               [Futur]
 
 ---
 
-*Derniere mise a jour : 6 decembre 2025*
+_Derniere mise a jour : 6 decembre 2025_

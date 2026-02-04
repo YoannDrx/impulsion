@@ -23,9 +23,7 @@ const feedbackSearchParams = {
 
 const searchParamsCache = createSearchParamsCache(feedbackSearchParams);
 
-export default function Page(
-  props: PageProps<"/[locale]/admin/feedback">,
-) {
+export default function Page(props: PageProps<"/[locale]/admin/feedback">) {
   return (
     <Suspense fallback={null}>
       <AdminFeedbackPage {...props} />
