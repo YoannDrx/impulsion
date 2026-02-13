@@ -1,0 +1,216 @@
+/**
+ * Impulsion Design System - Light Theme
+ *
+ * Theme clair avec une touche de lime subtile pour garder l'identite Impulsion.
+ * Alternative pour les utilisateurs preferant le mode clair.
+ */
+
+.light,
+.force-light-theme {
+  /* === CORE SEMANTIC COLORS === */
+
+  /* Backgrounds - Teinte lime tres subtile */
+  --background: oklch(0.985 0.008 120);
+  --foreground: var(--imp-dark-900);
+
+  /* Primary - Electric Lime adapte pour contraste */
+  --primary: var(--imp-lime-600);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary - Neon Cyan adapte pour contraste */
+  --secondary: var(--imp-cyan-600);
+  --secondary-foreground: oklch(1 0 0);
+
+  /* Accent - Elements secondaires */
+  --accent: oklch(0.95 0.04 120);
+  --accent-foreground: var(--imp-dark-900);
+
+  /* Muted - Elements discrets */
+  --muted: oklch(0.96 0.02 120);
+  --muted-foreground: oklch(0.45 0 0);
+
+  /* Cards */
+  --card: oklch(1 0 0);
+  --card-foreground: var(--imp-dark-900);
+
+  /* Popover */
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--imp-dark-900);
+
+  /* Borders */
+  --border: oklch(0.9 0.02 120);
+  --input: oklch(0.92 0.02 120);
+  --ring: var(--imp-lime-500);
+
+  /* === SEMANTIC STATUS COLORS === */
+
+  --destructive: var(--imp-danger);
+  --destructive-foreground: oklch(1 0 0);
+
+  --success: var(--imp-success);
+  --success-foreground: oklch(1 0 0);
+
+  --warning: var(--imp-warning);
+  --warning-foreground: var(--imp-dark-900);
+
+  --info: var(--imp-cyan-600);
+  --info-foreground: oklch(1 0 0);
+
+  /* === SIDEBAR COLORS === */
+
+  --sidebar: oklch(0.98 0.01 120);
+  --sidebar-foreground: var(--imp-dark-800);
+  --sidebar-primary: var(--imp-lime-600);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.03 120);
+  --sidebar-accent-foreground: var(--imp-dark-900);
+  --sidebar-border: oklch(0.9 0.02 120);
+  --sidebar-ring: var(--imp-lime-500);
+
+  /* === CHART COLORS (Light optimized) === */
+
+  --chart-1: var(--imp-lime-600);
+  --chart-2: var(--imp-cyan-600);
+  --chart-3: oklch(0.65 0.18 320);
+  --chart-4: oklch(0.7 0.16 50);
+  --chart-5: oklch(0.6 0.2 200);
+
+  /* === SPORT-SPECIFIC COLORS (Light optimized) === */
+
+  --sport-running: oklch(0.65 0.2 30);
+  --sport-jumping: oklch(0.6 0.18 280);
+  --sport-strength: oklch(0.55 0.15 340);
+  --sport-technique: var(--imp-cyan-600);
+
+  /* === GLOW EFFECTS (Light optimized - more subtle) === */
+
+  --glow-primary: 0 0 15px oklch(0.72 0.2 120 / 0.3);
+  --glow-secondary: 0 0 15px oklch(0.65 0.14 195 / 0.3);
+  --glow-intense: 0 0 25px oklch(0.72 0.2 120 / 0.5);
+
+  /* === GRADIENTS (Light optimized) === */
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--imp-lime-500),
+    var(--imp-lime-700)
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    var(--imp-cyan-500),
+    var(--imp-cyan-700)
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--imp-lime-500),
+    var(--imp-cyan-500)
+  );
+  --gradient-background: linear-gradient(
+    180deg,
+    oklch(0.99 0.005 120),
+    oklch(0.96 0.01 120)
+  );
+  --gradient-mesh:
+    radial-gradient(
+      at 40% 20%,
+      oklch(0.72 0.2 120 / 0.08) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 0%,
+      oklch(0.65 0.14 195 / 0.08) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 50%, oklch(0.72 0.2 120 / 0.04) 0px, transparent 50%),
+    radial-gradient(
+      at 80% 50%,
+      oklch(0.65 0.14 195 / 0.04) 0px,
+      transparent 50%
+    );
+
+  /* === GLASSMORPHISM (Light optimized) === */
+
+  --glass-background: oklch(1 0 0 / 0.7);
+  --glass-border: oklch(0 0 0 / 0.08);
+  --glass-blur: blur(20px);
+
+  /* === SHADOWS (Light optimized - more visible) === */
+
+  /* Override standard shadows for light mode */
+  --imp-shadow-xs:
+    0 1px 3px 0 oklch(0 0 0 / 0.08), 0 1px 2px -1px oklch(0 0 0 / 0.08);
+  --imp-shadow-sm:
+    0 2px 4px 0 oklch(0 0 0 / 0.08), 0 1px 2px -1px oklch(0 0 0 / 0.08);
+  --imp-shadow-md:
+    0 4px 6px -1px oklch(0 0 0 / 0.08), 0 2px 4px -2px oklch(0 0 0 / 0.06);
+  --imp-shadow-lg:
+    0 10px 15px -3px oklch(0 0 0 / 0.08), 0 4px 6px -4px oklch(0 0 0 / 0.06);
+  --imp-shadow-xl:
+    0 20px 25px -5px oklch(0 0 0 / 0.08), 0 8px 10px -6px oklch(0 0 0 / 0.06);
+
+  /* === COLOR MODE INDICATOR === */
+  color-scheme: light;
+
+  /* === CYBERPUNK ADAPTATIONS FOR LIGHT MODE === */
+
+  /* Void becomes light gray in light mode */
+  --imp-void: oklch(0.97 0 0);
+  --imp-void-soft: oklch(0.95 0.005 120);
+
+  /* Charcoal becomes soft grays */
+  --imp-charcoal: oklch(0.94 0.01 260);
+  --imp-charcoal-light: oklch(0.96 0.01 260);
+  --imp-charcoal-dark: oklch(0.9 0.01 260);
+
+  /* Scanlines inverted for light mode (darker on light bg) */
+  --imp-scanlines: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    oklch(0 0 0 / 0.02) 2px,
+    oklch(0 0 0 / 0.02) 4px
+  );
+
+  /* Noise with inverted opacity */
+  --imp-noise-opacity: 0.02;
+
+  /* HUD corners more visible on light bg */
+  --imp-hud-corner-color: var(--imp-lime-600);
+
+  /* Glass backgrounds for light mode */
+  --imp-glass-5: oklch(0 0 0 / 0.03);
+  --imp-glass-10: oklch(0 0 0 / 0.06);
+  --imp-glass-15: oklch(0 0 0 / 0.09);
+  --imp-glass-20: oklch(0 0 0 / 0.12);
+
+  /* Dark glass for overlays in light mode */
+  --imp-glass-dark-50: oklch(0 0 0 / 0.4);
+  --imp-glass-dark-70: oklch(0 0 0 / 0.6);
+  --imp-glass-dark-80: oklch(0 0 0 / 0.7);
+  --imp-glass-dark-90: oklch(0 0 0 / 0.85);
+
+  /* Colored glass more opaque for light mode */
+  --imp-glass-lime: oklch(0.72 0.2 120 / 0.08);
+  --imp-glass-cyan: oklch(0.65 0.14 195 / 0.08);
+  --imp-glass-danger: oklch(0.55 0.22 15 / 0.08);
+
+  /* Grid lines darker on light bg */
+  --imp-grid-line: oklch(0 0 0 / 0.05);
+  --imp-grid-line-accent: oklch(0.65 0.14 195 / 0.12);
+
+  /* Cyber glass for light mode */
+  --imp-cyber-glass-bg: oklch(1 0 0 / 0.85);
+  --imp-cyber-glass-border: oklch(0 0 0 / 0.08);
+
+  /* Text glows more subtle in light mode */
+  --imp-text-glow-lime: 0 0 8px oklch(0.72 0.2 120 / 0.4);
+  --imp-text-glow-cyan: 0 0 8px oklch(0.65 0.14 195 / 0.4);
+  --imp-text-glow-danger: 0 0 8px oklch(0.55 0.22 15 / 0.4);
+
+  /* Vignette lighter */
+  --imp-vignette: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    oklch(0 0 0 / 0.15) 100%
+  );
+}

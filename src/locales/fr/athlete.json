@@ -1,0 +1,109 @@
+{
+  "profile": {
+    "title": "Mon profil",
+    "editProfile": "Modifier le profil",
+    "sport": "Sport",
+    "team": "Équipe",
+    "coach": "Coach",
+    "joinedAt": "Membre depuis"
+  },
+  "sessions": {
+    "title": "Mes séances",
+    "upcoming": "À venir",
+    "completed": "Terminées",
+    "missed": "Manquées",
+    "noSessions": "Aucune séance",
+    "markAsDone": "Marquer comme faite",
+    "addFeedback": "Ajouter un feedback"
+  },
+  "feedback": {
+    "title": "Feedback",
+    "rpe": "RPE (Effort perçu)",
+    "rpeScale": {
+      "1": "Très léger",
+      "2": "Léger",
+      "3": "Modéré",
+      "4": "Assez dur",
+      "5": "Dur",
+      "6": "Plus dur",
+      "7": "Très dur",
+      "8": "Extrêmement dur",
+      "9": "Presque maximal",
+      "10": "Maximal"
+    },
+    "sensation": "Sensations",
+    "sensations": {
+      "great": "Super",
+      "good": "Bien",
+      "ok": "Correct",
+      "tired": "Fatigué",
+      "bad": "Pas bien"
+    },
+    "mood": "Humeur",
+    "moods": {
+      "motivated": "Motivé",
+      "neutral": "Neutre",
+      "stressed": "Stressé",
+      "tired": "Fatigué"
+    },
+    "comment": "Commentaire",
+    "commentPlaceholder": "Décrivez comment s'est passée la séance...",
+    "submit": "Envoyer le feedback"
+  },
+  "pain": {
+    "title": "Signaler une douleur",
+    "location": "Localisation",
+    "locations": {
+      "head": "Tête",
+      "neck": "Cou",
+      "shoulder": "Épaule",
+      "arm": "Bras",
+      "elbow": "Coude",
+      "wrist": "Poignet",
+      "hand": "Main",
+      "back": "Dos",
+      "hip": "Hanche",
+      "thigh": "Cuisse",
+      "knee": "Genou",
+      "calf": "Mollet",
+      "ankle": "Cheville",
+      "foot": "Pied"
+    },
+    "side": "Côté",
+    "sides": {
+      "left": "Gauche",
+      "right": "Droit",
+      "both": "Les deux"
+    },
+    "intensity": "Intensité (1-10)",
+    "description": "Description",
+    "descriptionPlaceholder": "Décrivez la douleur...",
+    "submit": "Signaler"
+  },
+  "progress": {
+    "title": "Ma progression",
+    "weeklyVolume": "Volume hebdomadaire",
+    "monthlyLoad": "Charge mensuelle",
+    "streak": "Série actuelle",
+    "streakDays": "{count} jours",
+    "level": "Niveau {level}",
+    "xp": "{current}/{total} XP"
+  },
+  "badges": {
+    "title": "Mes badges",
+    "locked": "Verrouillé",
+    "unlocked": "Débloqué le {date}",
+    "categories": {
+      "consistency": "Régularité",
+      "milestone": "Jalons",
+      "special": "Spéciaux"
+    }
+  },
+  "videos": {
+    "title": "Mes vidéos",
+    "upload": "Envoyer une vidéo",
+    "noVideos": "Aucune vidéo",
+    "pendingReview": "En attente de review",
+    "reviewed": "Reviewée"
+  }
+}

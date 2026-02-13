@@ -13,6 +13,11 @@ export const feedbackAction = action
     const user = await getUser();
 
     const email = user?.email ?? data.email;
+    const supportEmail = env.NEXT_PUBLIC_EMAIL_CONTACT;
+
+    if (!supportEmail) {
+      throw new Error("Support email is not configured");
+    }
 
     const feedback = await prisma.feedback.create({
       data: {
@@ -24,7 +29,7 @@ export const feedbackAction = action
     });
 
     await sendEmail({
-      to: env.NEXT_PUBLIC_EMAIL_CONTACT,
+      to: supportEmail,
       subject: `New feedback from ${email}`,
       text: `Review: ${feedback.review}\n\nMessage: ${feedback.message}`,
       replyTo: email,

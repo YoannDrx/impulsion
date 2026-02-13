@@ -1,0 +1,109 @@
+{
+  "profile": {
+    "title": "My profile",
+    "editProfile": "Edit profile",
+    "sport": "Sport",
+    "team": "Team",
+    "coach": "Coach",
+    "joinedAt": "Member since"
+  },
+  "sessions": {
+    "title": "My sessions",
+    "upcoming": "Upcoming",
+    "completed": "Completed",
+    "missed": "Missed",
+    "noSessions": "No sessions",
+    "markAsDone": "Mark as done",
+    "addFeedback": "Add feedback"
+  },
+  "feedback": {
+    "title": "Feedback",
+    "rpe": "RPE (Perceived Effort)",
+    "rpeScale": {
+      "1": "Very light",
+      "2": "Light",
+      "3": "Moderate",
+      "4": "Somewhat hard",
+      "5": "Hard",
+      "6": "Harder",
+      "7": "Very hard",
+      "8": "Extremely hard",
+      "9": "Almost maximal",
+      "10": "Maximal"
+    },
+    "sensation": "Sensations",
+    "sensations": {
+      "great": "Great",
+      "good": "Good",
+      "ok": "Okay",
+      "tired": "Tired",
+      "bad": "Not good"
+    },
+    "mood": "Mood",
+    "moods": {
+      "motivated": "Motivated",
+      "neutral": "Neutral",
+      "stressed": "Stressed",
+      "tired": "Tired"
+    },
+    "comment": "Comment",
+    "commentPlaceholder": "Describe how the session went...",
+    "submit": "Send feedback"
+  },
+  "pain": {
+    "title": "Report pain",
+    "location": "Location",
+    "locations": {
+      "head": "Head",
+      "neck": "Neck",
+      "shoulder": "Shoulder",
+      "arm": "Arm",
+      "elbow": "Elbow",
+      "wrist": "Wrist",
+      "hand": "Hand",
+      "back": "Back",
+      "hip": "Hip",
+      "thigh": "Thigh",
+      "knee": "Knee",
+      "calf": "Calf",
+      "ankle": "Ankle",
+      "foot": "Foot"
+    },
+    "side": "Side",
+    "sides": {
+      "left": "Left",
+      "right": "Right",
+      "both": "Both"
+    },
+    "intensity": "Intensity (1-10)",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe the pain...",
+    "submit": "Report"
+  },
+  "progress": {
+    "title": "My progress",
+    "weeklyVolume": "Weekly volume",
+    "monthlyLoad": "Monthly load",
+    "streak": "Current streak",
+    "streakDays": "{count} days",
+    "level": "Level {level}",
+    "xp": "{current}/{total} XP"
+  },
+  "badges": {
+    "title": "My badges",
+    "locked": "Locked",
+    "unlocked": "Unlocked on {date}",
+    "categories": {
+      "consistency": "Consistency",
+      "milestone": "Milestones",
+      "special": "Special"
+    }
+  },
+  "videos": {
+    "title": "My videos",
+    "upload": "Upload video",
+    "noVideos": "No videos",
+    "pendingReview": "Pending review",
+    "reviewed": "Reviewed"
+  }
+}

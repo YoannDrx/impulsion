@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "title": "Élevez votre entraînement",
+    "subtitle": "La plateforme de coaching sportif hybride qui connecte coachs et athlètes",
+    "cta": {
+      "primary": "Commencer gratuitement",
+      "secondary": "Découvrir les fonctionnalités"
+    },
+    "stats": {
+      "coaches": "Coachs actifs",
+      "athletes": "Athlètes suivis",
+      "sessions": "Séances planifiées"
+    }
+  },
+  "features": {
+    "title": "Tout ce dont vous avez besoin",
+    "subtitle": "Des outils puissants pour un coaching moderne",
+    "calendar": {
+      "title": "Calendrier intelligent",
+      "description": "Planifiez et suivez les séances de vos athlètes avec un calendrier intuitif"
+    },
+    "video": {
+      "title": "Analyse vidéo",
+      "description": "Commentez et analysez les vidéos de vos athlètes avec des marqueurs temporels"
+    },
+    "strava": {
+      "title": "Sync Strava",
+      "description": "Importez automatiquement les activités de vos athlètes depuis Strava"
+    },
+    "load": {
+      "title": "Gestion de charge",
+      "description": "Surveillez la charge d'entraînement et prévenez les blessures"
+    },
+    "gamification": {
+      "title": "Gamification",
+      "description": "Motivez vos athlètes avec des badges, streaks et récompenses"
+    },
+    "team": {
+      "title": "Gestion d'équipe",
+      "description": "Gérez facilement vos groupes d'athlètes et leurs accès"
+    }
+  },
+  "pricing": {
+    "title": "Tarifs simples",
+    "subtitle": "Choisissez le plan adapté à vos besoins",
+    "free": {
+      "name": "Gratuit",
+      "price": "0€",
+      "period": "/mois",
+      "description": "Pour démarrer",
+      "features": [
+        "Jusqu'à 5 athlètes",
+        "Calendrier de base",
+        "10 vidéos/mois",
+        "Support email"
+      ],
+      "cta": "Commencer"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "29€",
+      "period": "/mois",
+      "description": "Pour les coachs sérieux",
+      "features": [
+        "Athlètes illimités",
+        "Calendrier avancé",
+        "Vidéos illimitées",
+        "Sync Strava",
+        "Analytics avancés",
+        "Support prioritaire"
+      ],
+      "cta": "Essai gratuit 14 jours"
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent nos utilisateurs",
+    "subtitle": "Des coachs et athlètes qui nous font confiance"
+  },
+  "cta": {
+    "title": "Prêt à transformer votre coaching ?",
+    "subtitle": "Rejoignez des centaines de coachs qui utilisent Impulsion",
+    "button": "Créer mon compte gratuit"
+  },
+  "footer": {
+    "description": "Impulsion - La plateforme de coaching sportif hybride",
+    "links": {
+      "product": "Produit",
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "roadmap": "Roadmap"
+    },
+    "legal": {
+      "title": "Légal",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation"
+    },
+    "social": {
+      "title": "Suivez-nous"
+    },
+    "copyright": "© {year} Impulsion. Tous droits réservés."
+  }
+}

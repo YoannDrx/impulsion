@@ -1,0 +1,99 @@
+{
+  "header": {
+    "title": "BIO PROFILE",
+    "subtitle": "Analyse approfondie athlète"
+  },
+  "bodyMap": {
+    "title": "CARTOGRAPHIE CORPORELLE",
+    "instruction": "Cliquez sur une zone pour voir les détails",
+    "zones": {
+      "head": "TÊTE",
+      "neck": "COU",
+      "left-shoulder": "ÉPAULE G.",
+      "right-shoulder": "ÉPAULE D.",
+      "chest": "POITRINE",
+      "left-arm": "BRAS G.",
+      "right-arm": "BRAS D.",
+      "core": "CORE",
+      "left-hip": "HANCHE G.",
+      "right-hip": "HANCHE D.",
+      "left-thigh": "CUISSE G.",
+      "right-thigh": "CUISSE D.",
+      "left-knee": "GENOU G.",
+      "right-knee": "GENOU D.",
+      "left-calf": "MOLLET G.",
+      "right-calf": "MOLLET D.",
+      "left-foot": "PIED G.",
+      "right-foot": "PIED D."
+    },
+    "status": {
+      "optimal": "OPTIMAL",
+      "fatigued": "FATIGUÉ",
+      "at-risk": "À RISQUE",
+      "injured": "BLESSÉ"
+    }
+  },
+  "widgets": {
+    "readiness": {
+      "title": "READINESS SCORE",
+      "subtitle": "Disponibilité globale"
+    },
+    "sleep": {
+      "title": "QUALITÉ SOMMEIL",
+      "metrics": {
+        "duration": "DURÉE",
+        "quality": "QUALITÉ",
+        "hrv": "VFC NUIT"
+      }
+    },
+    "hrv": {
+      "title": "VARIABILITÉ CARDIAQUE",
+      "baseline": "BASELINE",
+      "current": "ACTUELLE",
+      "trend": "TENDANCE"
+    },
+    "load": {
+      "title": "CHARGE D'ENTRAÎNEMENT",
+      "acute": "CHARGE AIGUË (ATL)",
+      "chronic": "CHARGE CHRONIQUE (CTL)",
+      "balance": "BALANCE (TSB)",
+      "strain": "STRAIN"
+    },
+    "performance": {
+      "title": "INDICATEURS PERFORMANCE",
+      "power": "PUISSANCE",
+      "speed": "VITESSE",
+      "endurance": "ENDURANCE",
+      "technique": "TECHNIQUE"
+    }
+  },
+  "diagnosis": {
+    "title": "DIAGNOSTIC ZONE",
+    "noSelection": "Sélectionnez une zone sur la cartographie",
+    "sections": {
+      "status": "STATUT ACTUEL",
+      "history": "HISTORIQUE",
+      "recommendations": "RECOMMANDATIONS",
+      "exercises": "EXERCICES CIBLÉS"
+    }
+  },
+  "trainingHistory": {
+    "title": "HISTORIQUE CHARGE",
+    "period": {
+      "week": "7 JOURS",
+      "month": "30 JOURS",
+      "quarter": "90 JOURS"
+    },
+    "metrics": {
+      "volume": "VOLUME",
+      "intensity": "INTENSITÉ",
+      "frequency": "FRÉQUENCE"
+    }
+  },
+  "actions": {
+    "export": "EXPORTER RAPPORT",
+    "share": "PARTAGER",
+    "history": "VOIR HISTORIQUE",
+    "edit": "MODIFIER PROFIL"
+  }
+}

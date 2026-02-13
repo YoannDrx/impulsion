@@ -1,0 +1,31 @@
+/**
+ * Impulsion Design System - Main Entry Point
+ *
+ * Ce fichier importe tous les tokens et themes du design system.
+ * Importer ce fichier dans globals.css pour activer le design system complet.
+ */
+
+/* === DESIGN TOKENS === */
+
+/* Palette de couleurs Impulsion */
+@import "./tokens/colors.css";
+
+/* Systeme typographique */
+@import "./tokens/typography.css";
+
+/* Espacement et layout */
+@import "./tokens/spacing.css";
+
+/* Effets visuels (ombres, glows, gradients) */
+@import "./tokens/effects.css";
+
+/* Animations et transitions */
+@import "./tokens/animations.css";
+
+/* === THEMES === */
+
+/* Theme dark (defaut) */
+@import "./themes/dark.css";
+
+/* Theme light */
+@import "./themes/light.css";

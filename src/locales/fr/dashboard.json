@@ -1,0 +1,46 @@
+{
+  "title": "Tableau de bord",
+  "welcome": "Bienvenue, {name}",
+  "overview": {
+    "title": "Vue d'ensemble",
+    "thisWeek": "Cette semaine",
+    "sessionsPlanned": "Séances planifiées",
+    "sessionsCompleted": "Séances terminées",
+    "athletesActive": "Athlètes actifs",
+    "feedbackPending": "Feedbacks en attente"
+  },
+  "quickActions": {
+    "title": "Actions rapides",
+    "createSession": "Créer une séance",
+    "inviteAthlete": "Inviter un athlète",
+    "viewCalendar": "Voir le calendrier",
+    "uploadVideo": "Envoyer une vidéo"
+  },
+  "recentActivity": {
+    "title": "Activité récente",
+    "noActivity": "Aucune activité récente",
+    "sessionCompleted": "{athlete} a terminé {session}",
+    "sessionFeedback": "{athlete} a laissé un feedback",
+    "newVideo": "{athlete} a envoyé une vidéo",
+    "injuryReported": "{athlete} a signalé une douleur"
+  },
+  "upcomingSessions": {
+    "title": "Prochaines séances",
+    "noSessions": "Aucune séance planifiée",
+    "viewAll": "Voir toutes les séances"
+  },
+  "athleteAlerts": {
+    "title": "Alertes athlètes",
+    "noAlerts": "Aucune alerte",
+    "highLoad": "Charge élevée",
+    "painReported": "Douleur signalée",
+    "missedSession": "Séance manquée",
+    "streak": "Série en cours"
+  },
+  "stats": {
+    "weeklyLoad": "Charge hebdomadaire",
+    "compliance": "Taux de compliance",
+    "averageRpe": "RPE moyen",
+    "injuryRisk": "Risque de blessure"
+  }
+}

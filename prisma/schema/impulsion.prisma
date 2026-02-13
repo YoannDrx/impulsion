@@ -1,0 +1,462 @@
+// ============================================================================
+// IMPULSION COACHING MODELS
+// ============================================================================
+// These models extend the base Better Auth schema for sports coaching features.
+// Organization = Team (conceptually)
+// owner role = Coach
+// admin role = Assistant
+// member role = Athlete
+
+// ============================================================================
+// ATHLETE PROFILE
+// ============================================================================
+
+/// Extended profile for athletes with sport-specific information
+model AthleteProfile {
+  id     String @id @default(nanoid(11))
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  /// Primary sport (from SiteConfig.sports)
+  sport String?
+
+  /// Date of birth for age-based training adjustments
+  dateOfBirth DateTime?
+
+  /// Target/goal for the season
+  seasonGoal String?
+
+  /// Personal best records (JSON: { "5k": "18:30", "10k": "38:00", ... })
+  personalBests Json?
+
+  /// Health notes (allergies, conditions, etc.)
+  healthNotes String?
+
+  /// Preferred training days (JSON array: ["monday", "wednesday", "friday"])
+  preferredDays Json?
+
+  /// Weekly training volume target in minutes
+  weeklyVolumeTarget Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("athlete_profile")
+  @@index([userId])
+}
+
+// ============================================================================
+// COACHING SESSIONS
+// ============================================================================
+
+/// Training session planned by a coach
+model CoachingSession {
+  id             String       @id @default(nanoid(11))
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  /// Coach who created the session
+  createdById String
+  createdBy   User   @relation("SessionCreator", fields: [createdById], references: [id], onDelete: Cascade)
+
+  /// Session details
+  title       String
+  description String?
+
+  /// Session type: COURSE, PPG, TECHNIQUE, FORCE, RECUPERATION, AUTRE
+  type String @default("AUTRE")
+
+  /// Scheduled date and time
+  scheduledAt DateTime
+
+  /// Duration in minutes
+  durationMinutes Int @default(60)
+
+  /// Optional intensity target (RPE 1-10)
+  targetRpe Int?
+
+  /// Status: PLANIFIEE, FAITE, PARTIELLE, MANQUEE
+  status String @default("PLANIFIEE")
+
+  /// Template ID if created from a template
+  templateId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /// Athletes assigned to this session
+  assignments SessionAssignment[]
+
+  /// Feedback from athletes
+  feedbacks SessionFeedback[]
+
+  /// Videos associated with this session
+  videos Video[]
+
+  @@map("coaching_session")
+  @@index([organizationId])
+  @@index([createdById])
+  @@index([scheduledAt])
+  @@index([status])
+}
+
+/// Assignment of a session to an athlete
+model SessionAssignment {
+  id        String          @id @default(nanoid(11))
+  sessionId String
+  session   CoachingSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  /// Assigned athlete
+  athleteId String
+  athlete   User   @relation("AthleteAssignments", fields: [athleteId], references: [id], onDelete: Cascade)
+
+  /// Individual status for this athlete
+  status String @default("PLANIFIEE")
+
+  /// Actual completion date (if different from scheduled)
+  completedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@unique([sessionId, athleteId])
+  @@map("session_assignment")
+  @@index([athleteId])
+  @@index([sessionId])
+}
+
+// ============================================================================
+// SESSION FEEDBACK
+// ============================================================================
+
+/// Athlete feedback after completing a session
+model SessionFeedback {
+  id        String          @id @default(nanoid(11))
+  sessionId String
+  session   CoachingSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  /// Athlete providing feedback
+  athleteId String
+  athlete   User   @relation("AthleteFeedbacks", fields: [athleteId], references: [id], onDelete: Cascade)
+
+  /// RPE (Rate of Perceived Exertion) 1-10
+  rpe Int
+
+  /// Actual duration in minutes
+  actualDuration Int?
+
+  /// Sensation: SUPER, BIEN, CORRECT, FATIGUE, MAUVAIS
+  sensation String?
+
+  /// Mood: MOTIVE, NEUTRE, STRESSE, FATIGUE
+  mood String?
+
+  /// Free-form comment
+  comment String?
+
+  /// Strava activity ID if synced
+  stravaActivityId String?
+
+  /// Strava data (JSON: { distance, pace, heartRate, etc. })
+  stravaData Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /// Pain reports associated with this feedback
+  painReports PainReport[]
+
+  @@unique([sessionId, athleteId])
+  @@map("session_feedback")
+  @@index([athleteId])
+  @@index([sessionId])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// PAIN/INJURY TRACKING
+// ============================================================================
+
+/// Pain report from an athlete
+model PainReport {
+  id String @id @default(nanoid(11))
+
+  /// Athlete reporting pain
+  athleteId String
+  athlete   User   @relation("AthletePainReports", fields: [athleteId], references: [id], onDelete: Cascade)
+
+  /// Optional link to session feedback
+  feedbackId String?
+  feedback   SessionFeedback? @relation(fields: [feedbackId], references: [id], onDelete: SetNull)
+
+  /// Body location: HEAD, NECK, SHOULDER, ARM, ELBOW, WRIST, HAND, BACK, HIP, THIGH, KNEE, CALF, ANKLE, FOOT
+  location String
+
+  /// Side: LEFT, RIGHT, BOTH, CENTER
+  side String @default("CENTER")
+
+  /// Intensity 1-10
+  intensity Int
+
+  /// Description of the pain
+  description String?
+
+  /// Is this pain resolved?
+  isResolved Boolean @default(false)
+
+  /// Resolution date
+  resolvedAt DateTime?
+
+  /// Coach notes
+  coachNotes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("pain_report")
+  @@index([athleteId])
+  @@index([feedbackId])
+  @@index([createdAt])
+  @@index([isResolved])
+}
+
+// ============================================================================
+// VIDEO ANALYSIS
+// ============================================================================
+
+/// Video uploaded for analysis
+model Video {
+  id             String       @id @default(nanoid(11))
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  /// Uploader (athlete or coach)
+  uploadedById String
+  uploadedBy   User   @relation("VideoUploader", fields: [uploadedById], references: [id], onDelete: Cascade)
+
+  /// Optional session link
+  sessionId String?
+  session   CoachingSession? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+
+  /// Video metadata
+  title    String
+  fileName String
+  fileUrl  String
+  fileSize Int /// in bytes
+
+  /// Duration in seconds
+  duration Int?
+
+  /// Thumbnail URL
+  thumbnailUrl String?
+
+  /// Processing status: UPLOADING, PROCESSING, READY, ERROR
+  status String @default("UPLOADING")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /// Timestamped markers/comments
+  markers VideoMarker[]
+
+  @@map("video")
+  @@index([organizationId])
+  @@index([uploadedById])
+  @@index([sessionId])
+  @@index([createdAt])
+}
+
+/// Timestamped comment/marker on a video
+model VideoMarker {
+  id      String @id @default(nanoid(11))
+  videoId String
+  video   Video  @relation(fields: [videoId], references: [id], onDelete: Cascade)
+
+  /// Author of the marker
+  authorId String
+  author   User   @relation("MarkerAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+
+  /// Timestamp in seconds
+  timestamp Float
+
+  /// Comment content
+  content String
+
+  /// Optional parent marker for replies
+  parentId String?
+  parent   VideoMarker?  @relation("MarkerReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies  VideoMarker[] @relation("MarkerReplies")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("video_marker")
+  @@index([videoId])
+  @@index([authorId])
+  @@index([parentId])
+  @@index([timestamp])
+}
+
+// ============================================================================
+// SESSION TEMPLATES
+// ============================================================================
+
+/// Reusable session template
+model SessionTemplate {
+  id             String       @id @default(nanoid(11))
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  /// Creator
+  createdById String
+  createdBy   User   @relation("TemplateCreator", fields: [createdById], references: [id], onDelete: Cascade)
+
+  /// Template details
+  title       String
+  description String?
+
+  /// Session type
+  type String @default("AUTRE")
+
+  /// Default duration in minutes
+  durationMinutes Int @default(60)
+
+  /// Target RPE
+  targetRpe Int?
+
+  /// Category for organization: COURSE, PPG, PLIOMETRIE, TECHNIQUE, FORCE, AUTRE
+  category String @default("AUTRE")
+
+  /// Tags for filtering (JSON array)
+  tags Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("session_template")
+  @@index([organizationId])
+  @@index([createdById])
+  @@index([category])
+}
+
+// ============================================================================
+// GAMIFICATION
+// ============================================================================
+
+/// Badge definition
+model Badge {
+  id String @id @default(nanoid(11))
+
+  /// Badge identifier (unique key)
+  key String @unique
+
+  /// Display name
+  name String
+
+  /// Description
+  description String
+
+  /// Icon/image URL
+  iconUrl String?
+
+  /// Category: REGULARITE, JALON, SPECIAL
+  category String @default("JALON")
+
+  /// Rarity: COMMUN, RARE, EPIQUE, LEGENDAIRE
+  rarity String @default("COMMUN")
+
+  /// Criteria for unlocking (JSON: { type: "streak", value: 7 })
+  criteria Json?
+
+  /// XP reward for unlocking
+  xpReward Int @default(0)
+
+  createdAt DateTime @default(now())
+
+  /// Users who have this badge
+  userBadges UserBadge[]
+
+  @@map("badge")
+}
+
+/// Badge assignment to a user
+model UserBadge {
+  id      String @id @default(nanoid(11))
+  userId  String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badgeId String
+  badge   Badge  @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  /// When the badge was unlocked
+  unlockedAt DateTime @default(now())
+
+  /// Progress towards next tier if applicable (0-100)
+  progress Int @default(100)
+
+  @@unique([userId, badgeId])
+  @@map("user_badge")
+  @@index([userId])
+  @@index([badgeId])
+}
+
+/// User streak tracking
+model UserStreak {
+  id     String @id @default(nanoid(11))
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  /// Current streak count
+  currentStreak Int @default(0)
+
+  /// Longest streak ever
+  longestStreak Int @default(0)
+
+  /// Last activity date for streak calculation
+  lastActivityAt DateTime?
+
+  /// Current XP
+  xp Int @default(0)
+
+  /// Current level
+  level Int @default(1)
+
+  updatedAt DateTime @updatedAt
+
+  @@map("user_streak")
+  @@index([userId])
+}
+
+// ============================================================================
+// NOTIFICATIONS
+// ============================================================================
+
+/// Notification for a user
+model Notification {
+  id     String @id @default(nanoid(11))
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  /// Notification type: SESSION_REMINDER, FEEDBACK_REQUEST, VIDEO_COMMENT, BADGE_UNLOCK, etc.
+  type String
+
+  /// Title
+  title String
+
+  /// Message content
+  message String
+
+  /// Link to navigate to
+  link String?
+
+  /// Is read
+  isRead Boolean @default(false)
+
+  /// Read at timestamp
+  readAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@map("notification")
+  @@index([userId])
+  @@index([isRead])
+  @@index([createdAt])
+}

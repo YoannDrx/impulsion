@@ -5,9 +5,24 @@ import { prisma } from "@/lib/prisma";
 import { redisClient } from "@/lib/redis";
 import { CacheKeys, CacheTTL } from "@/lib/redis-keys";
 import { SiteConfig } from "@/site-config";
+import {
+  defaultLocale,
+  getLocaleFromPathname,
+  type Locale,
+} from "@/i18n/config";
 import { getSessionCookie } from "better-auth/cookies";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+
+const getLocaleFromRequest = (request: NextRequest) =>
+  getLocaleFromPathname(request.nextUrl.pathname);
+
+const withLocalePrefix = (pathname: string, locale: Locale | null) => {
+  const normalizedPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  if (!locale || locale === defaultLocale) return normalizedPath;
+  if (normalizedPath === "/") return `/${locale}`;
+  return `/${locale}${normalizedPath}`;
+};
 
 export const handleRootRedirect = (request: NextRequest) => {
   if (!SiteConfig.features.enableLandingRedirection) return null;
@@ -18,23 +33,20 @@ export const handleRootRedirect = (request: NextRequest) => {
 
   if (!session) return null;
 
+  const locale = getLocaleFromRequest(request);
   const url = request.nextUrl.clone();
-  url.pathname = "/orgs";
+  url.pathname = withLocalePrefix("/orgs", locale);
   return NextResponse.redirect(url);
 };
 
 export const extractOrgSlug = (pathname: string) => {
-  if (!pathname.startsWith("/orgs/")) return null;
+  const segments = pathname.split("/").filter(Boolean);
+  const orgIndex = segments.indexOf("orgs");
+  if (orgIndex === -1) return null;
 
-  const slugStartIndex = "/orgs/".length;
-  const slashIndex = pathname.indexOf("/", slugStartIndex);
-  const slug =
-    slashIndex === -1
-      ? pathname.substring(slugStartIndex)
-      : pathname.substring(slugStartIndex, slashIndex);
-
-  const isValidSlug = slug && slug !== "" && pathname !== "/orgs";
-  return isValidSlug ? slug : null;
+  const slug = segments[orgIndex + 1];
+  if (!slug) return null;
+  return slug;
 };
 
 export const validateSession = async (request: NextRequest) => {
@@ -142,8 +154,9 @@ export const switchActiveOrganization = async (
 };
 
 export const redirectToOrgList = (request: NextRequest) => {
+  const locale = getLocaleFromRequest(request);
   const url = request.nextUrl.clone();
-  url.pathname = "/orgs";
+  url.pathname = withLocalePrefix("/orgs", locale);
   return NextResponse.redirect(url);
 };
 
@@ -164,8 +177,9 @@ export const validateAdminAccess = async (request: NextRequest) => {
 };
 
 export const redirectToRoot = (request: NextRequest) => {
+  const locale = getLocaleFromRequest(request);
   const url = request.nextUrl.clone();
-  url.pathname = "/";
+  url.pathname = withLocalePrefix("/", locale);
   return NextResponse.redirect(url);
 };
 
@@ -178,9 +192,24 @@ export const isReservedSlug = (slug: string) => {
 };
 
 export const buildOrgRedirectUrl = (request: NextRequest, newSlug: string) => {
-  const newUrl = new URL(request.url);
-  const parts = request.nextUrl.pathname.split("/");
-  parts[2] = newSlug;
-  newUrl.pathname = parts.join("/");
+  const currentPath = request.nextUrl.pathname;
+  const locale = getLocaleFromPathname(currentPath);
+  const segments = currentPath.split("/").filter(Boolean);
+
+  if (locale) {
+    segments.shift();
+  }
+
+  const orgIndex = segments.indexOf("orgs");
+  if (orgIndex === -1) {
+    segments.push("orgs", newSlug);
+  } else if (segments.length > orgIndex + 1) {
+    segments[orgIndex + 1] = newSlug;
+  } else {
+    segments.push(newSlug);
+  }
+
+  const newUrl = request.nextUrl.clone();
+  newUrl.pathname = withLocalePrefix(`/${segments.join("/")}`, locale);
   return NextResponse.redirect(newUrl);
 };

@@ -1,0 +1,87 @@
+{
+  "header": {
+    "title": "SESSION ARCHITECT",
+    "subtitle": "Constructeur de séance"
+  },
+  "library": {
+    "title": "BIBLIOTHÈQUE D'EXERCICES",
+    "search": "Rechercher un exercice...",
+    "filters": {
+      "all": "TOUS",
+      "warmup": "ÉCHAUFFEMENT",
+      "main": "PRINCIPAL",
+      "cooldown": "RETOUR AU CALME",
+      "strength": "RENFORCEMENT",
+      "cardio": "CARDIO",
+      "technique": "TECHNIQUE",
+      "recovery": "RÉCUPÉRATION"
+    },
+    "empty": "Aucun exercice trouvé",
+    "dragHint": "Glissez vers la timeline"
+  },
+  "timeline": {
+    "title": "TIMELINE SÉANCE",
+    "phases": {
+      "warmup": "ÉCHAUFFEMENT",
+      "main": "BLOC PRINCIPAL",
+      "cooldown": "RETOUR AU CALME"
+    },
+    "dropHere": "DÉPOSEZ ICI",
+    "empty": "Glissez des exercices ici pour construire votre séance"
+  },
+  "exercise": {
+    "duration": "DURÉE",
+    "sets": "SÉRIES",
+    "reps": "RÉPÉTITIONS",
+    "rest": "REPOS",
+    "intensity": "INTENSITÉ",
+    "notes": "NOTES",
+    "delete": "SUPPRIMER",
+    "duplicate": "DUPLIQUER"
+  },
+  "neuralLoad": {
+    "title": "CHARGE NEURALE",
+    "subtitle": "Impact estimé sur le système nerveux",
+    "levels": {
+      "low": "FAIBLE",
+      "moderate": "MODÉRÉE",
+      "high": "ÉLEVÉE",
+      "extreme": "EXTRÊME"
+    },
+    "warning": "Attention: charge élevée pour cet athlète",
+    "metrics": {
+      "muscular": "MUSCULAIRE",
+      "cardiovascular": "CARDIO",
+      "neurological": "NEUROLOGIQUE",
+      "metabolic": "MÉTABOLIQUE"
+    }
+  },
+  "summary": {
+    "title": "RÉSUMÉ",
+    "totalDuration": "DURÉE TOTALE",
+    "exerciseCount": "EXERCICES",
+    "estimatedLoad": "CHARGE ESTIMÉE",
+    "targetZone": "ZONE CIBLE"
+  },
+  "templates": {
+    "title": "TEMPLATES",
+    "save": "SAUVEGARDER COMME TEMPLATE",
+    "load": "CHARGER TEMPLATE",
+    "recent": "RÉCENTS"
+  },
+  "actions": {
+    "preview": "PRÉVISUALISER",
+    "save": "SAUVEGARDER",
+    "saveDraft": "BROUILLON",
+    "assign": "ASSIGNER",
+    "cancel": "ANNULER",
+    "clear": "TOUT EFFACER"
+  },
+  "assign": {
+    "title": "ASSIGNER LA SÉANCE",
+    "selectAthletes": "Sélectionner les athlètes",
+    "selectDate": "Choisir une date",
+    "recurring": "Récurrent",
+    "confirm": "CONFIRMER"
+  }
+}

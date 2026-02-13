@@ -6,20 +6,71 @@ import { Typography } from "@/components/nowts/typography";
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { cn } from "@/lib/utils";
 import {
-  BarChart3,
+  Activity,
   Calendar,
-  CalendarCheck,
   CheckCircle,
-  Sparkles,
-  X,
+  PlayCircle,
+  Trophy,
+  Users,
 } from "lucide-react";
 import type { Variants } from "motion/react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { SectionLayout } from "./section-layout";
 
 export function BentoGridSection() {
+  const t = useTranslations("landing.features");
+
+  const items = [
+    {
+      title: t("calendar.title"),
+      description: <span className="text-sm">{t("calendar.description")}</span>,
+      header: <CalendarSkeleton />,
+      className: "md:col-span-1",
+      icon: <Calendar size={20} />,
+    },
+    {
+      title: t("video.title"),
+      description: <span className="text-sm">{t("video.description")}</span>,
+      header: <VideoSkeleton />,
+      className: "md:col-span-1",
+      icon: <PlayCircle size={20} />,
+    },
+    {
+      title: t("load.title"),
+      description: <span className="text-sm">{t("load.description")}</span>,
+      header: <LoadSkeleton />,
+      className: "md:col-span-1",
+      icon: <Activity size={20} />,
+    },
+    {
+      title: t("team.title"),
+      description: <span className="text-sm">{t("team.description")}</span>,
+      header: <TeamSkeleton />,
+      className: "md:col-span-2",
+      icon: <Users size={20} />,
+    },
+    {
+      title: t("gamification.title"),
+      description: (
+        <span className="text-sm">{t("gamification.description")}</span>
+      ),
+      header: <GamificationSkeleton />,
+      className: "md:col-span-1",
+      icon: <Trophy size={20} />,
+    },
+  ];
+
   return (
-    <SectionLayout>
+    <SectionLayout id="features">
+      <div className="mb-12 text-center">
+        <Typography variant="h2" className="mb-4">
+          {t("title")}
+        </Typography>
+        <Typography variant="muted" className="text-lg">
+          {t("subtitle")}
+        </Typography>
+      </div>
       <BentoGrid className="mx-auto max-w-4xl md:auto-rows-[20rem]">
         {items.map((item, i) => (
           <BentoGridItem
@@ -36,7 +87,7 @@ export function BentoGridSection() {
   );
 }
 
-const Skeleton1 = () => {
+const CalendarSkeleton = () => {
   const variants: Variants = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
@@ -48,37 +99,49 @@ const Skeleton1 = () => {
       whileHover="animate"
       className="flex h-full flex-col gap-2"
     >
-      <motion.div className="border-border bg-background flex flex-row items-start gap-2 rounded-2xl border p-3">
-        <img
-          alt="avatar"
-          src="https://melvynx.com/_next/image?url=%2Fimages%2Fmy-face.png&w=828&q=75"
-          className="size-6 shrink-0 rounded-full"
-        />
+      <motion.div className="border-border bg-background flex flex-row items-center gap-2 rounded-2xl border p-3">
+        <Calendar className="text-primary size-5" />
         <div>
-          <p className="text-xs text-neutral-500">
-            Create a Thread to announce Now.ts
-          </p>
+          <p className="text-xs font-medium">Lundi - Course 45min</p>
+          <p className="text-muted-foreground text-xs">RPE cible: 6</p>
         </div>
       </motion.div>
       <motion.div
         variants={variants}
-        className="border-border bg-background flex flex-row items-start justify-end gap-2 rounded-2xl border p-3"
+        className="border-border bg-background flex flex-row items-center gap-2 rounded-2xl border p-3"
       >
-        <p className="text-xs text-neutral-500">
-          Today I announced my new project, Now.TS, the perfect way to create
-          professional Next.js application in days.
-        </p>
-        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" />
+        <Calendar className="text-primary size-5" />
+        <div>
+          <p className="text-xs font-medium">Mercredi - PPG</p>
+          <p className="text-muted-foreground text-xs">RPE cible: 7</p>
+        </div>
       </motion.div>
     </motion.div>
   );
 };
 
-const Skeleton2 = () => {
+const VideoSkeleton = () => {
   const variants: Variants = {
-    initial: { opacity: 0, y: -10 },
-    animate: { opacity: 1, y: 0 },
+    initial: { scale: 1 },
+    animate: { scale: 1.05 },
   };
+
+  return (
+    <motion.div
+      initial="initial"
+      whileHover="animate"
+      variants={variants}
+      className="bg-muted flex h-full items-center justify-center rounded-lg"
+    >
+      <div className="flex flex-col items-center gap-2">
+        <PlayCircle className="text-primary size-12" />
+        <p className="text-muted-foreground text-xs">Cliquez pour analyser</p>
+      </div>
+    </motion.div>
+  );
+};
+
+const LoadSkeleton = () => {
   return (
     <motion.div
       initial="initial"
@@ -86,71 +149,36 @@ const Skeleton2 = () => {
       className="flex h-full flex-col gap-2"
     >
       <motion.div>
-        <Alert variant="default" className="">
+        <Alert variant="default">
           <Loader size={20} />
-          <AlertTitle>Schedule your threads...</AlertTitle>
+          <AlertTitle>Calcul de la charge...</AlertTitle>
         </Alert>
       </motion.div>
-      <motion.div variants={variants}>
-        <Alert variant="success" className="">
+      <motion.div
+        variants={{
+          initial: { opacity: 0, y: -10 },
+          animate: { opacity: 1, y: 0 },
+        }}
+      >
+        <Alert variant="success">
           <CheckCircle size={20} />
-          <AlertTitle>Your threads are now scheduled for 7:00 AM</AlertTitle>
+          <AlertTitle>ACWR: 1.12 - Zone optimale</AlertTitle>
         </Alert>
       </motion.div>
     </motion.div>
   );
 };
-const Skeleton3 = () => {
-  const variants = {
-    initial: {
-      backgroundPosition: "0 50%",
-    },
-    animate: {
-      backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
-    },
-  };
-  return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      variants={variants}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-      className="dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex size-full min-h-24 flex-1 flex-col space-y-2 rounded-lg"
-      style={{
-        background:
-          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
-        backgroundSize: "400% 400%",
-      }}
-    >
-      <motion.div className="size-full rounded-lg"></motion.div>
-    </motion.div>
-  );
-};
-const Skeleton4 = () => {
+
+const TeamSkeleton = () => {
   const first = {
-    initial: {
-      x: 20,
-      rotate: -5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
+    initial: { x: 20, rotate: -5 },
+    hover: { x: 0, rotate: 0 },
   };
   const second = {
-    initial: {
-      x: -20,
-      rotate: 5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
+    initial: { x: -20, rotate: 5 },
+    hover: { x: 0, rotate: 0 },
   };
+
   return (
     <motion.div
       initial="initial"
@@ -162,163 +190,53 @@ const Skeleton4 = () => {
         variants={first}
         className="border-border bg-background flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border p-4"
       >
-        <Typography variant="large">+123 followers</Typography>
-        <Typography variant={"muted"}>In the last 30 days</Typography>
-        <Typography variant={"muted"} className="text-green-500">
-          +12%
+        <Typography variant="large">12 athletes</Typography>
+        <Typography variant="muted">Actifs ce mois</Typography>
+        <Typography variant="muted" className="text-green-500">
+          +3
         </Typography>
       </motion.div>
       <motion.div className="border-border bg-background flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border p-4">
-        <Typography variant="large">+1.4 M Views</Typography>
-        <Typography variant={"muted"}>In the last 30 days</Typography>
-        <Typography variant={"muted"} className="text-green-500">
-          +21%
+        <Typography variant="large">48 seances</Typography>
+        <Typography variant="muted">Planifiees</Typography>
+        <Typography variant="muted" className="text-green-500">
+          +12%
         </Typography>
       </motion.div>
       <motion.div
         variants={second}
         className="border-border bg-background flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border p-4"
       >
-        <Typography variant="large">1244 likes</Typography>
-        <Typography variant="large">766 replis</Typography>
-        <Typography variant={"muted"}>In the last 30 days</Typography>
-        <Typography variant={"muted"} className="text-green-500">
-          +12%
+        <Typography variant="large">RPE moy: 6.4</Typography>
+        <Typography variant="muted">Charge optimale</Typography>
+        <Typography variant="muted" className="text-green-500">
+          OK
         </Typography>
       </motion.div>
     </motion.div>
   );
 };
 
-const Skeleton5 = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-
+const GamificationSkeleton = () => {
   return (
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-col gap-2"
+      className="flex h-full flex-col items-center justify-center gap-3"
     >
       <motion.div
-        variants={variants}
-        className="border-border bg-background flex flex-row items-start gap-2 rounded-2xl border p-3"
+        variants={{
+          initial: { scale: 1, rotate: 0 },
+          animate: { scale: 1.1, rotate: 5 },
+        }}
+        className="flex flex-col items-center"
       >
-        <img
-          src="https://melvynx.com/_next/image?url=%2Fimages%2Fmy-face.png&w=828&q=75"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="size-10 rounded-full"
-        />
-        <p className="text-xs text-neutral-500">
-          What I need to do to get more followers ?
-        </p>
-      </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="border-border bg-background flex flex-row items-start justify-end gap-2 rounded-2xl border p-3"
-      >
-        <div>
-          <p className="text-xs text-neutral-500">Searching...</p>
-          <motion.p
-            className="text-xs text-neutral-500"
-            variants={{
-              initial: {
-                opacity: 0,
-              },
-              animate: {
-                opacity: 1,
-              },
-            }}
-          >
-            Based on the Threads activity of the past 30 days, you should focus
-            creating content on Next.js
-          </motion.p>
-        </div>
-        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" />
+        <Trophy className="text-primary size-12" />
+        <Typography variant="large" className="mt-2">
+          Streak: 7 jours
+        </Typography>
+        <Typography variant="muted">Continue comme ca !</Typography>
       </motion.div>
     </motion.div>
   );
 };
-
-const items = [
-  {
-    title: "AI Content Generation",
-    description: (
-      <span className="text-sm">
-        Experience the power of AI in generating unique content.
-      </span>
-    ),
-    header: <Skeleton1 />,
-    className: "md:col-span-1",
-    icon: <Sparkles size={20} />,
-  },
-  {
-    title: "Schedule with ease",
-    description: (
-      <span className="text-sm">
-        We help you schedule your threads with ease.
-      </span>
-    ),
-    header: <Skeleton2 />,
-    className: "md:col-span-1",
-    icon: <Calendar size={20} />,
-  },
-  {
-    title: "Calendar View",
-    description: (
-      <span className="text-sm">
-        See what you have planned for the day with our calendar view.
-      </span>
-    ),
-    header: <Skeleton3 />,
-    className: "md:col-span-1",
-    icon: <CalendarCheck size={20} />,
-  },
-  {
-    title: "Threads Analysis",
-    description: (
-      <span className="text-sm">
-        Understand your threads with our powerful analytics.
-      </span>
-    ),
-    header: <Skeleton4 />,
-    className: "md:col-span-2",
-    icon: <BarChart3 size={20} />,
-  },
-
-  {
-    title: "See what works",
-    description: (
-      <span className="text-sm">
-        Understand the hype and trends with our powerful research tools.
-      </span>
-    ),
-    header: <Skeleton5 />,
-    className: "md:col-span-1",
-    icon: <X className="size-4 text-neutral-500" />,
-  },
-];

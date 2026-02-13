@@ -1,0 +1,40 @@
+import { orgMetadata } from "@/lib/metadata";
+import { getRequiredCurrentOrgCache } from "@/lib/react/cache";
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import { InjectCurrentOrgStore } from "./use-current-org";
+
+export async function generateMetadata(
+  props: LayoutProps<"/[locale]/orgs/[orgSlug]">,
+): Promise<Metadata> {
+  const params = await props.params;
+  return orgMetadata(params.orgSlug);
+}
+
+export default async function RouteLayout(
+  props: LayoutProps<"/[locale]/orgs/[orgSlug]">,
+) {
+  return (
+    <>
+      {props.children}
+      <Suspense fallback={null}>
+        <LayoutPage />
+      </Suspense>
+    </>
+  );
+}
+
+const LayoutPage = async () => {
+  const org = await getRequiredCurrentOrgCache();
+  return (
+    <InjectCurrentOrgStore
+      org={{
+        id: org.id,
+        slug: org.slug,
+        name: org.name,
+        image: org.logo ?? null,
+        subscription: org.subscription,
+      }}
+    />
+  );
+};

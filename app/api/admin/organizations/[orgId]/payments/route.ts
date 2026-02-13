@@ -1,6 +1,6 @@
 import { getRequiredAdmin } from "@/lib/auth/auth-user";
 import { prisma } from "@/lib/prisma";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { route } from "@/lib/zod-route";
 import { z } from "zod";
 
@@ -12,6 +12,7 @@ export const GET = route
   )
   .handler(async (req, { params }) => {
     await getRequiredAdmin();
+    const stripe = getStripe();
 
     const organization = await prisma.organization.findUnique({
       where: { id: params.orgId },

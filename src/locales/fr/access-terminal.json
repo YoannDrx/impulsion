@@ -1,0 +1,73 @@
+{
+  "title": "TERMINAL D'ACCÈS",
+  "subtitle": "Authentification requise",
+  "scanner": {
+    "title": "SCAN BIOMÉTRIQUE",
+    "status": "SCAN BIOMÉTRIQUE ACTIF",
+    "instructions": "Placez votre visage devant la caméra pour l'authentification biométrique",
+    "phases": {
+      "awaiting": "EN ATTENTE DE SCAN",
+      "scanning": "SCAN EN COURS...",
+      "processing": "TRAITEMENT...",
+      "granted": "ACCÈS AUTORISÉ",
+      "denied": "ACCÈS REFUSÉ"
+    },
+    "instruction": "CLIQUEZ POUR INITIER LE SCAN"
+  },
+  "status": {
+    "secure": "CONNEXION SÉCURISÉE",
+    "encryption": "Chiffrement",
+    "protocol": "Protocole",
+    "session": "Session"
+  },
+  "form": {
+    "title": "AUTHENTIFICATION",
+    "subtitle": "Entrez vos identifiants pour accéder au système",
+    "coachId": {
+      "label": "COACH_ID",
+      "placeholder": "Entrez votre identifiant",
+      "prefix": ">"
+    },
+    "passKey": {
+      "label": "PASS_KEY",
+      "placeholder": "Entrez votre clé d'accès",
+      "prefix": "$"
+    },
+    "rememberMe": "Maintenir la session active",
+    "submit": "AUTHENTIFIER",
+    "loading": "VÉRIFICATION...",
+    "submitting": "VÉRIFICATION...",
+    "forgotPassword": "Réinitialiser les accès",
+    "noAccount": "Pas encore de compte ?",
+    "register": "Créer un compte"
+  },
+  "divider": "OU",
+  "socialAuth": {
+    "google": "CONTINUER AVEC GOOGLE",
+    "github": "CONTINUER AVEC GITHUB"
+  },
+  "systemLogs": {
+    "title": "LOGS SYSTÈME",
+    "messages": [
+      "[SYS] Connexion sécurisée établie",
+      "[AUTH] En attente des credentials",
+      "[SEC] Protocole TLS 1.3 actif",
+      "[SYS] Monitoring des tentatives activé"
+    ]
+  },
+  "errors": {
+    "invalidCredentials": "ERREUR: Identifiants invalides",
+    "accountLocked": "ERREUR: Compte verrouillé. Contactez l'administrateur.",
+    "networkError": "ERREUR: Connexion au serveur impossible",
+    "tooManyAttempts": "ALERTE: Trop de tentatives. Veuillez patienter."
+  },
+  "links": {
+    "forgotPassword": "Réinitialiser les accès",
+    "createAccount": "Demander un accès",
+    "backToHome": "< Retour au terminal principal"
+  },
+  "footer": {
+    "securityLevel": "NIVEAU DE SÉCURITÉ: ÉLEVÉ",
+    "encryption": "CHIFFREMENT: AES-256"
+  }
+}

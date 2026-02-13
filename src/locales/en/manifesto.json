@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "title": "REDEFINE HUMAN LIMITS",
+    "subtitle": "The next-generation sports coaching platform. Data. Video. Intelligence.",
+    "bootSequence": [
+      "Initializing system...",
+      "Loading coaching modules...",
+      "Connecting to biometric sensors...",
+      "Calibrating analysis algorithms...",
+      "System ready. Welcome, Coach."
+    ],
+    "cta": {
+      "primary": "INITIATE ACCESS",
+      "secondary": "EXPLORE SYSTEM"
+    },
+    "stats": {
+      "coaches": "COACHES CONNECTED",
+      "athletes": "ATHLETES MONITORED",
+      "sessions": "SESSIONS ANALYZED",
+      "videos": "VIDEO HOURS"
+    }
+  },
+  "system": {
+    "status": "SYSTEM ONLINE",
+    "version": "v2.0.0-alpha",
+    "uptime": "UPTIME",
+    "latency": "LATENCY",
+    "ticker": "IMPULSION OS /// DATA-DRIVEN COACHING /// AUGMENT HUMAN /// NOT REPLACE ///"
+  },
+  "features": {
+    "title": "SYSTEM MODULES",
+    "subtitle": "Complete architecture for high-performance coaching",
+    "dataCore": {
+      "title": "DATA CORE",
+      "description": "Real-time sync with Strava, Garmin, Polar. Load analysis and injury prevention.",
+      "tags": ["TSS", "CTL", "ATL", "TSB"]
+    },
+    "videoLab": {
+      "title": "VIDEO LAB",
+      "description": "Biomechanical analysis with time markers and vector overlay.",
+      "tags": ["Annotations", "Slow-motion", "A/B Comparison"]
+    },
+    "missionControl": {
+      "title": "MISSION CONTROL",
+      "description": "Centralized dashboard to monitor your squad's readiness state.",
+      "tags": ["Readiness Score", "Risk Matrix", "Load Trends"]
+    },
+    "neuralPlanner": {
+      "title": "NEURAL PLANNER",
+      "description": "Intelligent planning of micro and macro training cycles.",
+      "tags": ["Auto-adjust", "Template", "Custom"]
+    }
+  },
+  "pricing": {
+    "title": "ACCESS LEVELS",
+    "subtitle": "Choose your clearance level",
+    "tiers": {
+      "observer": {
+        "name": "OBSERVER",
+        "price": "0",
+        "period": "/month",
+        "clearance": "Level 1",
+        "features": [
+          "5 athletes max",
+          "Basic calendar",
+          "10 video uploads/month",
+          "Standard reports"
+        ],
+        "cta": "ACTIVATE"
+      },
+      "operator": {
+        "name": "OPERATOR",
+        "price": "29",
+        "period": "/month",
+        "clearance": "Level 2",
+        "features": [
+          "Unlimited athletes",
+          "Strava/Garmin sync",
+          "Unlimited videos",
+          "Advanced analytics",
+          "Priority support"
+        ],
+        "cta": "UPGRADE",
+        "badge": "RECOMMENDED"
+      },
+      "commander": {
+        "name": "COMMANDER",
+        "price": "99",
+        "period": "/month",
+        "clearance": "Level 3",
+        "features": [
+          "Multi-organizations",
+          "API access",
+          "White-label",
+          "Custom integrations",
+          "Dedicated support"
+        ],
+        "cta": "CONTACT"
+      }
+    }
+  },
+  "cta": {
+    "title": "READY TO AUGMENT YOUR COACHING?",
+    "subtitle": "Join coaches who chose not to replace humans, but to augment them.",
+    "button": "REQUEST ACCESS"
+  },
+  "footer": {
+    "system": "IMPULSION OS",
+    "status": "All systems operational",
+    "links": {
+      "docs": "Documentation",
+      "api": "API",
+      "status": "Status",
+      "security": "Security"
+    }
+  }
+}

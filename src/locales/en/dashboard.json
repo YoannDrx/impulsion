@@ -1,0 +1,46 @@
+{
+  "title": "Dashboard",
+  "welcome": "Welcome, {name}",
+  "overview": {
+    "title": "Overview",
+    "thisWeek": "This week",
+    "sessionsPlanned": "Sessions planned",
+    "sessionsCompleted": "Sessions completed",
+    "athletesActive": "Active athletes",
+    "feedbackPending": "Pending feedback"
+  },
+  "quickActions": {
+    "title": "Quick actions",
+    "createSession": "Create session",
+    "inviteAthlete": "Invite athlete",
+    "viewCalendar": "View calendar",
+    "uploadVideo": "Upload video"
+  },
+  "recentActivity": {
+    "title": "Recent activity",
+    "noActivity": "No recent activity",
+    "sessionCompleted": "{athlete} completed {session}",
+    "sessionFeedback": "{athlete} left feedback",
+    "newVideo": "{athlete} uploaded a video",
+    "injuryReported": "{athlete} reported pain"
+  },
+  "upcomingSessions": {
+    "title": "Upcoming sessions",
+    "noSessions": "No scheduled sessions",
+    "viewAll": "View all sessions"
+  },
+  "athleteAlerts": {
+    "title": "Athlete alerts",
+    "noAlerts": "No alerts",
+    "highLoad": "High load",
+    "painReported": "Pain reported",
+    "missedSession": "Missed session",
+    "streak": "Active streak"
+  },
+  "stats": {
+    "weeklyLoad": "Weekly load",
+    "compliance": "Compliance rate",
+    "averageRpe": "Average RPE",
+    "injuryRisk": "Injury risk"
+  }
+}

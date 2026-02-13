@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { animate } from "motion/react";
 import { useEffect, useRef } from "react";
 import { SectionLayout } from "./section-layout";
@@ -7,44 +8,40 @@ import { SectionLayout } from "./section-layout";
 type StatProps = {
   number: number;
   suffix: string;
-  text: string;
+  textKey: string;
 };
 
 const stats: StatProps[] = [
   {
-    number: 476,
-    suffix: "K",
-    text: "Threads scheduled every month.",
+    number: 150,
+    suffix: "+",
+    textKey: "coaches",
   },
   {
-    number: 1.44,
+    number: 2.5,
     suffix: "K",
-    text: "Users that use our platform.",
+    textKey: "athletes",
   },
   {
-    number: 1.5,
-    suffix: "M+",
-    text: "Interactions with posts created by our users.",
-  },
-  {
-    number: 192,
-    suffix: "K",
-    text: "Users impacted by our published posts.",
+    number: 12,
+    suffix: "K+",
+    textKey: "sessions",
   },
 ];
 
 export function StatsSection() {
+  const t = useTranslations("landing.hero.stats");
+
   return (
     <SectionLayout size="sm">
-      <div className="grid w-full items-center gap-12 sm:grid-cols-2 md:-mx-5 md:max-w-none md:grid-cols-4 md:gap-0">
+      <div className="grid w-full items-center gap-12 sm:grid-cols-3 md:-mx-5 md:max-w-none md:gap-0">
         {stats.map((stat, index) => (
           <div key={index} className="relative text-center md:px-5">
             <h4 className="mb-2 text-2xl font-bold tabular-nums md:text-3xl">
               <Counter from={0} to={stat.number} />
-
               {stat.suffix}
             </h4>
-            <p className="text-muted-foreground text-sm">{stat.text}</p>
+            <p className="text-muted-foreground text-sm">{t(stat.textKey)}</p>
           </div>
         ))}
       </div>
@@ -72,7 +69,9 @@ function Counter({
       ease: "easeInOut",
 
       onUpdate(value) {
-        node.textContent = value.toFixed(2);
+        // Format based on whether it's a decimal or integer
+        node.textContent =
+          to < 10 ? value.toFixed(1) : Math.floor(value).toString();
       },
     });
 

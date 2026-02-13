@@ -8,8 +8,14 @@ import { ContactSupportSchema } from "./contact-support.schema";
 export const contactSupportAction = action
   .inputSchema(ContactSupportSchema)
   .action(async ({ parsedInput: { email, subject, message } }) => {
+    const supportEmail = env.NEXT_PUBLIC_EMAIL_CONTACT;
+
+    if (!supportEmail) {
+      throw new Error("Support email is not configured");
+    }
+
     await sendEmail({
-      to: env.NEXT_PUBLIC_EMAIL_CONTACT,
+      to: supportEmail,
       subject: `Support needed from ${email} - ${subject}`,
       text: message,
       html: `<p>${message}</p>`,

@@ -4,7 +4,7 @@ import { orgAction } from "@/lib/actions/safe-actions";
 import { AUTH_PLANS } from "@/lib/auth/stripe/auth-plans";
 import { ActionError } from "@/lib/errors/action-error";
 import { getServerUrl } from "@/lib/server-url";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { z } from "zod";
 
 export const upgradeOrgAction = orgAction
@@ -46,6 +46,8 @@ export const upgradeOrgAction = orgAction
       if (!customerId) {
         throw new ActionError("No Stripe customer ID found");
       }
+
+      const stripe = getStripe();
 
       // Create checkout session
       const session = await stripe.checkout.sessions.create({

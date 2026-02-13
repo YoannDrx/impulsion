@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "title": "REDÉFINIR LES LIMITES HUMAINES",
+    "subtitle": "La plateforme de coaching sportif de nouvelle génération. Données. Vidéo. Intelligence.",
+    "bootSequence": [
+      "Initialisation du système...",
+      "Chargement des modules de coaching...",
+      "Connexion aux capteurs biométriques...",
+      "Calibration des algorithmes d'analyse...",
+      "Système prêt. Bienvenue, Coach."
+    ],
+    "cta": {
+      "primary": "INITIER ACCÈS",
+      "secondary": "EXPLORER LE SYSTÈME"
+    },
+    "stats": {
+      "coaches": "COACHS CONNECTÉS",
+      "athletes": "ATHLÈTES MONITORÉS",
+      "sessions": "SÉANCES ANALYSÉES",
+      "videos": "HEURES VIDÉO"
+    }
+  },
+  "system": {
+    "status": "SYSTÈME EN LIGNE",
+    "version": "v2.0.0-alpha",
+    "uptime": "TEMPS DE FONCTIONNEMENT",
+    "latency": "LATENCE",
+    "ticker": "IMPULSION OS /// DATA-DRIVEN COACHING /// AUGMENTER L'HUMAIN /// PAS LE REMPLACER ///"
+  },
+  "features": {
+    "title": "MODULES DU SYSTÈME",
+    "subtitle": "Architecture complète pour le coaching de haute performance",
+    "dataCore": {
+      "title": "DATA CORE",
+      "description": "Synchronisation temps réel avec Strava, Garmin, Polar. Analyse de charge et prévention des blessures.",
+      "tags": ["TSS", "CTL", "ATL", "TSB"]
+    },
+    "videoLab": {
+      "title": "VIDEO LAB",
+      "description": "Analyse biomécanique avec marqueurs temporels et superposition vectorielle.",
+      "tags": ["Annotations", "Slow-motion", "Comparaison A/B"]
+    },
+    "missionControl": {
+      "title": "MISSION CONTROL",
+      "description": "Dashboard centralisé pour monitorer l'état de préparation de votre squad.",
+      "tags": ["Readiness Score", "Risk Matrix", "Load Trends"]
+    },
+    "neuralPlanner": {
+      "title": "NEURAL PLANNER",
+      "description": "Planification intelligente des micro et macro-cycles d'entraînement.",
+      "tags": ["Auto-adjust", "Template", "Custom"]
+    }
+  },
+  "pricing": {
+    "title": "NIVEAUX D'ACCÈS",
+    "subtitle": "Choisissez votre niveau d'autorisation",
+    "tiers": {
+      "observer": {
+        "name": "OBSERVER",
+        "price": "0",
+        "period": "/mois",
+        "clearance": "Niveau 1",
+        "features": [
+          "5 athlètes max",
+          "Calendrier basique",
+          "10 uploads vidéo/mois",
+          "Rapports standards"
+        ],
+        "cta": "ACTIVER"
+      },
+      "operator": {
+        "name": "OPERATOR",
+        "price": "29",
+        "period": "/mois",
+        "clearance": "Niveau 2",
+        "features": [
+          "Athlètes illimités",
+          "Sync Strava/Garmin",
+          "Vidéos illimitées",
+          "Analytics avancés",
+          "Support prioritaire"
+        ],
+        "cta": "UPGRADE",
+        "badge": "RECOMMANDÉ"
+      },
+      "commander": {
+        "name": "COMMANDER",
+        "price": "99",
+        "period": "/mois",
+        "clearance": "Niveau 3",
+        "features": [
+          "Multi-organisations",
+          "API access",
+          "White-label",
+          "Custom integrations",
+          "Dedicated support"
+        ],
+        "cta": "CONTACT"
+      }
+    }
+  },
+  "cta": {
+    "title": "PRÊT À AUGMENTER VOTRE COACHING ?",
+    "subtitle": "Rejoignez les coachs qui ont choisi de ne pas remplacer l'humain, mais de l'augmenter.",
+    "button": "DEMANDER ACCÈS"
+  },
+  "footer": {
+    "system": "IMPULSION OS",
+    "status": "Tous systèmes opérationnels",
+    "links": {
+      "docs": "Documentation",
+      "api": "API",
+      "status": "Status",
+      "security": "Sécurité"
+    }
+  }
+}

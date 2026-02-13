@@ -88,9 +88,18 @@ export const sendEmail = async (params: SendEmailParams) => {
     html = await pretty(await render(params.html));
   }
 
+  const from = params.from ?? env.EMAIL_FROM;
+
+  if (!from) {
+    throw new Error("EMAIL_FROM is not configured");
+  }
+
+  const replyTo = params.replyTo ?? env.NEXT_PUBLIC_EMAIL_CONTACT;
+
   const result = await mailAdapter.send({
     ...params,
-    from: params.from ?? env.EMAIL_FROM,
+    from,
+    ...(replyTo && { replyTo }),
     html,
   });
 

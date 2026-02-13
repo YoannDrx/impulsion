@@ -1,0 +1,129 @@
+/**
+ * Impulsion Design System - Typography Tokens
+ *
+ * Systeme typographique moderne avec polices optimisees pour le sport et la tech.
+ */
+
+:root {
+  /* === FONT FAMILIES === */
+
+  /* Sans-serif principal - Interface */
+  --imp-font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Display - Titres et elements d'impact */
+  --imp-font-display: "Space Grotesk", var(--imp-font-sans);
+
+  /* Mono - Donnees numeriques, chronos, code */
+  --imp-font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Serif - Citations, textes edito (optionnel) */
+  --imp-font-serif: "Source Serif 4", Georgia, serif;
+
+  /* === FONT SIZES === */
+
+  /* Scale basee sur un ratio de 1.25 (Major Third) */
+  --imp-text-xs: 0.75rem; /* 12px */
+  --imp-text-sm: 0.875rem; /* 14px */
+  --imp-text-base: 1rem; /* 16px */
+  --imp-text-lg: 1.125rem; /* 18px */
+  --imp-text-xl: 1.25rem; /* 20px */
+  --imp-text-2xl: 1.5rem; /* 24px */
+  --imp-text-3xl: 1.875rem; /* 30px */
+  --imp-text-4xl: 2.25rem; /* 36px */
+  --imp-text-5xl: 3rem; /* 48px */
+  --imp-text-6xl: 3.75rem; /* 60px */
+  --imp-text-7xl: 4.5rem; /* 72px */
+  --imp-text-8xl: 6rem; /* 96px */
+  --imp-text-9xl: 8rem; /* 128px */
+
+  /* === LINE HEIGHTS === */
+
+  --imp-leading-none: 1;
+  --imp-leading-tight: 1.15;
+  --imp-leading-snug: 1.25;
+  --imp-leading-normal: 1.5;
+  --imp-leading-relaxed: 1.625;
+  --imp-leading-loose: 2;
+
+  /* === LETTER SPACING === */
+
+  --imp-tracking-tighter: -0.05em;
+  --imp-tracking-tight: -0.025em;
+  --imp-tracking-normal: 0;
+  --imp-tracking-wide: 0.025em;
+  --imp-tracking-wider: 0.05em;
+  --imp-tracking-widest: 0.1em;
+
+  /* === FONT WEIGHTS === */
+
+  --imp-weight-thin: 100;
+  --imp-weight-extralight: 200;
+  --imp-weight-light: 300;
+  --imp-weight-normal: 400;
+  --imp-weight-medium: 500;
+  --imp-weight-semibold: 600;
+  --imp-weight-bold: 700;
+  --imp-weight-extrabold: 800;
+  --imp-weight-black: 900;
+
+  /* === COMPOSITE STYLES === */
+
+  /* Headings */
+  --imp-h1-size: var(--imp-text-5xl);
+  --imp-h1-weight: var(--imp-weight-bold);
+  --imp-h1-leading: var(--imp-leading-tight);
+  --imp-h1-tracking: var(--imp-tracking-tight);
+
+  --imp-h2-size: var(--imp-text-4xl);
+  --imp-h2-weight: var(--imp-weight-semibold);
+  --imp-h2-leading: var(--imp-leading-tight);
+  --imp-h2-tracking: var(--imp-tracking-tight);
+
+  --imp-h3-size: var(--imp-text-3xl);
+  --imp-h3-weight: var(--imp-weight-semibold);
+  --imp-h3-leading: var(--imp-leading-snug);
+  --imp-h3-tracking: var(--imp-tracking-normal);
+
+  --imp-h4-size: var(--imp-text-2xl);
+  --imp-h4-weight: var(--imp-weight-semibold);
+  --imp-h4-leading: var(--imp-leading-snug);
+  --imp-h4-tracking: var(--imp-tracking-normal);
+
+  --imp-h5-size: var(--imp-text-xl);
+  --imp-h5-weight: var(--imp-weight-medium);
+  --imp-h5-leading: var(--imp-leading-normal);
+  --imp-h5-tracking: var(--imp-tracking-normal);
+
+  --imp-h6-size: var(--imp-text-lg);
+  --imp-h6-weight: var(--imp-weight-medium);
+  --imp-h6-leading: var(--imp-leading-normal);
+  --imp-h6-tracking: var(--imp-tracking-normal);
+
+  /* Body text */
+  --imp-body-size: var(--imp-text-base);
+  --imp-body-weight: var(--imp-weight-normal);
+  --imp-body-leading: var(--imp-leading-relaxed);
+
+  --imp-body-lg-size: var(--imp-text-lg);
+  --imp-body-sm-size: var(--imp-text-sm);
+
+  /* Labels & Captions */
+  --imp-label-size: var(--imp-text-sm);
+  --imp-label-weight: var(--imp-weight-medium);
+  --imp-label-tracking: var(--imp-tracking-wide);
+
+  --imp-caption-size: var(--imp-text-xs);
+  --imp-caption-weight: var(--imp-weight-normal);
+  --imp-caption-tracking: var(--imp-tracking-normal);
+
+  /* Numeric displays (chronos, stats) */
+  --imp-stat-size: var(--imp-text-4xl);
+  --imp-stat-weight: var(--imp-weight-bold);
+  --imp-stat-family: var(--imp-font-mono);
+
+  --imp-chrono-size: var(--imp-text-6xl);
+  --imp-chrono-weight: var(--imp-weight-bold);
+  --imp-chrono-family: var(--imp-font-mono);
+  --imp-chrono-tracking: var(--imp-tracking-tight);
+}

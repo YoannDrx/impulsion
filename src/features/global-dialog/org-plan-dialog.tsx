@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -7,11 +9,15 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { AUTH_PLANS, getPlanFeatures } from "@/lib/auth/stripe/auth-plans";
-import { SimplePricingCard } from "@app/orgs/[orgSlug]/(navigation)/settings/billing/(tabs)/_components/simple-pricing-card";
+import { SimplePricingCard } from "@app/[locale]/orgs/[orgSlug]/(navigation)/settings/billing/(tabs)/_components/simple-pricing-card";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { closeGlobalDialog } from "./global-dialog.store";
 
 export const OrgPlanDialog = () => {
+  const params = useParams<{ orgSlug?: string }>();
+  const orgSlug = params.orgSlug ?? "default";
+
   return (
     <Dialog open={true} onOpenChange={() => closeGlobalDialog()}>
       <DialogContent className="max-h-[90vh] max-w-3xl overflow-auto px-8 py-6 lg:px-16 lg:py-14">
@@ -34,7 +40,9 @@ export const OrgPlanDialog = () => {
               features={getPlanFeatures(card)}
               action={
                 <Button asChild>
-                  <Link href="/orgs/default/settings/billing">Upgrade</Link>
+                  <Link href={`/orgs/${orgSlug}/settings/billing`}>
+                    Upgrade
+                  </Link>
                 </Button>
               }
             />
