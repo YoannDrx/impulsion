@@ -94,9 +94,12 @@ export const sendEmail = async (params: SendEmailParams) => {
     throw new Error("EMAIL_FROM is not configured");
   }
 
+  const replyTo = params.replyTo ?? env.NEXT_PUBLIC_EMAIL_CONTACT;
+
   const result = await mailAdapter.send({
     ...params,
     from,
+    ...(replyTo && { replyTo }),
     html,
   });
 
